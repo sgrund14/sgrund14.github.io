@@ -1,0 +1,272 @@
+body {
+    font-family: 'Josefin Sans';
+    font-weight: lighter;
+}
+
+.bottomhalf {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    background-color: black;
+}
+
+#canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50%;
+    width: 100%;
+}
+
+#canvas2 {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 50%;
+    width: 100%;
+}
+
+.row {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    left: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    top: 0;
+}
+
+.bottom {
+    top: 50%;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 25em;
+    pointer-events: auto;
+}
+
+.buttons {
+    a,
+    p, 
+    h1 {
+        padding-left: .5em;
+        padding-right: .5em;
+        margin: 0;
+        transition: all .25s;
+    }
+}
+
+.tabs,
+.links {
+    position: absolute;
+    right: 10%;
+    transition: all .5s;
+    p:hover, a:hover {
+        opacity: .5;
+    }
+}
+
+.tabs {
+    bottom: 0;
+    a , p{
+        color: black;
+    }
+}
+
+.links {
+    a , p{
+        color: white;
+    }
+}
+
+.top-panel {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bottom-panel {
+    @extend .top-panel;
+    top: 50%;
+    left: 0;
+    color: white;
+}
+
+.panel {
+    text-align: center;
+    line-height: 1.5em;
+    width: 25em;
+    margin-left: 10%;
+}
+
+.on {
+    font-size: 2em;
+    padding-left: -.5em;
+}
+
+a , p {
+    cursor: pointer;
+    user-select: none;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.resume {
+    color: white;
+    font-size: 2.5em;
+    transition: all .125s;
+}
+
+.resume:hover {
+    opacity: .75;
+}
+
+.prism {
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 5em;
+    .P {
+    color: red;
+    }
+    .R {
+        color: cyan;
+    }
+    .I {
+        color: green;
+    }
+    .S {
+        color: magenta;
+    }
+    .M {
+        color: blue;
+    }
+}
+
+.prism:hover {
+    .P {
+        color: blue;
+    }
+    .R {
+        color: red;
+    }
+    .I {
+        color: cyan;
+    }
+    .S {
+        color: green;
+    }
+    .M {
+        color: magenta;
+    }
+}
+
+.letter {
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: all .25s;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: lighter;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: lighter;
+}
+
+h6 {
+    font-size: .2em;
+}
+
+.picture {
+    width: 25em;
+    height: 15em;
+}
+
+#slider {
+    width: 25em;
+    height: auto;
+    overflow: hidden;
+    transition: all .25s;
+}
+
+#slider:hover {
+    opacity: .75;
+}
+
+#slider {
+    #slides {
+        display: block;
+        width: 150em;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+#slider {
+    .slide {
+        float: left;
+        list-style-type: none;
+        width: 25em;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 2.5vmin;
+        /* Base font-size of 32px */
+    }
+    .panel {
+        margin: auto;
+    }
+    .tabs,
+    .links {
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .info,
+    .contact,
+    .tabs,
+    .links {
+        font-weight: 400;
+    }
+    #first-name,
+    #last-name,
+    {
+        font-weight: 300;
+    }
+    .tabs {
+        margin-top: auto;
+    }
+}
+
+@media screen and (max-height: 360px) {
+    html {
+        font-size: 2.5vmin;
+        /* Base font-size of 32px */
+    }
+    .info,
+    .contact,
+    .tabs,
+    .links {
+        font-weight: 400;
+    }
+}
