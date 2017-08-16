@@ -2,8 +2,8 @@ var webpack = require('webpack');
 var path = require('path');
 var debug = process.env.NODE_ENV !== "production";
 
-var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
-var APP_DIR = path.resolve(__dirname, 'src/client/app');
+var BUILD_DIR = path.resolve(__dirname, 'src/public');
+var APP_DIR = path.resolve(__dirname, 'src/app');
 
 module.exports = {
   context: path.join(__dirname, "src"),
@@ -20,7 +20,8 @@ module.exports = {
           presets: ['react', 'es2015', 'stage-0'],
           plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
         }
-      }
+      },
+      { test: /\.scss$/, loader: ['style-loader', 'css-loader', "sass-loader"]}
     ]
   },
   output: {
