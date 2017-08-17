@@ -19,7 +19,6 @@
     "paper": "^0.11.4",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
-    "react-router": "^1.0.3",
     "webpack": "^2.7.0"
   },
   "repository": {
@@ -27,7 +26,6 @@
     "url": "git+https://github.com/sgrund14/website-react.git"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.0",
     "babel-plugin-add-module-exports": "^0.1.2",
