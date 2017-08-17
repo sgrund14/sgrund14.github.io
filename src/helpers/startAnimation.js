@@ -1,5 +1,7 @@
 'use strict';
 
+let paper = require('paper/dist/paper-full');
+
 const colors = {
     yellow: 'yellow',
     darkblue: '#000251',
