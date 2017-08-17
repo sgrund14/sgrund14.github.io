@@ -3,14 +3,14 @@
 let paper = require('paper/dist/paper-full');
 
 const colors = {
-    yellow: 'yellow',
+    yellow: '#ffe738',
     darkblue: '#000251',
     lightgreen: '#93ff99',
     lightergrey: '#eaeaea',
     lightblue: '#e5e6ff',
     darkred: '#6b0000',
     darkgrey: '#3a3a3a',
-    lightgrey: 'lightgrey'
+    lightgrey: '#bfbfbf'
 };
 
 const anim = (paperArray, id, canvasElement) => {
