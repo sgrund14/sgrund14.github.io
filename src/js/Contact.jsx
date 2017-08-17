@@ -11,7 +11,7 @@ const Contact = ({ currentSection }) => {
 					sgrund@oberlin.edu
 					<br />
 					<h2>twitter</h2>
-					@salt_pepper_boi
+					@salt_n_pepper_games
 				</div>
 			</div>
 			<div className='bottom-panel'>

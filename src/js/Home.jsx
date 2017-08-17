@@ -1,11 +1,11 @@
 "use strict";
 
 const React = require('react');
-const { anim, colors } = require('../scripts/runAnim.jsx');
+const { anim, colors } = require('../helpers/startAnimation');
 
-const Info = require('./Info.jsx');
-const Work = require('./Work.jsx');
-const Contact = require('./Contact.jsx');
+const Info = require('./Info');
+const Work = require('./Work');
+const Contact = require('./Contact');
 
 class Home extends React.Component {
 	constructor(props) {
@@ -17,6 +17,8 @@ class Home extends React.Component {
 		this.state = {
 			currentSection: null
 		};
+
+		this.resetColors = this.resetColors.bind(this);
 	}
 	componentDidMount() {
 		this.topAnim = anim(this.paperArray, 0, document.getElementById('canvas'));
@@ -29,51 +31,69 @@ class Home extends React.Component {
 
 	}
 
+	resetColors() {
+		this.topAnim.colorChange(colors.yellow);
+		this.bottomAnim.colorChange(colors.lightgrey);
+	}
+
 	render() {
+		const { currentSection } = this.state;
+		const onInfo = currentSection === 'info';
+		const onWork = currentSection === 'work';
+		const onContact = currentSection === 'contact';
 		return (
 			<div>
 				<div className='bottomhalf'></div>
 				<canvas resize='true' id='canvas'></canvas>
     			<canvas resize='true' id='canvas2'></canvas>
 
-    			<Info currentSection={this.state.currentSection}/>
-    			<Work currentSection={this.state.currentSection}/>
-    			<Contact currentSection={this.state.currentSection}/>
+    			<Info currentSection={currentSection} />
+    			<Work currentSection={currentSection} />
+    			<Contact currentSection={currentSection} />
 
 				<div className='row top'>
 					<ul className='buttons tabs'>
 						<h1 id='first-name'>SAMUEL</h1>
 						<p
-							className={this.state.currentSection === 'info' ? 'on' : ''}
+							className={onInfo ? 'on' : ''}
 							onClick={() => {
-								if (this.state.currentSection !== 'info') {
+								if (!onInfo) {
 									this.setState({ currentSection: 'info' });
+									this.topAnim.colorChange(colors.lightblue);
+									this.bottomAnim.colorChange(colors.darkblue);
 								} else {
 									this.setState({ currentSection: null });
+									this.resetColors();
 								}
 							}}
 						>
 						info
 						</p>
 						<p
-							className={this.state.currentSection === 'work' ? 'on' : ''}
+							className={onWork ? 'on' : ''}
 							onClick={() => {
-								if (this.state.currentSection !== 'work') {
+								if (!onWork) {
 									this.setState({ currentSection: 'work' });
+									this.topAnim.colorChange(colors.lightgreen);
+									this.bottomAnim.colorChange(colors.darkred);
 								} else {
 									this.setState({ currentSection: null });
+									this.resetColors();
 								}
 							}}
 						>
 						work
 						</p>
 						<p
-							className={this.state.currentSection === 'contact' ? 'on' : ''}
+							className={onContact ? 'on' : ''}
 							onClick={() => {
-								if (this.state.currentSection !== 'contact') {
+								if (!onContact) {
 									this.setState({ currentSection: 'contact' });
+									this.topAnim.colorChange(colors.lightergrey);
+									this.bottomAnim.colorChange(colors.darkgrey);
 								} else {
 									this.setState({ currentSection: null });
+									this.resetColors();
 								}
 							}}
 						>

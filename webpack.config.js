@@ -3,12 +3,15 @@ var path = require('path');
 var debug = process.env.NODE_ENV !== "production";
 
 var BUILD_DIR = path.resolve(__dirname, 'src/public');
-var APP_DIR = path.resolve(__dirname, 'src/app');
+var APP_DIR = path.resolve(__dirname, 'src/js');
 
 module.exports = {
   context: path.join(__dirname, "src"),
   devtool: debug ? "inline-sourcemap" : null,
   entry: APP_DIR + '/index.jsx',
+  resolve: {
+      extensions: ['.js', '.json', '.jsx']
+  },
   module: {
     loaders: [
       {

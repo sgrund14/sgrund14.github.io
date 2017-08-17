@@ -1,8 +1,8 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-require('../styles/main.scss');
+require('../scss/main.scss');
 
-const Home = require ('./Home.jsx');
+const Home = require('./Home');
 
 ReactDOM.render(
 	<Home />,

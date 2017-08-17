@@ -3,38 +3,55 @@
 const React = require('react');
 
 class Work extends React.Component {
+	constructor(props) {
+		super(props);
+		this.interval = null;
+
+		// configure settings for image slider:
+        // width of image, speed of animation, time paused on each image, index of the slide
+		this.width = 25;
+		this.animationSpeed = 1000;
+		this.pause = 3000;
+		this.currentSlide = 1;
+		this.animate = null;
+
+		// cache slider DOM
+		this.$slider = null,
+		this.$slideContainer = null;
+		this.$slides = null;
+	}
 
 	componentDidMount() {
-        // configure settings for image slider:
-        // width of image, speed of animation, time paused on each image, index of the slide
-        const width = 25;
-        const animationSpeed = 1000;
-        const pause = 3000;
-        let currentSlide = 1;
-
-        // cache slider DOM
-        const slider = $('#slider');
-        const slideContainer = $('#slides');
-        const slides = $('.slide');
-
-        let interval;
-
-        const animate = () => {
+		this.$slider = $('#slider');
+		this.$slideContainer = $('#slides');
+		this.$slides = $('.slide');
+		this.animate = () => {
             // slide images to the left
-            slideContainer.animate({
-                'margin-left': '-=' + width + 'em'
-            }, animationSpeed, function () {
+            this.$slideContainer.animate({
+                'margin-left': '-=' + this.width + 'em'
+            }, this.animationSpeed, () => {
                 // if you've hit the last image in the slideshow,
                 // reset slider to 1st image
-                if (++currentSlide === slides.length) {
-                    currentSlide = 1;
-                    slideContainer.css('margin-left', 0);
+                if (++this.currentSlide === this.$slides.length) {
+                    this.currentSlide = 1;
+                    this.$slideContainer.css('margin-left', 0);
                 }
             });
         };
+	}
 
-        // run slider
-        interval = setInterval(animate, pause);
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.currentSection === 'work') {
+	        // run slider
+	        this.interval = setInterval(this.animate, this.pause);
+		} else {
+			// reset slider
+			clearInterval(this.interval);
+			setTimeout(() => {
+				this.currentSlide = 1;
+				this.$slideContainer.css('margin-left', 0);
+			}, 250);
+		}
 	}
 
 	render() {
