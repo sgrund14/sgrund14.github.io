@@ -16,7 +16,7 @@ const Contact = ({ currentSection }) => {
 			</div>
 			<div className='bottom-panel'>
 				<div className='panel lower contact'>
-					<a href='files/resume_april_2017.pdf' className='resume' target='_blank'>resume</a>
+					<a href='src/files/resume_april_2017.pdf' className='resume' target='_blank'>resume</a>
 				</div>
 			</div>
 		</div>
