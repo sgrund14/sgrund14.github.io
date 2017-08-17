@@ -44,8 +44,8 @@ class Home extends React.Component {
 		return (
 			<div>
 				<div className='bottomhalf'></div>
-				<canvas resize='true' id='canvas'></canvas>
-    			<canvas resize='true' id='canvas2'></canvas>
+				<canvas id='canvas'></canvas>
+    			<canvas id='canvas2'></canvas>
 
     			<Info currentSection={currentSection} />
     			<Work currentSection={currentSection} />
