@@ -2,11 +2,11 @@ var webpack = require('webpack');
 var path = require('path');
 var debug = process.env.NODE_ENV !== "production";
 
-var BUILD_DIR = path.resolve(__dirname, 'docs/public');
-var APP_DIR = path.resolve(__dirname, 'docs/app');
+var BUILD_DIR = path.resolve(__dirname, 'src/public');
+var APP_DIR = path.resolve(__dirname, 'src/app');
 
 module.exports = {
-  context: path.join(__dirname, "docs"),
+  context: path.join(__dirname, "src"),
   devtool: debug ? "inline-sourcemap" : null,
   entry: APP_DIR + '/index.jsx',
   module: {
