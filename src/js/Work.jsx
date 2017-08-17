@@ -1,6 +1,7 @@
 'use strict';
 
 const React = require('react');
+const PropTypes = require('prop-types');
 
 class Work extends React.Component {
 	constructor(props) {
@@ -89,5 +90,9 @@ class Work extends React.Component {
 		);
 	}
 }
+
+Work.propTypes = {
+	currentSection: PropTypes.string
+};
 
 module.exports = Work;

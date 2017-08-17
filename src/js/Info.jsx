@@ -1,6 +1,7 @@
 'use strict';
 
 const React = require('react');
+const PropTypes = require('prop-types');
 
 const Info = ({ currentSection }) => {
 	return (
@@ -19,6 +20,10 @@ const Info = ({ currentSection }) => {
 			</div>
 		</div>
 	);
-}
+};
+
+Info.propTypes = {
+	currentSection: PropTypes.string
+};
 
 module.exports = Info;
