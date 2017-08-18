@@ -42,7 +42,7 @@ class Work extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (nextProps.currentSection === 'work') {
+		if (nextProps.onWork) {
 	        // run slider
 	        this.interval = setInterval(this.animate, this.pause);
 		} else {
@@ -56,9 +56,8 @@ class Work extends React.Component {
 	}
 
 	render() {
-		const { currentSection } = this.props;
 		return (
-			<div className={`${currentSection === 'work' ? 'section-on' : ''} work-section`}>
+			<div className={`${this.props.onWork ? 'section-on' : ''} work-section`}>
 				<div className='top-panel'>
 					<div className='panel upper work'>
 						<a href='https://www.behance.net/sgrund' target='_blank'>
@@ -92,7 +91,7 @@ class Work extends React.Component {
 }
 
 Work.propTypes = {
-	currentSection: PropTypes.string
+	onWork: PropTypes.bool
 };
 
 module.exports = Work;

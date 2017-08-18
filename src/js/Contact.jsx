@@ -3,9 +3,9 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
-const Contact = ({ currentSection }) => {
+const Contact = ({ onContact }) => {
 	return (
-		<div className={`${currentSection === 'contact' ? 'section-on' : ''} contact-section`}>
+		<div className={`${onContact ? 'section-on' : ''} contact-section`}>
 			<div className='top-panel'>
 				<div className='panel upper contact'>
 					<h2>email</h2>
@@ -25,7 +25,7 @@ const Contact = ({ currentSection }) => {
 };
 
 Contact.propTypes = {
-	currentSection: PropTypes.string
+	onContact: PropTypes.bool
 };
 
 module.exports = Contact;

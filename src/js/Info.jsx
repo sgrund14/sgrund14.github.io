@@ -3,9 +3,9 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
-const Info = ({ currentSection }) => {
+const Info = ({ onInfo }) => {
 	return (
-		<div className={`${currentSection === 'info' ? 'section-on' : ''} info-section`}>
+		<div className={`${onInfo ? 'section-on' : ''} info-section`}>
 			<div className='top-panel'>
 				<div className='panel upper info'>
 					Samuel Grund is a fourth year college student at Oberlin College pursuing a bachelor's degree in Computer Science.
@@ -23,7 +23,7 @@ const Info = ({ currentSection }) => {
 };
 
 Info.propTypes = {
-	currentSection: PropTypes.string
+	onInfo: PropTypes.bool
 };
 
 module.exports = Info;

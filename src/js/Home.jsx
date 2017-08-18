@@ -11,8 +11,8 @@ class Home extends React.Component {
 	constructor(props) {
 		super(props);
 		this.paperArray = [];
-		this.topAnim = {};
-		this.bottomAnim = {};
+		this.topAnim = null;
+		this.bottomAnim = null;
 		this.colors = {
 		    homeTop: '#ffe738', // yellow
 		    homeBottom: '#bfbfbf', // lightgrey
@@ -21,13 +21,11 @@ class Home extends React.Component {
 		    workTop: '#93ff99', // lightgreen
 		    workBottom: '#6b0000', // darkred
 		    contactTop: '#eaeaea', // lightergrey
-		    contactBottom: '#3a3a3a', // dark grey
+		    contactBottom: '#3a3a3a', // darkgrey
 		};
 		this.state = {
-			currentSection: null
+			currentSection: 'home'
 		};
-
-		this.navigateHome = this.navigateHome.bind(this);
 		this.navigate = this.navigate.bind(this);
 	}
 	componentDidMount() {
@@ -39,12 +37,6 @@ class Home extends React.Component {
 		this.paperArray[0].view.onFrame = this.topAnim.update(0);
 		this.paperArray[1].view.onFrame = this.bottomAnim.update(1);
 
-	}
-
-	navigateHome() {
-		this.setState({ currentSection: null });
-		this.topAnim.colorChange(this.colors.homeTop);
-		this.bottomAnim.colorChange(this.colors.homeBottom);
 	}
 
 	navigate(section) {
@@ -60,31 +52,33 @@ class Home extends React.Component {
 		const onContact = currentSection === 'contact';
 		return (
 			<div>
-				<div class='bottomhalf'></div>
-				<canvas data-paper-resize id='canvas'></canvas>
-				<canvas data-paper-resize id='canvas2'></canvas>
-    			<Info currentSection={currentSection} />
-    			<Work currentSection={currentSection} />
-    			<Contact currentSection={currentSection} />
+				{/* render black background for bottom half, top and bottom canvases for animation*/}
+				<div className='bottomhalf' />
+				<canvas data-paper-resize id='canvas' />
+				<canvas data-paper-resize id='canvas2' />
+
+    			<Info onInfo={onInfo} />
+    			<Work onWork={onWork} />
+    			<Contact onContact={onContact} />
 
 				<div className='row top'>
 					<ul className='buttons tabs'>
 						<h1 id='first-name'>SAMUEL</h1>
 						<p
 							className={onInfo ? 'on' : ''}
-							onClick={onInfo ? this.navigateHome : () => this.navigate('info')}
+							onClick={() => this.navigate(onInfo ? 'home' : 'info')}
 						>
 						info
 						</p>
 						<p
 							className={onWork ? 'on' : ''}
-							onClick={onWork ? this.navigateHome : () => this.navigate('work')}
+							onClick={() => this.navigate(onWork ? 'home' : 'work')}
 						>
 						work
 						</p>
 						<p
 							className={onContact ? 'on' : ''}
-							onClick={onContact ? this.navigateHome : () => this.navigate('contact')}
+							onClick={() => this.navigate(onContact ? 'home' : 'contact')}
 						>
 						contact
 						</p>
