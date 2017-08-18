@@ -22,6 +22,7 @@
     "react-color": "^2.13.4",
     "react-dom": "^0.14.6",
     "react-select": "^1.0.0-rc.5",
+    "react-slick": "^0.14.11",
     "webpack": "^2.7.0"
   },
   "repository": {

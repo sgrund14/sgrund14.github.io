@@ -28,6 +28,10 @@ class Home extends React.Component {
 		};
 		this.navigate = this.navigate.bind(this);
 	}
+	/*
+	* initialize animation as soon as canvas elements mount
+	*
+	*/
 	componentDidMount() {
 		// runs animation. id refers to which canvas paper runs on: 0 for top, 1 for bottom.
 		// canvasElement is the canvas to draw on
@@ -37,6 +41,11 @@ class Home extends React.Component {
 		this.paperArray[1].view.onFrame = this.bottomAnim.update(1);
 	}
 
+	/*
+	* @param section: section to navigate to
+	* navigate site to provided page, change color as appropriate
+	*
+	*/
 	navigate(section) {
 		this.setState({ currentSection: section });
 		this.topAnim.colorChange(this.colors[`${section}Top`]);
