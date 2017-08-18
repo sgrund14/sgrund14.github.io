@@ -29,14 +29,12 @@ class Home extends React.Component {
 		this.navigate = this.navigate.bind(this);
 	}
 	componentDidMount() {
-		this.topAnim = anim(this.paperArray, 0, document.getElementById('canvas'));
-		this.bottomAnim = anim(this.paperArray, 1, document.getElementById('canvas2'));
-
 		// runs animation. id refers to which canvas paper runs on: 0 for top, 1 for bottom.
 		// canvasElement is the canvas to draw on
+		this.topAnim = anim(this.paperArray, 0, document.getElementById('canvas'));
+		this.bottomAnim = anim(this.paperArray, 1, document.getElementById('canvas2'));
 		this.paperArray[0].view.onFrame = this.topAnim.update(0);
 		this.paperArray[1].view.onFrame = this.bottomAnim.update(1);
-
 	}
 
 	navigate(section) {

@@ -19,7 +19,9 @@
     "paper": "paperjs/paper.js",
     "prop-types": "^15.5.10",
     "react": "^0.14.6",
+    "react-color": "^2.13.4",
     "react-dom": "^0.14.6",
+    "react-select": "^1.0.0-rc.5",
     "webpack": "^2.7.0"
   },
   "repository": {
