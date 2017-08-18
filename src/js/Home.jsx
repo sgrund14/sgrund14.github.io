@@ -27,7 +27,8 @@ class Home extends React.Component {
 			currentSection: null
 		};
 
-		this.resetColors = this.resetColors.bind(this);
+		this.navigateHome = this.navigateHome.bind(this);
+		this.navigate = this.navigate.bind(this);
 	}
 	componentDidMount() {
 		this.topAnim = anim(this.paperArray, 0, document.getElementById('canvas'));
@@ -40,9 +41,16 @@ class Home extends React.Component {
 
 	}
 
-	resetColors() {
+	navigateHome() {
+		this.setState({ currentSection: null });
 		this.topAnim.colorChange(this.colors.homeTop);
 		this.bottomAnim.colorChange(this.colors.homeBottom);
+	}
+
+	navigate(section) {
+		this.setState({ currentSection: section });
+		this.topAnim.colorChange(this.colors[`${section}Top`]);
+		this.bottomAnim.colorChange(this.colors[`${section}Bottom`]);
 	}
 
 	render() {
@@ -52,7 +60,6 @@ class Home extends React.Component {
 		const onContact = currentSection === 'contact';
 		return (
 			<div>
-
 				<div class='bottomhalf'></div>
 				<canvas data-paper-resize id='canvas'></canvas>
 				<canvas data-paper-resize id='canvas2'></canvas>
@@ -65,46 +72,19 @@ class Home extends React.Component {
 						<h1 id='first-name'>SAMUEL</h1>
 						<p
 							className={onInfo ? 'on' : ''}
-							onClick={() => {
-								if (!onInfo) {
-									this.setState({ currentSection: 'info' });
-									this.topAnim.colorChange(this.colors.infoTop);
-									this.bottomAnim.colorChange(this.colors.infoBottom);
-								} else {
-									this.setState({ currentSection: null });
-									this.resetColors();
-								}
-							}}
+							onClick={onInfo ? this.navigateHome : () => this.navigate('info')}
 						>
 						info
 						</p>
 						<p
 							className={onWork ? 'on' : ''}
-							onClick={() => {
-								if (!onWork) {
-									this.setState({ currentSection: 'work' });
-									this.topAnim.colorChange(this.colors.workTop);
-									this.bottomAnim.colorChange(this.colors.workBottom);
-								} else {
-									this.setState({ currentSection: null });
-									this.resetColors();
-								}
-							}}
+							onClick={onWork ? this.navigateHome : () => this.navigate('work')}
 						>
 						work
 						</p>
 						<p
 							className={onContact ? 'on' : ''}
-							onClick={() => {
-								if (!onContact) {
-									this.setState({ currentSection: 'contact' });
-									this.topAnim.colorChange(this.colors.contactTop);
-									this.bottomAnim.colorChange(this.colors.contactBottom);
-								} else {
-									this.setState({ currentSection: null });
-									this.resetColors();
-								}
-							}}
+							onClick={onContact ? this.navigateHome : () => this.navigate('contact')}
 						>
 						contact
 						</p>
