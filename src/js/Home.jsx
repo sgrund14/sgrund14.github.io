@@ -1,7 +1,7 @@
 "use strict";
 
 const React = require('react');
-const { anim, colors } = require('../helpers/startAnimation');
+const { anim } = require('../helpers/startAnimation');
 
 const Info = require('./Info');
 const Work = require('./Work');
@@ -13,7 +13,16 @@ class Home extends React.Component {
 		this.paperArray = [];
 		this.topAnim = {};
 		this.bottomAnim = {};
-
+		this.colors = {
+		    homeTop: '#ffe738', // yellow
+		    homeBottom: '#bfbfbf', // lightgrey
+		    infoTop: '#e5e6ff', // lightblue
+		    infoBottom: '#000251', // darkblue
+		    workTop: '#93ff99', // lightgreen
+		    workBottom: '#6b0000', // darkred
+		    contactTop: '#eaeaea', // lightergrey
+		    contactBottom: '#3a3a3a', // dark grey
+		};
 		this.state = {
 			currentSection: null
 		};
@@ -32,8 +41,8 @@ class Home extends React.Component {
 	}
 
 	resetColors() {
-		this.topAnim.colorChange(colors.yellow);
-		this.bottomAnim.colorChange(colors.lightgrey);
+		this.topAnim.colorChange(this.colors.homeTop);
+		this.bottomAnim.colorChange(this.colors.homeBottom);
 	}
 
 	render() {
@@ -59,8 +68,8 @@ class Home extends React.Component {
 							onClick={() => {
 								if (!onInfo) {
 									this.setState({ currentSection: 'info' });
-									this.topAnim.colorChange(colors.lightblue);
-									this.bottomAnim.colorChange(colors.darkblue);
+									this.topAnim.colorChange(this.colors.infoTop);
+									this.bottomAnim.colorChange(this.colors.infoBottom);
 								} else {
 									this.setState({ currentSection: null });
 									this.resetColors();
@@ -74,8 +83,8 @@ class Home extends React.Component {
 							onClick={() => {
 								if (!onWork) {
 									this.setState({ currentSection: 'work' });
-									this.topAnim.colorChange(colors.lightgreen);
-									this.bottomAnim.colorChange(colors.darkred);
+									this.topAnim.colorChange(this.colors.workTop);
+									this.bottomAnim.colorChange(this.colors.workBottom);
 								} else {
 									this.setState({ currentSection: null });
 									this.resetColors();
@@ -89,8 +98,8 @@ class Home extends React.Component {
 							onClick={() => {
 								if (!onContact) {
 									this.setState({ currentSection: 'contact' });
-									this.topAnim.colorChange(colors.lightergrey);
-									this.bottomAnim.colorChange(colors.darkgrey);
+									this.topAnim.colorChange(this.colors.contactTop);
+									this.bottomAnim.colorChange(this.colors.contactBottom);
 								} else {
 									this.setState({ currentSection: null });
 									this.resetColors();

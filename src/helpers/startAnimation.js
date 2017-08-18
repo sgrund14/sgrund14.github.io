@@ -2,17 +2,6 @@
 
 let paper = require('paper/dist/paper-full');
 
-const colors = {
-    yellow: '#ffe738',
-    darkblue: '#000251',
-    lightgreen: '#93ff99',
-    lightergrey: '#eaeaea',
-    lightblue: '#e5e6ff',
-    darkred: '#6b0000',
-    darkgrey: '#3a3a3a',
-    lightgrey: '#bfbfbf'
-};
-
 const anim = (paperArray, id, canvasElement) => {
     paperArray[id] = new paper.PaperScope();
     paper = paperArray[id];
@@ -28,12 +17,11 @@ const anim = (paperArray, id, canvasElement) => {
 
     path = new paper.Path.Circle({
         center: [0, 0],
-        radius: 10,
-        fillColor: 'yellow'
+        radius: 10
     });
 
     // initialize circle colors: yellow for top canvas, grey for bottom
-    id === 0 ? path.fillColor = colors.yellow : path.fillColor = colors.lightgrey;
+    id === 0 ? path.fillColor = '#ffe738' : path.fillColor = '#bfbfbf';
 
     // Create a symbol, which we will use to place instances of later:
     const symbol = new paper.Symbol(path);
@@ -132,7 +120,6 @@ const anim = (paperArray, id, canvasElement) => {
 };
 
 module.exports = {
-    anim: anim,
-    colors: colors
+    anim: anim
 };
 
