@@ -119,7 +119,5 @@ const anim = (paperArray, id, canvasElement) => {
     };
 };
 
-module.exports = {
-    anim: anim
-};
+module.exports = anim;
 

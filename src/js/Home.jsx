@@ -1,7 +1,7 @@
 "use strict";
 
 const React = require('react');
-const { anim } = require('../helpers/startAnimation');
+const anim = require('../helpers/startAnimation');
 
 const Info = require('./Info');
 const Work = require('./Work');
