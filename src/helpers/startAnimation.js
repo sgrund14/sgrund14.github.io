@@ -1,11 +1,11 @@
 'use strict';
 
-let paper = require('paper/dist/paper-full');
+const paper = require('paper/dist/paper-full');
 
 const anim = (paperArray, id, canvasElement) => {
     paperArray[id] = new paper.PaperScope();
-    paper = paperArray[id];
-    paper.setup(canvasElement);
+    const currentPaper = paperArray[id];
+    currentPaper.setup(canvasElement);
 
     let count;
     let speed = 8;
@@ -15,7 +15,7 @@ const anim = (paperArray, id, canvasElement) => {
 
     let path;
 
-    path = new paper.Path.Circle({
+    path = new currentPaper.Path.Circle({
         center: [0, 0],
         radius: 10
     });
@@ -24,15 +24,15 @@ const anim = (paperArray, id, canvasElement) => {
     id === 0 ? path.fillColor = '#ffe738' : path.fillColor = '#bfbfbf';
 
     // Create a symbol, which we will use to place instances of later:
-    const symbol = new paper.Symbol(path);
+    const symbol = new currentPaper.Symbol(path);
 
     // Place the instances of the symbol:
     for (let i = 0; i < count; i++) {
         // The center position is a random point in the view:
-        const rand = paper.Point.random();
-        const centX = rand.x * paper.view.size.width;
-        const centY = rand.y * paper.view.size.height;
-        const center = new paper.Point(centX, centY);
+        const rand = currentPaper.Point.random();
+        const centX = rand.x * currentPaper.view.size.width;
+        const centY = rand.y * currentPaper.view.size.height;
+        const center = new currentPaper.Point(centX, centY);
 
         var placedSymbol = symbol.place(center);
 
@@ -40,9 +40,9 @@ const anim = (paperArray, id, canvasElement) => {
 
         // larger circles on top canvas, smaller circles on bottom
         if (id === 0) {
-            placedSymbol.scale(paper.view.size.width / 300 * i / count);
+            placedSymbol.scale(currentPaper.view.size.width / 300 * i / count);
         } else {
-            placedSymbol.scale(paper.view.size.width / 600 * i / count);
+            placedSymbol.scale(currentPaper.view.size.width / 600 * i / count);
         }
     }
 
@@ -61,7 +61,7 @@ const anim = (paperArray, id, canvasElement) => {
 
     // smoothly transition from start color to end color over duration
     const fade = (start, end, duration) => {
-        const endColor = new paper.Color(end);
+        const endColor = new currentPaper.Color(end);
 
         const interval = 10;
         const steps = duration / interval;
@@ -76,7 +76,7 @@ const anim = (paperArray, id, canvasElement) => {
             const r = parseFloat(lerp(start.red, endColor.red, u));
             const g = parseFloat(lerp(start.green, endColor.green, u));
             const b = parseFloat(lerp(start.blue, endColor.blue, u));
-            const colorname = new paper.Color(r, g, b);
+            const colorname = new currentPaper.Color(r, g, b);
             path.fillColor = colorname;
             u += step_u;
         }, interval);
