@@ -43,10 +43,6 @@ class Home extends React.Component {
 		const onContact = currentSection === 'contact';
 		return (
 			<div>
-				<div className='bottomhalf'></div>
-				<canvas resize="true" id='canvas'></canvas>
-    			<canvas resize="true" id='canvas2'></canvas>
-
     			<Info currentSection={currentSection} />
     			<Work currentSection={currentSection} />
     			<Contact currentSection={currentSection} />
