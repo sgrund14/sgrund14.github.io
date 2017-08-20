@@ -187,6 +187,12 @@ body {
     }
 }
 
+.selection-area {
+    position: relative;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
 .top-settings {
     @extend .top-panel;
     align-items: center;
@@ -197,7 +203,8 @@ body {
         height: 100%;
         width: 100%;
         background-color: black;
-        opacity: .25;
+        opacity: .1;
+        z-index: -1;
     }
 }
 
@@ -213,7 +220,7 @@ body {
         height: 100%;
         width: 100%;
         background-color: white;
-        opacity: .25;
+        opacity: .1;
     }
 }
 

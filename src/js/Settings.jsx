@@ -72,7 +72,6 @@ class Settings extends React.Component {
 							}}
 						/>
 					</div>
-					<div className="top-settings-overlay" />
 					<div className='color-wrapper'>
 						<div>
 							<div className='circle-picker-text no-user-select'>
@@ -81,19 +80,22 @@ class Settings extends React.Component {
 								  <circle r="5" cx="6" cy="6" stroke="black" strokeWidth="1.5" fill={`${currentColors[`${currentSection}Top`]}`} />
 								</svg>
 							</div>
-							<CirclePicker
-								circleSize={this.state.circleSize}
-								circleSpacing={this.state.circleSpacing}
-								width={this.state.pickerWidth}
-								color={currentColors[`${currentSection}Top`]}
-								onSwatchHover={(color, e) => {
-									onCircleHover(color, 'Top');
-								}}
-								onChangeComplete={(color, e) => {
-									onCircleSelect(color, 'Top');
-								}}
-								className='circle-picker'
-							/>
+							<div className="selection-area">
+								<div className="top-settings-overlay" />
+								<CirclePicker
+									circleSize={this.state.circleSize}
+									circleSpacing={this.state.circleSpacing}
+									width={this.state.pickerWidth}
+									color={currentColors[`${currentSection}Top`]}
+									onSwatchHover={(color, e) => {
+										onCircleHover(color, 'Top');
+									}}
+									onChangeComplete={(color, e) => {
+										onCircleSelect(color, 'Top');
+									}}
+									className='circle-picker'
+								/>
+							</div>
 						</div>
 						<div>
 							<div className="circle-picker-text no-user-select">
@@ -102,24 +104,26 @@ class Settings extends React.Component {
 								  <circle r="5" cx="6" cy="6" stroke="black" strokeWidth="1.5" fill={`${currentColors[`${currentSection}TopBackground`]}`} />
 								</svg>
 							</div>
-							<CirclePicker
-								circleSize={this.state.circleSize}
-								circleSpacing={this.state.circleSpacing}
-								width={this.state.pickerWidth}
-								color={currentColors[`${currentSection}TopBackground`]}
-								onSwatchHover={(color, e) => {
-									onBackgroundHover(color, 'Top');
-								}}
-								onChangeComplete={(color, e) => {
-									onBackgroundSelect(color, 'Top');
-								}}
-								className='circle-picker'
-							/>
+							<div className="selection-area">
+								<div className="top-settings-overlay" />
+								<CirclePicker
+									circleSize={this.state.circleSize}
+									circleSpacing={this.state.circleSpacing}
+									width={this.state.pickerWidth}
+									color={currentColors[`${currentSection}TopBackground`]}
+									onSwatchHover={(color, e) => {
+										onBackgroundHover(color, 'Top');
+									}}
+									onChangeComplete={(color, e) => {
+										onBackgroundSelect(color, 'Top');
+									}}
+									className='circle-picker'
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div className='bottom-settings'>
-					<div className="bottom-settings-overlay" />
 					<div className='color-wrapper'>
 						<div>
 							<div className="circle-picker-text no-user-select">
@@ -128,19 +132,22 @@ class Settings extends React.Component {
 								  <circle r="5" cx="6" cy="6" stroke="white" strokeWidth="1.5" fill={`${currentColors[`${currentSection}Bottom`]}`} />
 								</svg>
 							</div>
-							<CirclePicker
-								circleSize={this.state.circleSize}
-								circleSpacing={this.state.circleSpacing}
-								width={this.state.pickerWidth}
-								color={currentColors[`${currentSection}Bottom`]}
-								onSwatchHover={(color, e) => {
-									onCircleHover(color, 'Bottom');
-								}}
-								onChangeComplete={(color, e) => {
-									onCircleSelect(color, 'Bottom');
-								}}
-								className='circle-picker'
-							/>
+							<div className="selection-area">
+								<div className="bottom-settings-overlay" />
+								<CirclePicker
+									circleSize={this.state.circleSize}
+									circleSpacing={this.state.circleSpacing}
+									width={this.state.pickerWidth}
+									color={currentColors[`${currentSection}Bottom`]}
+									onSwatchHover={(color, e) => {
+										onCircleHover(color, 'Bottom');
+									}}
+									onChangeComplete={(color, e) => {
+										onCircleSelect(color, 'Bottom');
+									}}
+									className='circle-picker'
+								/>
+							</div>
 						</div>
 						<div>
 							<div className="circle-picker-text no-user-select">
@@ -149,19 +156,22 @@ class Settings extends React.Component {
 								  <circle r="5" cx="6" cy="6" stroke="white" strokeWidth="1.5" fill={`${currentColors[`${currentSection}BottomBackground`]}`} />
 								</svg>
 							</div>
-							<CirclePicker
-								circleSize={this.state.circleSize}
-								circleSpacing={this.state.circleSpacing}
-								width={this.state.pickerWidth}
-								color={currentColors[`${currentSection}BottomBackground`]}
-								onSwatchHover={(color, e) => {
-									onBackgroundHover(color, 'Bottom');
-								}}
-								onChangeComplete={(color, e) => {
-									onBackgroundSelect(color, 'Bottom');
-								}}
-								className='circle-picker'
-							/>
+							<div className="selection-area">
+								<div className="bottom-settings-overlay" />
+								<CirclePicker
+									circleSize={this.state.circleSize}
+									circleSpacing={this.state.circleSpacing}
+									width={this.state.pickerWidth}
+									color={currentColors[`${currentSection}BottomBackground`]}
+									onSwatchHover={(color, e) => {
+										onBackgroundHover(color, 'Bottom');
+									}}
+									onChangeComplete={(color, e) => {
+										onBackgroundSelect(color, 'Bottom');
+									}}
+									className='circle-picker'
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
