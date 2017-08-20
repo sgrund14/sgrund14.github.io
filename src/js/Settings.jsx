@@ -3,8 +3,35 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const { CirclePicker } = require('react-color');
+const lightColors = [
+
+];
+const darkColors = [
+
+];
 
 class Settings extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			circleSize: '14',
+			circleSpacing: '14',
+			pickerWidth: '141'
+		};
+		this.WidthChange = this.WidthChange.bind(this);
+		
+		const mq = window.matchMedia("(max-width: 480px)");
+		mq.addListener(this.WidthChange);
+		
+	}
+	WidthChange(mq) {
+		if (mq.matches) {
+			this.setState({circleSpacing: '7'});
+		} else {
+			this.setState({circleSpacing: '14'});
+		}
+	}
+
 	render() {
 		const {
 			currentColors,
@@ -29,6 +56,9 @@ class Settings extends React.Component {
 								</svg>
 							</div>
 							<CirclePicker
+								circleSize={this.state.circleSize}
+								circleSpacing={this.state.circleSpacing}
+								width={this.state.pickerWidth}
 								color={currentColors[`${currentSection}Top`]}
 								onSwatchHover={(color, e) => {
 									onCircleHover(color, 'Top');
@@ -47,6 +77,9 @@ class Settings extends React.Component {
 								</svg>
 							</div>
 							<CirclePicker
+								circleSize={this.state.circleSize}
+								circleSpacing={this.state.circleSpacing}
+								width={this.state.pickerWidth}
 								color={currentColors[`${currentSection}TopBackground`]}
 								onSwatchHover={(color, e) => {
 									onBackgroundHover(color, 'Top');
@@ -70,6 +103,9 @@ class Settings extends React.Component {
 								</svg>
 							</div>
 							<CirclePicker
+								circleSize={this.state.circleSize}
+								circleSpacing={this.state.circleSpacing}
+								width={this.state.pickerWidth}
 								color={currentColors[`${currentSection}Bottom`]}
 								onSwatchHover={(color, e) => {
 									onCircleHover(color, 'Bottom');
@@ -88,6 +124,9 @@ class Settings extends React.Component {
 								</svg>
 							</div>
 							<CirclePicker
+								circleSize={this.state.circleSize}
+								circleSpacing={this.state.circleSpacing}
+								width={this.state.pickerWidth}
 								color={currentColors[`${currentSection}BottomBackground`]}
 								onSwatchHover={(color, e) => {
 									onBackgroundHover(color, 'Bottom');
