@@ -42,7 +42,7 @@ class Work extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (nextProps.onWork) {
+		if (nextProps.onWork && !nextProps.onSettings) {
 	        // run slider
 	        this.interval = setInterval(this.animate, this.pause);
 		} else {
