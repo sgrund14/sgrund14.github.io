@@ -16,10 +16,10 @@ class Settings extends React.Component {
 		this.state = {
 			circleSize: '14',
 			circleSpacing: '14',
-			pickerWidth: '141'
+			pickerWidth: '150'
 		};
 		this.WidthChange = this.WidthChange.bind(this);
-		
+
 		const mq = window.matchMedia("(max-width: 480px)");
 		mq.addListener(this.WidthChange);
 		
