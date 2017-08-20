@@ -23,7 +23,7 @@ class Settings extends React.Component {
 		};
 		// media query for resizing color picker
 		this.WidthChange = this.WidthChange.bind(this);
-		this.mq = window.matchMedia("(max-width: 480px)");
+		this.mq = window.matchMedia("(max-width: 1080px)");
 		this.handleTouchStart = null;
 		this.handleTouchMove = null;
 	}
