@@ -2,12 +2,6 @@
 
 const paper = require('paper/dist/paper-full');
 
- // helper function for smooth color transition
-// lerp and fade functions adapted from: 
-// http://stackoverflow.com/questions/11292649/javascript-color-animation
-const lerp = (val1, val2, rate) => {
-    return (1 - rate) * val1 + rate * val2;
-};
 // https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
 const hexToRgb = hex => {
     // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
@@ -77,6 +71,13 @@ const anim = (paperArray, id, canvasElement) => {
             placedSymbol.scale(currentPaper.view.size.width / 600 * i / count);
         }
     }
+
+     // helper function for smooth color transition
+    // lerp and fade functions adapted from: 
+    // http://stackoverflow.com/questions/11292649/javascript-color-animation
+    const lerp = (val1, val2, rate) => {
+        return (1 - rate) * val1 + rate * val2;
+    };
 
     // function to change circle colors on screen change
     const colorChange = color => {
