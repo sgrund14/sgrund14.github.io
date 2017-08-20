@@ -122,8 +122,8 @@ body {
 
 .settings-button {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: .5em;
+    right: .5em;
     font-size: 2em;
     transition: all .25s;
 }
@@ -375,6 +375,9 @@ h6 {
     }
     .color-wrapper {
         flex-direction: column;
+    }
+    .settings-header {
+        width: 10em;
     }
     .panel {
         margin: auto;
