@@ -5,6 +5,27 @@ body {
     transition: all .125s;
 }
 
+.settings-arrow-right {
+    transition: all .25s;
+    position: absolute;
+    right: 0;
+}
+.settings-arrow-left {
+    transition: all .25s;
+    position: absolute;
+    left: 0;
+}
+.settings-arrow-active:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+.settings-arrow-disabled {
+    opacity: .5;
+}
+.settings-arrow-disabled:hover {
+    cursor: not-allowed;
+}
+
 .info-section,
 .work-section,
 .contact-section,
@@ -21,8 +42,14 @@ body {
 }
 
 .settings-header {
+    z-index: 2;
+    font-size: 2em;
+    display: flex;
     margin: 0px;
     padding: 0px;
+    width: 15em;
+    justify-content: center;
+    position: relative;
 }
 
 .on {
@@ -37,6 +64,7 @@ body {
 
 .color-wrapper {
     display: flex;
+    z-index: 2;
 }
 
 .circle-picker {

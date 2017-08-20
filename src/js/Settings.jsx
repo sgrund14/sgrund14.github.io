@@ -3,6 +3,7 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const { CirclePicker } = require('react-color');
+const sectionArray = ['home', 'info', 'work', 'contact'];
 const lightColors = [
 
 ];
@@ -42,12 +43,35 @@ class Settings extends React.Component {
 			onCircleHover,
 			onCircleSelect,
 			onBackgroundHover,
-			onBackgroundSelect
+			onBackgroundSelect,
+			navigate
 		} = this.props;
+		const canNavigateRight = sectionArray.indexOf(currentSection) !== sectionArray.length - 1;
+		const canNavigateLeft = sectionArray.indexOf(currentSection) !== 0;
 		return (
 			<div className={`${onSettings ? 'section-on' : ''} settings-section`}>
 				<div className='top-settings'>
-					<h2 className='settings-header'>{currentSection}</h2>
+					<div className='settings-header'>
+						<i
+							className={`${canNavigateLeft ? 'settings-arrow-active' : 'settings-arrow-disabled'} settings-arrow-left fa fa-chevron-left`}
+							onClick={() => {
+								if (canNavigateLeft) {
+									const navigateTo = sectionArray.indexOf(currentSection) - 1;
+									navigate(sectionArray[navigateTo]);
+								}
+							}}
+						/>
+						<span>{currentSection}</span>
+						<i
+							className={`${canNavigateRight ? 'settings-arrow-active' : 'settings-arrow-disabled'} settings-arrow-right fa fa-chevron-right`}
+							onClick={() => {
+								if (canNavigateRight) {
+									const navigateTo = sectionArray.indexOf(currentSection) + 1;
+									navigate(sectionArray[navigateTo]);
+								}
+							}}
+						/>
+					</div>
 					<div className="top-settings-overlay" />
 					<div className='color-wrapper'>
 						<div>
@@ -153,7 +177,8 @@ Settings.propTypes = {
 	onCircleHover: PropTypes.func,
 	onCircleSelect: PropTypes.func,
 	onBackgroundHover: PropTypes.func,
-	onBackgroundSelect: PropTypes.func
+	onBackgroundSelect: PropTypes.func,
+	navigate: PropTypes.func
 };
 
 module.exports = Settings;

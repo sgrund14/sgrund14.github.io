@@ -155,6 +155,7 @@ class Home extends React.Component {
     				onCircleSelect={this.onCircleSelect}
     				onBackgroundHover={this.onBackgroundHover}
     				onBackgroundSelect={this.onBackgroundSelect}
+    				navigate={this.navigate}
     			/>
 
     			<div className={`${onSettings ? '' : 'section-on'} home-section`}>
