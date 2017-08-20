@@ -24,7 +24,21 @@ module.exports = {
           plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
         }
       },
-      { test: /\.scss$/, loader: ['style-loader', 'css-loader', "sass-loader"]}
+      { test: [/\.scss$/, /\.css$/], loader: ['style-loader', 'css-loader', "sass-loader"]},
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+            'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ]
+      },
+      {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'node_modules/slick-carousel/slick/fonts/[name].[ext]',
+        },
+      }
     ]
   },
   output: {

@@ -1,15 +1,21 @@
 body {
     font-family: 'Josefin Sans';
     font-weight: lighter;
+    margin: 0;
+    transition: all .125s;
 }
 
-.info-section, .work-section, .contact-section {
+.info-section, .work-section, .contact-section, .home-section, .settings-section {
     visibility: hidden;
     opacity: 0;
     transition: all .25s;
 }
 .work-section, .contact-section {
     text-align: center;
+}
+.settings-header {
+    margin: 0px;
+    padding: 0px;
 }
 
 .on {
@@ -22,7 +28,25 @@ body {
     opacity: 1;
 }
 
-.bottomhalf {
+.color-wrapper {
+    display: flex;
+}
+
+.circle-picker {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.circle-picker-text {
+    font-size: 1.17em;
+    text-align: center;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+.circle-picker-circle {
+    margin-left: 5px;
+}
+
+#bottomhalf {
     z-index: -1;
     position: absolute;
     height: 50%;
@@ -30,6 +54,7 @@ body {
     top: 50%;
     left: 0;
     background-color: black;
+    transition: all .125s;
 }
 
 #canvas {
@@ -56,6 +81,18 @@ body {
     left: 0;
     display: flex;
     flex-direction: column;
+}
+
+.settings-button {
+    position: absolute;
+    top: 15px; 
+    right: 15px;
+    font-size: 2em;
+    transition: all .25s;
+}
+.settings-button:hover {
+    cursor: pointer;
+    opacity: .5;
 }
 
 .top {
@@ -106,6 +143,35 @@ body {
 .links {
     a , p{
         color: white;
+    }
+}
+
+.top-settings {
+    @extend .top-panel;
+    align-items: center;
+    .top-settings-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        opacity: .25;
+    }
+}
+.bottom-settings {
+    @extend .top-panel;
+    top: 50%;
+    color: white;
+    align-items: center;
+    .bottom-settings-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        opacity: .25;
     }
 }
 

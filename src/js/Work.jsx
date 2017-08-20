@@ -56,8 +56,9 @@ class Work extends React.Component {
 	}
 
 	render() {
+		const { onWork, onSettings } = this.props;
 		return (
-			<div className={`${this.props.onWork ? 'section-on' : ''} work-section`}>
+			<div className={`${onWork && !onSettings ? 'section-on' : ''} work-section`}>
 				<div className='top-panel'>
 					<div className='panel upper work'>
 						<a href='https://www.behance.net/sgrund' target='_blank'>
@@ -91,7 +92,8 @@ class Work extends React.Component {
 }
 
 Work.propTypes = {
-	onWork: PropTypes.bool
+	onWork: PropTypes.bool,
+	onSettings: PropTypes.bool
 };
 
 module.exports = Work;
