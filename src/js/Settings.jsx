@@ -17,11 +17,15 @@ class Settings extends React.Component {
 		this.state = {
 			circleSize: '14',
 			circleSpacing: '14',
-			pickerWidth: '150'
+			pickerWidth: '150',
+			canNavigateLeft: false,
+			canNavigateRight: false
 		};
 		// media query for resizing color picker
 		this.WidthChange = this.WidthChange.bind(this);
 		this.mq = window.matchMedia("(max-width: 480px)");
+		this.handleTouchStart = null;
+		this.handleTouchMove = null;
 	}
 	WidthChange(mq) {
 		if (mq.matches) {
@@ -33,6 +37,58 @@ class Settings extends React.Component {
 	componentDidMount() {
 		this.WidthChange(this.mq);
 		this.mq.addListener(this.WidthChange);
+
+		// https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android
+		// detect swipes for setting navigation
+		let xDown = null;                                                        
+		let yDown = null;                                                        
+
+		this.handleTouchStart = evt => {                                         
+		    xDown = evt.touches[0].clientX;                                      
+		    yDown = evt.touches[0].clientY;                                      
+		};                                                
+
+		this.handleTouchMove = evt => {
+		    if ( ! xDown || ! yDown ) {
+		        return;
+		    }
+
+		    var xUp = evt.touches[0].clientX;                                    
+		    var yUp = evt.touches[0].clientY;
+
+		    var xDiff = xDown - xUp;
+		    var yDiff = yDown - yUp;
+
+		    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+		        if ( xDiff > 0 ) {
+		        	if (this.state.canNavigateRight) {
+						const navigateRight = sectionArray.indexOf(this.props.currentSection) + 1;
+						this.props.navigate(sectionArray[navigateRight]);
+					}
+		        } else {
+		            if (this.state.canNavigateLeft) {
+						const navigateLeft = sectionArray.indexOf(this.props.currentSection) - 1;
+						this.props.navigate(sectionArray[navigateLeft]);
+					}
+		        }
+		    }
+		    /* reset values */
+		    xDown = null;
+		    yDown = null;                                             
+		};
+	}
+	componentWillReceiveProps(nextProps) {
+		this.setState({
+			canNavigateLeft: sectionArray.indexOf(nextProps.currentSection) !== 0,
+			canNavigateRight: sectionArray.indexOf(nextProps.currentSection) !== sectionArray.length - 1
+		});
+		if (nextProps.onSettings) {
+			document.addEventListener('touchstart', this.handleTouchStart, false);        
+			document.addEventListener('touchmove', this.handleTouchMove, false);
+		} else {
+			document.removeEventListener('touchstart', this.handleTouchStart, false);        
+			document.removeEventListener('touchmove', this.handleTouchMove, false);
+		}
 	}
 
 	render() {
@@ -46,16 +102,14 @@ class Settings extends React.Component {
 			onBackgroundSelect,
 			navigate
 		} = this.props;
-		const canNavigateRight = sectionArray.indexOf(currentSection) !== sectionArray.length - 1;
-		const canNavigateLeft = sectionArray.indexOf(currentSection) !== 0;
 		return (
 			<div className={`${onSettings ? 'section-on' : ''} settings-section`}>
 				<div className='top-settings'>
 					<div className='settings-header'>
 						<i
-							className={`${canNavigateLeft ? 'settings-arrow-active' : 'settings-arrow-disabled'} settings-arrow-left fa fa-chevron-left`}
+							className={`${this.state.canNavigateLeft ? 'settings-arrow-active' : 'settings-arrow-disabled'} settings-arrow-left fa fa-chevron-left`}
 							onClick={() => {
-								if (canNavigateLeft) {
+								if (this.state.canNavigateLeft) {
 									const navigateTo = sectionArray.indexOf(currentSection) - 1;
 									navigate(sectionArray[navigateTo]);
 								}
@@ -63,9 +117,9 @@ class Settings extends React.Component {
 						/>
 						<span>{currentSection}</span>
 						<i
-							className={`${canNavigateRight ? 'settings-arrow-active' : 'settings-arrow-disabled'} settings-arrow-right fa fa-chevron-right`}
+							className={`${this.state.canNavigateRight ? 'settings-arrow-active' : 'settings-arrow-disabled'} settings-arrow-right fa fa-chevron-right`}
 							onClick={() => {
-								if (canNavigateRight) {
+								if (this.state.canNavigateRight) {
 									const navigateTo = sectionArray.indexOf(currentSection) + 1;
 									navigate(sectionArray[navigateTo]);
 								}
