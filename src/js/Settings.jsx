@@ -22,7 +22,7 @@ class Settings extends React.Component {
 					<div className="top-settings-overlay" />
 					<div className='color-wrapper'>
 						<div>
-							<div className='circle-picker-text'>
+							<div className='circle-picker-text no-user-select'>
 								<span>Circles</span>
 								<svg className='circle-picker-circle' height="12" width="12">
 								  <circle r="5" cx="6" cy="6" stroke="black" strokeWidth="1.5" fill={`${currentColors[`${currentSection}Top`]}`} />
@@ -40,7 +40,7 @@ class Settings extends React.Component {
 							/>
 						</div>
 						<div>
-							<div className="circle-picker-text">
+							<div className="circle-picker-text no-user-select">
 								<span>Background</span>
 								<svg className='circle-picker-circle' height="12" width="12">
 								  <circle r="5" cx="6" cy="6" stroke="black" strokeWidth="1.5" fill={`${currentColors[`${currentSection}TopBackground`]}`} />
@@ -63,7 +63,7 @@ class Settings extends React.Component {
 					<div className="bottom-settings-overlay" />
 					<div className='color-wrapper'>
 						<div>
-							<div className="circle-picker-text">
+							<div className="circle-picker-text no-user-select">
 								<span>Circles</span>
 								<svg className='circle-picker-circle' height="12" width="12">
 								  <circle r="5" cx="6" cy="6" stroke="white" strokeWidth="1.5" fill={`${currentColors[`${currentSection}Bottom`]}`} />
@@ -81,7 +81,7 @@ class Settings extends React.Component {
 							/>
 						</div>
 						<div>
-							<div className="circle-picker-text">
+							<div className="circle-picker-text no-user-select">
 								<span>Background</span>
 								<svg className='circle-picker-circle' height="12" width="12">
 								  <circle r="5" cx="6" cy="6" stroke="white" strokeWidth="1.5" fill={`${currentColors[`${currentSection}BottomBackground`]}`} />

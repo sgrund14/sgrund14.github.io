@@ -307,6 +307,9 @@ h6 {
         height: auto;
     }
 }
+.no-user-select {
+    user-select: none;
+}
 #first-name,
 #last-name,
 {
