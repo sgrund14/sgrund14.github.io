@@ -18,11 +18,9 @@ class Settings extends React.Component {
 			circleSpacing: '14',
 			pickerWidth: '150'
 		};
+		// media query for resizing color picker
 		this.WidthChange = this.WidthChange.bind(this);
-
-		const mq = window.matchMedia("(max-width: 480px)");
-		mq.addListener(this.WidthChange);
-		
+		this.mq = window.matchMedia("(max-width: 480px)");
 	}
 	WidthChange(mq) {
 		if (mq.matches) {
@@ -30,6 +28,10 @@ class Settings extends React.Component {
 		} else {
 			this.setState({circleSpacing: '14'});
 		}
+	}
+	componentDidMount() {
+		this.WidthChange(this.mq);
+		this.mq.addListener(this.WidthChange);
 	}
 
 	render() {
