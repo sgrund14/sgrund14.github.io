@@ -64,12 +64,12 @@ class Work extends React.Component {
 						<a href='https://www.behance.net/sgrund' target='_blank'>
 							<div id='slider'>
 								<ul id='slides'>
-									<li className='slide slide1'><img className='picture' src='src/images/frame-0029.png' /></li>
-									<li className='slide slide2'><img className='picture' src='src/images/frame-0155.png' /></li>
-									<li className='slide slide3'><img className='picture' src='src/images/frame-0201.png' /></li>
-									<li className='slide slide4'><img className='picture' src='src/images/frame-0228.png' /></li>
-									<li className='slide slide5'><img className='picture' src='src/images/frame-0297.png' /></li>
-									<li className='slide slide6'><img className='picture' src='src/images/frame-0029.png' /></li>
+									<li class="slide slide1"><img class="picture" src="src/images/frame-0029.png" /></li>
+			                        <li class="slide slide2"><img class="picture" src="src/images/frame-0155.png" /></li>
+			                        <li class="slide slide3"><img class="picture" src="src/images/frame-0201.png" /></li>
+			                        <li class="slide slide4"><img class="picture" src="src/images/frame-0228.png" /></li>
+			                        <li class="slide slide5"><img class="picture" src="src/images/frame-0297.png" /></li>
+			                        <li class="slide slide6"><img class="picture" src="src/images/frame-0029.png" /></li>
 								</ul>
 							</div>
 						</a>
