@@ -307,6 +307,11 @@ h6 {
         height: auto;
     }
 }
+#first-name,
+#last-name,
+{
+    user-select: none;
+}
 
 @media screen and (max-width: 480px) {
     html {
