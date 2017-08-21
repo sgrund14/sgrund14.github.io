@@ -5,10 +5,10 @@ const PropTypes = require('prop-types');
 const { CirclePicker } = require('react-color');
 const sectionArray = ['home', 'info', 'work', 'contact'];
 const colorPickerColors = [
-	'#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5',
-	'#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50',
-	'#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800',
-	'#ff5722', '#795548', '#607d8b', '#000000', '#ffffff'
+	'#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#ffe738', '#93ff99',
+	'#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#bfbfbf', '#6b0000',
+	'#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#e5e6ff', '#eaeaea',
+	'#ff5722', '#795548', '#607d8b', '#000000', '#ffffff', '#000251', '#3a3a3a'
 ];
 
 class Settings extends React.Component {
@@ -17,7 +17,7 @@ class Settings extends React.Component {
 		this.state = {
 			circleSize: '14',
 			circleSpacing: '14',
-			pickerWidth: '150',
+			pickerWidth: '200',
 			canNavigateLeft: false,
 			canNavigateRight: false
 		};
@@ -29,9 +29,9 @@ class Settings extends React.Component {
 	}
 	WidthChange(mq) {
 		if (mq.matches) {
-			this.setState({circleSpacing: '10', circleSize: '10', pickerWidth: '100' });
+			this.setState({circleSpacing: '10', circleSize: '10', pickerWidth: '150' });
 		} else {
-			this.setState({circleSpacing: '14', circleSize: '14', pickerWidth: '150' });
+			this.setState({circleSpacing: '14', circleSize: '14', pickerWidth: '200' });
 		}
 	}
 	componentDidMount() {
