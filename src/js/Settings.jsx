@@ -4,11 +4,11 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const { CirclePicker } = require('react-color');
 const sectionArray = ['home', 'info', 'work', 'contact'];
-const lightColors = [
-
-];
-const darkColors = [
-
+const colorPickerColors = [
+	'#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5',
+	'#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50',
+	'#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800',
+	'#ff5722', '#795548', '#607d8b', '#000000', '#ffffff'
 ];
 
 class Settings extends React.Component {
@@ -29,7 +29,7 @@ class Settings extends React.Component {
 	}
 	WidthChange(mq) {
 		if (mq.matches) {
-			this.setState({circleSpacing: '7'});
+			this.setState({circleSpacing: '10', circleSize: '10', pickerWidth: '100' });
 		} else {
 			this.setState({circleSpacing: '14'});
 		}
@@ -137,6 +137,7 @@ class Settings extends React.Component {
 							<div className="selection-area">
 								<div className="top-settings-overlay" />
 								<CirclePicker
+									colors={colorPickerColors}
 									circleSize={this.state.circleSize}
 									circleSpacing={this.state.circleSpacing}
 									width={this.state.pickerWidth}
@@ -161,6 +162,7 @@ class Settings extends React.Component {
 							<div className="selection-area">
 								<div className="top-settings-overlay" />
 								<CirclePicker
+									colors={colorPickerColors}
 									circleSize={this.state.circleSize}
 									circleSpacing={this.state.circleSpacing}
 									width={this.state.pickerWidth}
@@ -189,6 +191,7 @@ class Settings extends React.Component {
 							<div className="selection-area">
 								<div className="bottom-settings-overlay" />
 								<CirclePicker
+									colors={colorPickerColors}
 									circleSize={this.state.circleSize}
 									circleSpacing={this.state.circleSpacing}
 									width={this.state.pickerWidth}
@@ -213,6 +216,7 @@ class Settings extends React.Component {
 							<div className="selection-area">
 								<div className="bottom-settings-overlay" />
 								<CirclePicker
+									colors={colorPickerColors}
 									circleSize={this.state.circleSize}
 									circleSpacing={this.state.circleSpacing}
 									width={this.state.pickerWidth}

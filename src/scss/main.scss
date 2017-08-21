@@ -135,11 +135,13 @@ body {
 
 .top {
     top: 0;
+    transition: all .25s;
 }
 
 .bottom {
     top: 50%;
     color: white;
+    transition: all .25s;
 }
 
 .buttons {
@@ -403,6 +405,10 @@ h6 {
     }
     .tabs {
         margin-top: auto;
+    }
+    .circle-picker-text {
+        padding-bottom: .25em;
+        padding-top: .25em;
     }
 }
 
