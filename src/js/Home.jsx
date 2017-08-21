@@ -37,7 +37,8 @@ class Home extends React.Component {
 		this.state = {
 			colors: Object.assign({}, colorDefaults),
 			currentSection: 'home',
-			onSettings: false
+			onSettings: false,
+			hideNav: false
 		};
 		this.navigate = this.navigate.bind(this);
 		this.closeSettings = this.closeSettings.bind(this);
@@ -133,7 +134,7 @@ class Home extends React.Component {
 	}
 
 	render() {
-		const { currentSection, onSettings } = this.state;
+		const { currentSection, onSettings, hideNav } = this.state;
 		const onInfo = currentSection === 'info';
 		const onWork = currentSection === 'work';
 		const onContact = currentSection === 'contact';
@@ -158,7 +159,7 @@ class Home extends React.Component {
     				navigate={this.navigate}
     			/>
 
-    			<div className={`${onSettings ? '' : 'section-on'} home-section`}>
+    			<div className={`${onSettings || hideNav ? '' : 'section-on'} home-section`}>
 					<div className='row top'>
 						<ul className='buttons tabs'>
 							<h1 id='first-name'>SAMUEL</h1>
@@ -202,6 +203,14 @@ class Home extends React.Component {
 						}
 					}}
 				/>
+				{!onSettings &&
+					<i
+						className={`hide-nav-button fa ${hideNav ? 'fa-window-maximize' : 'fa-window-minimize'}`}
+						onClick={() => {
+							this.setState({ hideNav: !hideNav });
+						}}
+					/>
+				}
 				
 			</div>
 		);

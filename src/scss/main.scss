@@ -132,6 +132,18 @@ body {
     cursor: pointer;
     opacity: .5;
 }
+.hide-nav-button {
+    position: absolute;
+    top: .5em;
+    left: .5em;
+    font-size: 2em;
+    transition: all .25s;
+}
+
+.hide-nav-button:hover {
+    cursor: pointer;
+    opacity: .5;
+}
 
 .top {
     top: 0;
