@@ -368,7 +368,9 @@ h6 {
     user-select: none;
 }
 
-@media screen and (max-width: 1080px) {
+@media only screen
+    and (orientation: portrait) {
+
     html {
         font-size: 2.5vmin;
         /* Base font-size of 32px */
