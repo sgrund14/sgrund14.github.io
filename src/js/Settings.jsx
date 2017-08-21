@@ -5,9 +5,9 @@ const PropTypes = require('prop-types');
 const { CirclePicker } = require('react-color');
 const sectionArray = ['home', 'info', 'work', 'contact'];
 const colorPickerColors = [
-	'#f44336', '#e91e63', '#6b0000', '#9c27b0', '#673ab7', '#000251', '#3f51b5',
-	'#2196f3', '#03a9f4', '#00bcd4', '#e5e6ff', '#009688', '#4caf50', '#93ff99',
-	'#8bc34a', '#cddc39', '#ffe738', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722',
+	'#f44336', '#e91e63', '#d82727', '#6b0000', '#9c27b0', '#673ab7', '#000251',
+	'#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#e5e6ff', '#009688', '#4caf50',
+	'#93ff99', '#8bc34a', '#cddc39', '#ffe738', '#ffc107', '#ff9800', '#ff5722',
 	'#795548',  '#000000', '#3a3a3a', '#607d8b', '#bfbfbf', '#eaeaea', '#ffffff'
 ];
 
