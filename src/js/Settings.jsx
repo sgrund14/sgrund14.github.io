@@ -31,7 +31,7 @@ class Settings extends React.Component {
 		if (mq.matches) {
 			this.setState({circleSpacing: '10', circleSize: '10', pickerWidth: '100' });
 		} else {
-			this.setState({circleSpacing: '14'});
+			this.setState({circleSpacing: '14', circleSize: '14', pickerWidth: '150' });
 		}
 	}
 	componentDidMount() {
