@@ -132,7 +132,7 @@ body {
     cursor: pointer;
     opacity: .5;
 }
-.hide-nav-button {
+.hide-all-button {
     position: absolute;
     top: .5em;
     left: .5em;
@@ -140,7 +140,7 @@ body {
     transition: all .25s;
 }
 
-.hide-nav-button:hover {
+.hide-all-button:hover {
     cursor: pointer;
     opacity: .5;
 }

@@ -42,7 +42,7 @@ class Work extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (nextProps.onWork && !nextProps.onSettings) {
+		if (nextProps.onWork && !nextProps.onSettings && !nextProps.hideAll) {
 	        // run slider
 	        this.interval = setInterval(this.animate, this.pause);
 		} else {
@@ -56,9 +56,9 @@ class Work extends React.Component {
 	}
 
 	render() {
-		const { onWork, onSettings } = this.props;
+		const { hideAll, onWork, onSettings } = this.props;
 		return (
-			<div className={`${onWork && !onSettings ? 'section-on' : ''} work-section`}>
+			<div className={`${!hideAll && onWork && !onSettings ? 'section-on' : ''} work-section`}>
 				<div className='top-panel'>
 					<div className='panel upper work'>
 						<a href='https://www.behance.net/sgrund' target='_blank'>
@@ -92,6 +92,7 @@ class Work extends React.Component {
 }
 
 Work.propTypes = {
+	hideAll: PropTypes.bool,
 	onWork: PropTypes.bool,
 	onSettings: PropTypes.bool
 };

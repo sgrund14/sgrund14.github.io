@@ -38,7 +38,7 @@ class Home extends React.Component {
 			colors: Object.assign({}, colorDefaults),
 			currentSection: 'home',
 			onSettings: false,
-			hideNav: false
+			hideAll: false
 		};
 		this.navigate = this.navigate.bind(this);
 		this.closeSettings = this.closeSettings.bind(this);
@@ -134,7 +134,7 @@ class Home extends React.Component {
 	}
 
 	render() {
-		const { currentSection, onSettings, hideNav } = this.state;
+		const { currentSection, onSettings, hideAll } = this.state;
 		const onInfo = currentSection === 'info';
 		const onWork = currentSection === 'work';
 		const onContact = currentSection === 'contact';
@@ -145,9 +145,9 @@ class Home extends React.Component {
 				<canvas data-paper-resize id='canvas' />
 				<canvas data-paper-resize id='canvas2' />
 
-    			<Info onInfo={onInfo} onSettings={onSettings} />
-    			<Work onWork={onWork} onSettings={onSettings} />
-    			<Contact onContact={onContact} onSettings={onSettings} />
+    			<Info hideAll={hideAll} onInfo={onInfo} onSettings={onSettings} />
+    			<Work hideAll={hideAll} onWork={onWork} onSettings={onSettings} />
+    			<Contact hideAll={hideAll} onContact={onContact} onSettings={onSettings} />
     			<Settings
     				currentColors={this.state.colors}
     				currentSection={this.state.currentSection}
@@ -159,7 +159,7 @@ class Home extends React.Component {
     				navigate={this.navigate}
     			/>
 
-    			<div className={`${onSettings || hideNav ? '' : 'section-on'} home-section`}>
+    			<div className={`${onSettings || hideAll ? '' : 'section-on'} home-section`}>
 					<div className='row top'>
 						<ul className='buttons tabs'>
 							<h1 id='first-name'>SAMUEL</h1>
@@ -205,9 +205,9 @@ class Home extends React.Component {
 				/>
 				{!onSettings &&
 					<i
-						className={`hide-nav-button fa ${hideNav ? 'fa-window-maximize' : 'fa-window-minimize'}`}
+						className={`hide-all-button fa ${hideAll ? 'fa-plus-square-o' : 'fa-minus-square-o'}`}
 						onClick={() => {
-							this.setState({ hideNav: !hideNav });
+							this.setState({ hideAll: !hideAll });
 						}}
 					/>
 				}

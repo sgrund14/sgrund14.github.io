@@ -3,9 +3,9 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
-const Info = ({ onInfo, onSettings }) => {
+const Info = ({ hideAll, onInfo, onSettings }) => {
 	return (
-		<div className={`${onInfo && !onSettings ? 'section-on' : ''} info-section`}>
+		<div className={`${!hideAll && onInfo && !onSettings ? 'section-on' : ''} info-section`}>
 			<div className='top-panel'>
 				<div className='panel info'>
 					Samuel Grund is a fourth year college student at Oberlin College pursuing a bachelor's degree in Computer Science.
@@ -23,6 +23,7 @@ const Info = ({ onInfo, onSettings }) => {
 };
 
 Info.propTypes = {
+	hideAll: PropTypes.bool,
 	onInfo: PropTypes.bool,
 	onSettings: PropTypes.bool
 };

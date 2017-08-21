@@ -3,9 +3,9 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
-const Contact = ({ onContact, onSettings }) => {
+const Contact = ({ hideAll, onContact, onSettings }) => {
 	return (
-		<div className={`${onContact && !onSettings ? 'section-on' : ''} contact-section`}>
+		<div className={`${!hideAll && onContact && !onSettings ? 'section-on' : ''} contact-section`}>
 			<div className='top-panel'>
 				<div className='panel upper contact'>
 					<h2>email</h2>
@@ -25,6 +25,7 @@ const Contact = ({ onContact, onSettings }) => {
 };
 
 Contact.propTypes = {
+	hideAll: PropTypes.bool,
 	onContact: PropTypes.bool,
 	onSettings: PropTypes.bool
 };
