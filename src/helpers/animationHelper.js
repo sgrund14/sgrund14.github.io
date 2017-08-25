@@ -26,17 +26,22 @@ const changeBackgroundColor = (endColor, area) => {
     const section = document.getElementById(area);
     const rgb = hexToRgb(endColor);
     // https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
-    // const els = document.getElementsByClassName(area === 'body' ? 'top' : 'bottom');
-    // let fontColor;
-    // if ((rgb.r*0.299 + rgb.g*0.587 + rgb.b*0.114) > 186) {
-    //     fontColor = '#000000';
-    // } else {
-    //     fontColor = '#ffffff'
-    // }
-    // if (els && els[0]) {
-    //     els[0].style.color = fontColor;
-    // }
-    section.style.backgroundColor = rgbToString(rgb.r, rgb.g, rgb.b);
+    const els = document.getElementsByClassName(area === 'body' ? 'top-color' : 'bottom-color');
+    const circleSVGs = document.getElementsByClassName(area === 'body' ? 'circle-svg-top' : 'circle-svg-bottom');
+    let fontColor;
+    if ((rgb.r*0.299 + rgb.g*0.587 + rgb.b*0.114) > 186) {
+        fontColor = '#000000';
+    } else {
+        fontColor = '#ffffff'
+    }
+    Array.from(els).forEach(el => {
+        el.style.color = fontColor;
+    });
+    Array.from(circleSVGs).forEach(el => {
+        el.style.stroke = fontColor;
+    });
+
+    section.style.backgroundColor = endColor;
 };
 
 const anim = (paperArray, id, canvasElement) => {

@@ -5,13 +5,41 @@ body {
     transition: all .25s;
 }
 
+.circle-svg-top {
+    r: 5px;
+    cx: 6px;
+    cy: 6px;
+    stroke: black;
+    stroke-width: 1.5px;
+    transition: stroke .025s;
+}
+.circle-svg-bottom {
+    r: 5px;
+    cx: 6px;
+    cy: 6px;
+    stroke: white;
+    stroke-width: 1.5px;
+    transition: stroke .025s;
+}
+
+.top-color {
+    color: black;
+    transition: color .025s;
+}
+.bottom-color {
+    color: white;
+    transition: color .025s;
+}
+
 .settings-arrow-right {
-    transition: all .25s;
+    transition: opacity .25s;
+    transition: color .025s;
     position: absolute;
     right: 0;
 }
 .settings-arrow-left {
-    transition: all .25s;
+    transition: opacity .25s;
+    transition: color .025s;
     position: absolute;
     left: 0;
 }
@@ -42,6 +70,7 @@ body {
 }
 
 .settings-header {
+    color: inherit;
     z-index: 2;
     font-size: 2em;
     display: flex;
@@ -121,11 +150,13 @@ body {
 }
 
 .settings-button {
+    color: inherit;
     position: absolute;
     top: .5em;
     right: .5em;
     font-size: 2em;
-    transition: all .25s;
+    transition: opacity .25s;
+    transition: color .025s;
 }
 
 .settings-button:hover {
@@ -133,11 +164,13 @@ body {
     opacity: .5;
 }
 .hide-all-button {
+    color: inherit;
     position: absolute;
     top: .5em;
     left: .5em;
     font-size: 2em;
-    transition: all .25s;
+    transition: opacity .25s;
+    transition: color .025s;
 }
 
 .hide-all-button:hover {
@@ -152,11 +185,11 @@ body {
 
 .bottom {
     top: 50%;
-    color: white;
     transition: all .25s;
 }
 
 .buttons {
+    color: inherit;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -191,14 +224,14 @@ body {
     bottom: 0;
     a,
     p {
-        color: black;
+        color: inherit;
     }
 }
 
 .links {
     a,
     p {
-        color: white;
+        color: inherit;
     }
 }
 
@@ -211,6 +244,7 @@ body {
 .top-settings {
     @extend .top-panel;
     align-items: center;
+    color: inherit;
     .top-settings-overlay {
         position: absolute;
         top: 0;
@@ -226,7 +260,7 @@ body {
 .bottom-settings {
     @extend .top-panel;
     top: 50%;
-    color: white;
+    color: inherit;
     align-items: center;
     .bottom-settings-overlay {
         position: absolute;
@@ -252,7 +286,7 @@ body {
     @extend .top-panel;
     top: 50%;
     left: 0;
-    color: white;
+    color: inherit;
 }
 
 .panel {
@@ -270,7 +304,7 @@ p {
 }
 
 .resume {
-    color: white;
+    color: inherit;
     font-size: 2.5em;
     transition: all .125s;
 }

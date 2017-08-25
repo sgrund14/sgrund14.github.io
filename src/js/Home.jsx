@@ -160,7 +160,7 @@ class Home extends React.Component {
     			/>
 
     			<div className={`${onSettings || hideAll ? '' : 'section-on'} home-section`}>
-					<div className='row top'>
+					<div className='row top top-color'>
 						<ul className='buttons tabs'>
 							<h1 id='first-name'>SAMUEL</h1>
 							<p
@@ -183,7 +183,7 @@ class Home extends React.Component {
 							</p>
 						</ul>
 					</div>
-					<div className='row bottom'>
+					<div className='row bottom bottom-color'>
 						<ul className='buttons links'>
 							<a href='https://github.com/sgrund14' id='github' target='_blank'>github</a>
 							<a href='https://www.linkedin.com/in/samuel-grund-2a7481108' id='linkedin' target='_blank'>linkedin</a>
@@ -194,23 +194,25 @@ class Home extends React.Component {
 					</div>
 				</div>
 
-				<i
-					className={`settings-button fa ${onSettings ? 'fa-times' : 'fa-gear'}`}
-					onClick={() => {
-						this.setState({ onSettings: !onSettings });
-						if (onSettings) {
-							this.closeSettings(this.state.currentSection);	
-						}
-					}}
-				/>
-				{!onSettings &&
+				<div className="top-color">
 					<i
-						className={`hide-all-button fa ${hideAll ? 'fa-plus-square-o' : 'fa-minus-square-o'}`}
+						className={`settings-button fa ${onSettings ? 'fa-times' : 'fa-gear'}`}
 						onClick={() => {
-							this.setState({ hideAll: !hideAll });
+							this.setState({ onSettings: !onSettings });
+							if (onSettings) {
+								this.closeSettings(this.state.currentSection);	
+							}
 						}}
 					/>
-				}
+					{!onSettings &&
+						<i
+							className={`hide-all-button fa ${hideAll ? 'fa-plus-square-o' : 'fa-minus-square-o'}`}
+							onClick={() => {
+								this.setState({ hideAll: !hideAll });
+							}}
+						/>
+					}
+				</div>
 				
 			</div>
 		);

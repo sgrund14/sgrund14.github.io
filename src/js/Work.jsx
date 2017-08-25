@@ -59,7 +59,7 @@ class Work extends React.Component {
 		const { hideAll, onWork, onSettings } = this.props;
 		return (
 			<div className={`${!hideAll && onWork && !onSettings ? 'section-on' : ''} work-section`}>
-				<div className='top-panel'>
+				<div className='top-panel top-color'>
 					<div className='panel upper work'>
 						<a href='https://www.behance.net/sgrund' target='_blank'>
 							<div id='slider'>
@@ -75,7 +75,7 @@ class Work extends React.Component {
 						</a>
 					</div>
 				</div>
-				<div className='bottom-panel'>
+				<div className='bottom-panel bottom-color'>
 					<div className='panel lower work'>
 						<a href='http://cs-361-project.github.io/prism-game/' className='prism' target='_blank'>
 							<span className='letter P'>p</span>

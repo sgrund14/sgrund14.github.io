@@ -104,7 +104,7 @@ class Settings extends React.Component {
 		} = this.props;
 		return (
 			<div className={`${onSettings ? 'section-on' : ''} settings-section`}>
-				<div className='top-settings'>
+				<div className='top-settings top-color'>
 					<div className='settings-header'>
 						<i
 							className={`${this.state.canNavigateLeft ? 'settings-arrow-active' : 'settings-arrow-disabled'} settings-arrow-left fa fa-chevron-left`}
@@ -131,7 +131,7 @@ class Settings extends React.Component {
 							<div className='circle-picker-text no-user-select'>
 								<span>Circles</span>
 								<svg className='circle-picker-circle' height="12" width="12">
-								  <circle r="5" cx="6" cy="6" stroke="black" strokeWidth="1.5" fill={`${currentColors[`${currentSection}Top`]}`} />
+								  <circle className='circle-svg-top' fill={`${currentColors[`${currentSection}Top`]}`} />
 								</svg>
 							</div>
 							<div className="selection-area">
@@ -156,7 +156,7 @@ class Settings extends React.Component {
 							<div className="circle-picker-text no-user-select">
 								<span>Background</span>
 								<svg className='circle-picker-circle' height="12" width="12">
-								  <circle r="5" cx="6" cy="6" stroke="black" strokeWidth="1.5" fill={`${currentColors[`${currentSection}TopBackground`]}`} />
+								  <circle className='circle-svg-top' fill={`${currentColors[`${currentSection}TopBackground`]}`} />
 								</svg>
 							</div>
 							<div className="selection-area">
@@ -181,11 +181,11 @@ class Settings extends React.Component {
 				</div>
 				<div className='bottom-settings'>
 					<div className='color-wrapper'>
-						<div>
+						<div className='bottom-color'>
 							<div className="circle-picker-text no-user-select">
 								<span>Circles</span>
 								<svg className='circle-picker-circle' height="12" width="12">
-								  <circle r="5" cx="6" cy="6" stroke="white" strokeWidth="1.5" fill={`${currentColors[`${currentSection}Bottom`]}`} />
+								  <circle className='circle-svg-bottom' fill={`${currentColors[`${currentSection}Bottom`]}`} />
 								</svg>
 							</div>
 							<div className="selection-area">
@@ -206,11 +206,11 @@ class Settings extends React.Component {
 								/>
 							</div>
 						</div>
-						<div>
+						<div className='bottom-color'>
 							<div className="circle-picker-text no-user-select">
 								<span>Background</span>
 								<svg className='circle-picker-circle' height="12" width="12">
-								  <circle r="5" cx="6" cy="6" stroke="white" strokeWidth="1.5" fill={`${currentColors[`${currentSection}BottomBackground`]}`} />
+								  <circle className='circle-svg-bottom' fill={`${currentColors[`${currentSection}BottomBackground`]}`} />
 								</svg>
 							</div>
 							<div className="selection-area">
