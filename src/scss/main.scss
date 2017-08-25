@@ -32,14 +32,12 @@ body {
 }
 
 .settings-arrow-right {
-    transition: opacity .25s;
-    transition: color .025s;
+    transition: color .025s, opacity .25s;
     position: absolute;
     right: 0;
 }
 .settings-arrow-left {
-    transition: opacity .25s;
-    transition: color .025s;
+    transition: color .025s, opacity .25s;
     position: absolute;
     left: 0;
 }
@@ -155,8 +153,7 @@ body {
     top: .5em;
     right: .5em;
     font-size: 2em;
-    transition: opacity .25s;
-    transition: color .025s;
+    transition: color .025s, opacity .25s;
 }
 
 .settings-button:hover {
@@ -169,8 +166,7 @@ body {
     top: .5em;
     left: .5em;
     font-size: 2em;
-    transition: opacity .25s;
-    transition: color .025s;
+    transition: color .025s, opacity .25s;
 }
 
 .hide-all-button:hover {
@@ -199,13 +195,14 @@ body {
 }
 
 .buttons {
+    color: inherit;
     a,
     p,
     h1 {
         padding-left: .5em;
         padding-right: .5em;
         margin: 0;
-        transition: all .25s;
+        transition: padding-left .25s, font-size .25s, opacity .25s;
     }
 }
 
@@ -213,7 +210,6 @@ body {
 .links {
     position: absolute;
     right: 10%;
-    transition: all .5s;
     p:hover,
     a:hover {
         opacity: .5;
