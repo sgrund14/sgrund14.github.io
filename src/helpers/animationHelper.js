@@ -17,10 +17,6 @@ const hexToRgb = hex => {
         b: parseInt(result[3], 16)
     } : null;
 }
-// https://stackoverflow.com/questions/14323082/why-doesnt-backgroundcolor-rgba-b-c-work
-function rgbToString(r,g,b) {
-    return 'rgb(' + [(r||0),(g||0),(b||0)].join(',') + ')';
-}
 
 const changeBackgroundColor = (endColor, area) => {
     const section = document.getElementById(area);
@@ -28,6 +24,7 @@ const changeBackgroundColor = (endColor, area) => {
     // https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
     const els = document.getElementsByClassName(area === 'body' ? 'top-color' : 'bottom-color');
     const circleSVGs = document.getElementsByClassName(area === 'body' ? 'circle-svg-top' : 'circle-svg-bottom');
+    const overlay = document.getElementsByClassName(area === 'body' ? 'top-settings-overlay' : 'bottom-settings-overlay');
     let fontColor;
     if ((rgb.r*0.299 + rgb.g*0.587 + rgb.b*0.114) > 186) {
         fontColor = '#000000';
@@ -39,6 +36,9 @@ const changeBackgroundColor = (endColor, area) => {
     });
     Array.from(circleSVGs).forEach(el => {
         el.style.stroke = fontColor;
+    });
+    Array.from(overlay).forEach(el => {
+        el.style.backgroundColor = fontColor;
     });
 
     section.style.backgroundColor = endColor;
