@@ -12,7 +12,7 @@ const Contact = ({ hideAll, onContact, onSettings }) => {
 					sgrund@oberlin.edu
 					<br />
 					<h2>twitter</h2>
-					@salt_and_pepper_games
+					@s_and_p_games
 				</div>
 			</div>
 			<div className='bottom-panel bottom-color'>
