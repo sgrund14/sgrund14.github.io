@@ -311,6 +311,17 @@ p {
     opacity: .75;
 }
 
+.prism-blog {
+    display: inline-block;
+    color: inherit;
+    font-weight: 400;
+    margin-top: 2em;
+    transition: opacity .25s;
+}
+.prism-blog:hover {
+    opacity: .75;
+}
+
 .prism {
     font-weight: 300;
     text-decoration: none;

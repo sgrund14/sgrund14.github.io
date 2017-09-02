@@ -84,6 +84,9 @@ class Work extends React.Component {
 							<span className='letter S'>s</span>
 							<span className='letter M'>m</span>
 						</a>
+						<a href="https://salt-and-pepper-games.github.io/" target="_blank" className="prism-blog">
+							DEVELOPMENT BLOG
+						</a>
 					</div>
 				</div>
 			</div>
