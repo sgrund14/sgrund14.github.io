@@ -1,3 +1,14 @@
+@mixin mobile {
+  @media only screen and (orientation: portrait), only screen and (max-height: 480px) {
+    @content;
+  }
+}
+html {
+    @include mobile {
+        font-size: 2.5vmin;
+    }
+}
+
 body {
     font-family: 'Josefin Sans';
     font-weight: 300;
@@ -77,6 +88,9 @@ body {
     width: 15em;
     justify-content: center;
     position: relative;
+    @include mobile {
+        width: 10em;
+    }
 }
 
 .on {
@@ -92,6 +106,9 @@ body {
 .color-wrapper {
     display: flex;
     z-index: 2;
+    @include mobile {
+        flex-direction: column;
+    }
 }
 
 .circle-picker {
@@ -104,6 +121,10 @@ body {
     text-align: center;
     padding-bottom: .75em;
     padding-top: .75em;
+    @include mobile {
+        padding-bottom: .25em;
+        padding-top: .25em;
+    }
 }
 
 .circle-picker-circle {
@@ -208,11 +229,17 @@ body {
 
 .tabs,
 .links {
+    font-weight: 300;
     position: absolute;
     right: 10%;
     p:hover,
     a:hover {
         opacity: .5;
+    }
+    @include mobile {
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -221,6 +248,9 @@ body {
     a,
     p {
         color: inherit;
+    }
+    @include mobile {
+        margin-top: auto;
     }
 }
 
@@ -291,6 +321,9 @@ body {
     line-height: 1.5em;
     width: 25em;
     margin-left: 10%;
+    @include mobile {
+        margin: auto;
+    }
 }
 
 a,
@@ -424,59 +457,15 @@ h6 {
 #last-name,
 {
     user-select: none;
-}
-
-@media only screen
-    and (orientation: portrait) {
-
-    html {
-        font-size: 2.5vmin;
-        /* Base font-size of 32px */
-    }
-    .color-wrapper {
-        flex-direction: column;
-    }
-    .settings-header {
-        width: 10em;
-    }
-    .panel {
-        margin: auto;
-    }
-    .tabs,
-    .links {
-        position: static;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .info,
-    .contact,
-    .tabs,
-    .links {
-        font-weight: 400;
-    }
-    #first-name,
-    #last-name,
-    {
+    @include mobile {
         font-weight: 300;
     }
-    .tabs {
-        margin-top: auto;
-    }
-    .circle-picker-text {
-        padding-bottom: .25em;
-        padding-top: .25em;
-    }
 }
-
-@media screen and (max-height: 480px) {
-    html {
-        font-size: 2.5vmin;
-        /* Base font-size of 32px */
-    }
-    .info,
-    .contact,
-    .tabs,
-    .links {
+.info,
+.contact,
+.tabs,
+.links {
+    @include mobile {
         font-weight: 400;
     }
 }

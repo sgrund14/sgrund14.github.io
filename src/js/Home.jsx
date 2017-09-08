@@ -1,31 +1,52 @@
 'use strict';
 
 const React = require('react');
-const { anim, changeBackgroundColor } = require('../helpers/animationHelper');
+const { anim, changeBackgroundColor, possibleColors, initialCircleColors } = require('../helpers/animationHelper');
 
 const Info = require('./Info');
 const Work = require('./Work');
 const Contact = require('./Contact');
 const Settings = require('./Settings');
 
+// // default color settings
+// const colorDefaults = {
+// 	homeTop: '#ffe738', // yellow
+//     homeBottom: '#bfbfbf', // lightgrey
+//     infoTop: '#e5e6ff', // lightblue
+//     infoBottom: '#000251', // darkblue
+//     workTop: '#93ff99', // lightgreen
+//     workBottom: '#6b0000', // darkred
+//     contactTop: '#eaeaea', // lightergrey
+//     contactBottom: '#3a3a3a', // darkgrey
+//     homeTopBackground: '#ffffff',
+//     homeBottomBackground: '000000',
+//     infoTopBackground: '#ffffff',
+//     infoBottomBackground: '000000',
+//     workTopBackground: '#ffffff',
+//     workBottomBackground: '000000',
+//     contactTopBackground: '#ffffff',
+//     contactBottomBackground: '000000'
+// };
+
 // default color settings
+// randomize on load
 const colorDefaults = {
-	homeTop: '#ffe738', // yellow
-    homeBottom: '#bfbfbf', // lightgrey
-    infoTop: '#e5e6ff', // lightblue
-    infoBottom: '#000251', // darkblue
-    workTop: '#93ff99', // lightgreen
-    workBottom: '#6b0000', // darkred
-    contactTop: '#eaeaea', // lightergrey
-    contactBottom: '#3a3a3a', // darkgrey
+	homeTop: initialCircleColors.top,
+    homeBottom: initialCircleColors.bottom,
+    infoTop: possibleColors[Math.floor(Math.random()*possibleColors.length)],
+    infoBottom: possibleColors[Math.floor(Math.random()*possibleColors.length)],
+    workTop: possibleColors[Math.floor(Math.random()*possibleColors.length)],
+    workBottom: possibleColors[Math.floor(Math.random()*possibleColors.length)],
+    contactTop: possibleColors[Math.floor(Math.random()*possibleColors.length)],
+    contactBottom: possibleColors[Math.floor(Math.random()*possibleColors.length)],
     homeTopBackground: '#ffffff',
-    homeBottomBackground: '000000',
-    infoTopBackground: '#ffffff',
-    infoBottomBackground: '000000',
-    workTopBackground: '#ffffff',
-    workBottomBackground: '000000',
-    contactTopBackground: '#ffffff',
-    contactBottomBackground: '000000'
+    homeBottomBackground: '#000000',
+    infoTopBackground: possibleColors[Math.floor(Math.random()*possibleColors.length)],
+    infoBottomBackground: possibleColors[Math.floor(Math.random()*possibleColors.length)],
+    workTopBackground: possibleColors[Math.floor(Math.random()*possibleColors.length)],
+    workBottomBackground: possibleColors[Math.floor(Math.random()*possibleColors.length)],
+    contactTopBackground: possibleColors[Math.floor(Math.random()*possibleColors.length)],
+    contactBottomBackground: possibleColors[Math.floor(Math.random()*possibleColors.length)]
 };
 
 class Home extends React.Component {
@@ -56,6 +77,7 @@ class Home extends React.Component {
 		// canvasElement is the canvas to draw on
 		this.topAnim = anim(this.paperArray, 0, document.getElementById('canvas'));
 		this.bottomAnim = anim(this.paperArray, 1, document.getElementById('canvas2'));
+		// this.closeSettings('home');
 		this.paperArray[0].view.onFrame = this.topAnim.update(0);
 		this.paperArray[1].view.onFrame = this.bottomAnim.update(1);
 	}

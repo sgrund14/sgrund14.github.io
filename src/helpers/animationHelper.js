@@ -2,6 +2,21 @@
 
 const paper = require('paper/dist/paper-full');
 
+const possibleColors = [
+    '#f44336', '#e91e63', '#d82727', '#6b0000', '#9c27b0', '#673ab7', '#000251',
+    '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#ced0ff', '#009688', '#4caf50',
+    '#93ff99', '#8bc34a', '#cddc39', '#ffe738', '#ffc107', '#ff9800', '#ff5722',
+    '#795548',  '#000000', '#3a3a3a', '#607d8b', '#bfbfbf', '#eaeaea', '#ffffff'
+];
+const colorsNoWhite = possibleColors.filter(col => col !== '#ffffff');
+const colorsNoBlack = possibleColors.filter(col => col !== '#000000');
+const initialCircleColors = {
+    // don't randomly pick white
+    top: colorsNoWhite[Math.floor(Math.random()*colorsNoWhite.length)],
+    // don't randomly pick black
+    bottom: colorsNoBlack[Math.floor(Math.random()*colorsNoBlack.length)]
+};
+
 // https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
 const hexToRgb = hex => {
     // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
@@ -63,7 +78,7 @@ const anim = (paperArray, id, canvasElement) => {
     });
 
     // initialize circle colors: yellow for top canvas, grey for bottom
-    id === 0 ? path.fillColor = '#ffe738' : path.fillColor = '#bfbfbf';
+    id === 0 ? path.fillColor = initialCircleColors.top : path.fillColor = initialCircleColors.bottom;
 
     // Create a symbol, which we will use to place instances of later:
     const symbol = new currentPaper.Symbol(path);
@@ -188,5 +203,5 @@ const anim = (paperArray, id, canvasElement) => {
     };
 };
 
-module.exports = { anim, changeBackgroundColor };
+module.exports = { anim, changeBackgroundColor, possibleColors, initialCircleColors };
 
