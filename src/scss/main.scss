@@ -3,6 +3,29 @@
     @content;
   }
 }
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
 html {
     @include mobile {
         font-size: 2.5vmin;
@@ -225,6 +248,16 @@ body {
         margin: 0;
         transition: padding-left .25s, font-size .25s, opacity .25s;
     }
+}
+.tabs,
+.links,
+.settings-button,
+.hide-all-button {
+    -webkit-animation: fadein .5s;
+    -moz-animation: fadein .5s;
+    -ms-animation: fadein .5s;
+    -o-animation: fadein .5s;
+    animation: fadein .5s;
 }
 
 .tabs,

@@ -9,7 +9,7 @@ const Info = ({ hideAll, onInfo, onSettings }) => {
 			<div className='top-panel top-color'>
 				<div className='panel info'>
 					Samuel Grund is a fourth year college student at Oberlin College pursuing a bachelor's degree in Computer Science.
-					He's savvy with hip front end techonologies like React, Redux, and GraphQL, and has a knack for making slick web applications.
+					He's savvy with hip front end techonologies like React, Redux, and GraphQL, and enjoys making slick web applications.
 				</div>
 			</div>
 			<div className='bottom-panel bottom-color'>
