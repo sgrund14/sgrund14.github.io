@@ -130,7 +130,7 @@ class Settings extends React.Component {
 						<div>
 							<div className='circle-picker-text no-user-select'>
 								<span>Circles</span>
-								<svg className='circle-picker-circle' height="12" width="12">
+								<svg className='circle-picker-circle'>
 								  <circle className='circle-svg-top' fill={`${currentColors[`${currentSection}Top`]}`} />
 								</svg>
 							</div>
@@ -155,7 +155,7 @@ class Settings extends React.Component {
 						<div>
 							<div className="circle-picker-text no-user-select">
 								<span>Background</span>
-								<svg className='circle-picker-circle' height="12" width="12">
+								<svg className='circle-picker-circle'>
 								  <circle className='circle-svg-top' fill={`${currentColors[`${currentSection}TopBackground`]}`} />
 								</svg>
 							</div>
@@ -184,7 +184,7 @@ class Settings extends React.Component {
 						<div className='bottom-color'>
 							<div className="circle-picker-text no-user-select">
 								<span>Circles</span>
-								<svg className='circle-picker-circle' height="12" width="12">
+								<svg className='circle-picker-circle'>
 								  <circle className='circle-svg-bottom' fill={`${currentColors[`${currentSection}Bottom`]}`} />
 								</svg>
 							</div>
@@ -209,7 +209,7 @@ class Settings extends React.Component {
 						<div className='bottom-color'>
 							<div className="circle-picker-text no-user-select">
 								<span>Background</span>
-								<svg className='circle-picker-circle' height="12" width="12">
+								<svg className='circle-picker-circle'>
 								  <circle className='circle-svg-bottom' fill={`${currentColors[`${currentSection}BottomBackground`]}`} />
 								</svg>
 							</div>

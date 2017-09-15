@@ -40,17 +40,17 @@ body {
 }
 
 .circle-svg-top {
-    r: 5px;
-    cx: 6px;
-    cy: 6px;
+    r: 0.5em;
+    cx: 1em;
+    cy: 1.1em;
     stroke: black;
     stroke-width: 1.5px;
     transition: stroke .025s;
 }
 .circle-svg-bottom {
-    r: 5px;
-    cx: 6px;
-    cy: 6px;
+    r: 0.5em;
+    cx: 1em;
+    cy: 1.1em;
     stroke: white;
     stroke-width: 1.5px;
     transition: stroke .025s;
@@ -151,7 +151,11 @@ body {
 }
 
 .circle-picker-circle {
-    margin-left: 5px;
+    margin-left: .5em;
+    height: 2.5em;
+    width: 2.5em;
+    padding-bottom: 1em;
+    margin-bottom: -2em;
 }
 
 #bottomhalf {
