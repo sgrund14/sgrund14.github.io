@@ -135,7 +135,7 @@ class Settings extends React.Component {
 								</svg>
 							</div>
 							<div className="selection-area">
-								<div className="top-settings-overlay" />
+								<div className="top-settings-overlay settings-overlay-left" />
 								<CirclePicker
 									colors={colorPickerColors}
 									circleSize={this.state.circleSize}
@@ -160,7 +160,7 @@ class Settings extends React.Component {
 								</svg>
 							</div>
 							<div className="selection-area">
-								<div className="top-settings-overlay" />
+								<div className="top-settings-overlay settings-overlay-right" />
 								<CirclePicker
 									colors={colorPickerColors}
 									circleSize={this.state.circleSize}
@@ -189,7 +189,7 @@ class Settings extends React.Component {
 								</svg>
 							</div>
 							<div className="selection-area">
-								<div className="bottom-settings-overlay" />
+								<div className="bottom-settings-overlay settings-overlay-left" />
 								<CirclePicker
 									colors={colorPickerColors}
 									circleSize={this.state.circleSize}
@@ -214,7 +214,7 @@ class Settings extends React.Component {
 								</svg>
 							</div>
 							<div className="selection-area">
-								<div className="bottom-settings-overlay" />
+								<div className="bottom-settings-overlay settings-overlay-right" />
 								<CirclePicker
 									colors={colorPickerColors}
 									circleSize={this.state.circleSize}

@@ -333,6 +333,27 @@ body {
         opacity: .1;
     }
 }
+.settings-overlay-left {
+    margin-left: -2em;
+    padding-left: 2em;
+    border-radius: 4em 0em 0em 4em;
+    @include mobile {
+        border-radius: 4em;
+        margin-left: -1em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+.settings-overlay-right {
+    padding-right: 2em;
+    border-radius: 0em 4em 4em 0em;
+    @include mobile {
+        border-radius: 4em;
+        margin-left: -1em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
 
 .top-panel {
     position: absolute;
