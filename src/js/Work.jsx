@@ -77,7 +77,7 @@ class Work extends React.Component {
 				</div>
 				<div className='bottom-panel bottom-color'>
 					<div className='panel lower work'>
-						<a href='http://cs-361-project.github.io/prism-game/' className='prism' target='_blank'>
+						<a href='https://salt-and-pepper-games.github.io/prism' className='prism' target='_blank'>
 							<span className='letter P'>p</span>
 							<span className='letter R'>r</span>
 							<span className='letter I'>i</span>
@@ -85,7 +85,7 @@ class Work extends React.Component {
 							<span className='letter M'>m</span>
 						</a>
 						<a href="https://salt-and-pepper-games.github.io/" target="_blank" className="prism-blog">
-							PRISM 2.0 COMING SOON
+							DEVELOPMENT BLOG
 						</a>
 					</div>
 				</div>
