@@ -96,6 +96,11 @@ body {
     transition: all .25s;
 }
 
+.lower.work {
+    display: flex;
+    flex-direction: column;
+}
+
 .work-section,
 .contact-section {
     text-align: center;
