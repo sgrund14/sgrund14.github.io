@@ -198,7 +198,7 @@ class Home extends React.Component {
 							work
 							</p>
 							<p
-								className={onContact ? 'on' : ''}
+								className={`contact-btn ${onContact ? 'on' : ''}`}
 								onClick={() => this.navigate(onContact ? 'home' : 'contact')}
 							>
 							contact
