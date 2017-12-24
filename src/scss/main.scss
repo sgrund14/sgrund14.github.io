@@ -257,15 +257,54 @@ body {
         transition: padding-left .25s, font-size .25s, opacity .25s;
     }
 }
-.tabs,
-.links,
+#first-name,
+#last-name,
 .settings-button,
 .hide-all-button {
-    -webkit-animation: fadein .5s;
-    -moz-animation: fadein .5s;
-    -ms-animation: fadein .5s;
-    -o-animation: fadein .5s;
-    animation: fadein .5s;
+    -webkit-animation: fadein .95s;
+    -moz-animation: fadein .95s;
+    -ms-animation: fadein .95s;
+    -o-animation: fadein .95s;
+    animation: fadein .95s;
+}
+#info-btn, #behance-btn {
+    opacity: 0;
+    -webkit-animation: fadein .5s forwards;
+    -moz-animation: fadein .5s forwards;
+    -ms-animation: fadein .5s forwards;
+    -o-animation: fadein .5s forwards;
+    animation: fadein .5s forwards;
+    -webkit-animation-delay: .25s;
+    -moz-animation-delay: .25s;
+    -ms-animation-delay: .25s;
+    -o-animation-delay: .25s;
+    animation-delay: .25s;
+}
+#work-btn, #linkedin-btn {
+    opacity: 0;
+    -webkit-animation: fadein .5s forwards;
+    -moz-animation: fadein .5s forwards;
+    -ms-animation: fadein .5s forwards;
+    -o-animation: fadein .5s forwards;
+    animation: fadein .5s forwards;
+    -webkit-animation-delay: .35s;
+    -moz-animation-delay: .35s;
+    -ms-animation-delay: .35s;
+    -o-animation-delay: .35s;
+    animation-delay: .35s;
+}
+#contact-btn, #github-btn {
+    opacity: 0;
+    -webkit-animation: fadein .5s forwards;
+    -moz-animation: fadein .5s forwards;
+    -ms-animation: fadein .5s forwards;
+    -o-animation: fadein .5s forwards;
+    animation: fadein .5s forwards;
+    -webkit-animation-delay: .45s;
+    -moz-animation-delay: .45s;
+    -ms-animation-delay: .45s;
+    -o-animation-delay: .45s;
+    animation-delay: .45s;
 }
 
 .tabs,

@@ -186,18 +186,21 @@ class Home extends React.Component {
 						<ul className='buttons tabs'>
 							<h1 id='first-name'>SAMUEL</h1>
 							<p
+								id="info-btn"
 								className={onInfo ? 'on' : ''}
 								onClick={() => this.navigate(onInfo ? 'home' : 'info')}
 							>
 							info
 							</p>
 							<p
+								id="work-btn"
 								className={onWork ? 'on' : ''}
 								onClick={() => this.navigate(onWork ? 'home' : 'work')}
 							>
 							work
 							</p>
 							<p
+								id="contact-btn"
 								className={`contact-btn ${onContact ? 'on' : ''}`}
 								onClick={() => this.navigate(onContact ? 'home' : 'contact')}
 							>
@@ -207,9 +210,9 @@ class Home extends React.Component {
 					</div>
 					<div className='row bottom bottom-color'>
 						<ul className='buttons links'>
-							<a href='https://github.com/sgrund14' id='github' target='_blank'>github</a>
-							<a href='https://www.linkedin.com/in/samuel-grund-2a7481108' id='linkedin' target='_blank'>linkedin</a>
-							<a href='https://www.behance.net/sgrund' id='behance' target='_blank'>behance</a>
+							<a id="github-btn" href='https://github.com/sgrund14' target='_blank'>github</a>
+							<a id="linkedin-btn" href='https://www.linkedin.com/in/samuel-grund-2a7481108' target='_blank'>linkedin</a>
+							<a id="behance-btn" href='https://www.behance.net/sgrund' target='_blank'>behance</a>
 							<h1 id='last-name'>GRUND
 							</h1>
 						</ul>
