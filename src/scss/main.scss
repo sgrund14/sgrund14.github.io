@@ -80,10 +80,10 @@ body {
     cursor: pointer;
 }
 .settings-arrow-disabled {
-    opacity: .5;
+    opacity: 0;
 }
 .settings-arrow-disabled:hover {
-    cursor: not-allowed;
+    cursor: default;
 }
 
 .info-section,
