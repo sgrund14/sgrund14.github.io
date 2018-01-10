@@ -314,7 +314,7 @@ body {
     right: 10%;
     p:hover,
     a:hover {
-        opacity: .5;
+        opacity: .5 !important;
     }
     @include mobile {
         position: static;
