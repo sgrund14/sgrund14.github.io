@@ -62,7 +62,7 @@ class Work extends React.Component {
 				<div className='top-panel top-color'>
 					<div className='panel upper work'>
 						<a href='https://www.wobc.org' target='_blank'>
-							<img className="wobc-logo" src="src/images/wobc-logo.png" alt=""/>
+							<img className="wobc-logo" src="src/images/wobc-logo-05.png" alt=""/>
 							{/*<div id='slider'>
 															<ul id='slides'>
 																<li class="slide slide1"><img class="picture" src="src/images/frame-0029.png" /></li>

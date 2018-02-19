@@ -578,12 +578,8 @@ h6 {
     }
 }
 .wobc-logo {
-    height: 40%;
+    width: 100%;
     transition: opacity .25s;
-    @include mobile {
-        height: unset;
-        width: 100%;
-    }
 }
 .wobc-logo:hover {
     opacity: .75;
