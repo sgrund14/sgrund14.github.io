@@ -15,8 +15,8 @@ class Settings extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			circleSize: '14',
-			circleSpacing: '14',
+			circleSize: 14,
+			circleSpacing: 14,
 			pickerWidth: '200',
 			canNavigateLeft: false,
 			canNavigateRight: false
@@ -29,9 +29,9 @@ class Settings extends React.Component {
 	}
 	WidthChange(mq) {
 		if (mq.matches) {
-			this.setState({circleSpacing: '10', circleSize: '10', pickerWidth: '150' });
+			this.setState({circleSpacing: 10, circleSize: 10, pickerWidth: '150' });
 		} else {
-			this.setState({circleSpacing: '14', circleSize: '14', pickerWidth: '200' });
+			this.setState({circleSpacing: 14, circleSize: 14, pickerWidth: '200' });
 		}
 	}
 	componentDidMount() {

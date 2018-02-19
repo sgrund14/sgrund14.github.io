@@ -1,6 +1,6 @@
 'use strict';
 
-const paper = require('paper/dist/paper-full');
+const paper = require('paper');
 
 const possibleColors = [
     '#f44336', '#e91e63', '#d82727', '#6b0000', '#9c27b0', '#673ab7', '#000251',
