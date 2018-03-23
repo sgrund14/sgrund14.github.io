@@ -15,7 +15,7 @@ const Info = ({ hideAll, onInfo, onSettings }) => {
 			<div className='bottom-panel bottom-color'>
 				<div className='panel info'>
 					In the past, he's tried his hand in game development, providing excellent wait service at nice restaurants, and developing top-notch internal tools for 1stdibs.com.
-					Today, he enjoys basketball, cooking, reading, and coding. He loves to make websites for his friends.
+					Today, he enjoys basketball, cooking, reading, and coding.
 				</div>
 			</div>
 		</div>
