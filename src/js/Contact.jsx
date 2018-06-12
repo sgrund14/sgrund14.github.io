@@ -9,10 +9,10 @@ const Contact = ({ hideAll, onContact, onSettings }) => {
 			<div className='top-panel top-color'>
 				<div className='panel upper contact'>
 					<h2>email</h2>
-					sgrund@oberlin.edu
+					sgrund626@gmail.com
 					<br />
-					<h2>twitter</h2>
-					@s_and_p_games
+					<h2>twitter + instagram</h2>
+					@gruno14
 				</div>
 			</div>
 			<div className='bottom-panel bottom-color'>

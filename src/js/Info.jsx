@@ -8,14 +8,14 @@ const Info = ({ hideAll, onInfo, onSettings }) => {
 		<div className={`${!hideAll && onInfo && !onSettings ? 'section-on' : ''} info-section`}>
 			<div className='top-panel top-color'>
 				<div className='panel info'>
-					Samuel Grund is a fourth year college student at Oberlin College pursuing a bachelor's degree in Computer Science.
-					He's savvy with hip front end techonologies like React, Redux, and GraphQL, and enjoys making slick web applications.
+					Samuel Grund graduated from Oberlin College with a bachelor's degree in Computer Science on May 28th, 2018.
+					Now almost 22 and full of vitality, he's ready to make slick web applications until he drops or is feeling tired.
 				</div>
 			</div>
 			<div className='bottom-panel bottom-color'>
 				<div className='panel info'>
-					In the past, he's tried his hand in game development, providing excellent wait service at nice restaurants, and developing top-notch internal tools for 1stdibs.com.
-					Today, he enjoys basketball, cooking, reading, and coding.
+					By day, he's a front end engineer at 1stdibs.com. By night, he enjoys basketball, cooking, reading, and coding.
+					Sometimes he likes to make websites for his friends and family.
 				</div>
 			</div>
 		</div>

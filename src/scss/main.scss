@@ -455,6 +455,17 @@ p {
 .prism-blog:hover {
     opacity: .75;
 }
+.prism-splash {
+    display: inline-block;
+    color: inherit;
+    font-weight: 400;
+    font-size: .75em;
+    margin-top: 1em;
+    transition: opacity .25s;
+}
+.prism-splash:hover {
+    opacity: .75;
+}
 
 .prism {
     font-weight: 300;
@@ -584,4 +595,100 @@ h6 {
 .wobc-logo:hover {
     opacity: .75;
     cursor: pointer;
+}
+.work-dots {
+    padding: 0;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    height: 18px;
+}
+.work-dots > li {
+    border-radius: 1rem;
+    width: 12px;
+    height: 12px;
+    margin: 0 1rem;
+    background-color: black;
+    transition: opacity .5s, height .5s, width .5s;
+    opacity: .5;
+}
+.work-dots > .slick-active {
+    width: 18px;
+    height: 18px;
+    opacity: 1;
+}
+.work-dots > li > button {
+    opacity: 0;
+}
+.work-dots > li:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+.work-dots > .slick-active:hover {
+    opacity: 1;
+    cursor: default;
+}
+.work-dots > li > button:hover {
+    cursor: pointer;
+}
+.work-dots > .slick-active > button:hover {
+    cursor: default;
+}
+.work-slider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    @include mobile {
+        margin-bottom: 1rem;
+    }
+}
+.work-slider {
+    width: 100%;
+}
+.custom-arrow {
+    color: black;
+    transition: color .25s;
+    position: absolute;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    -webkit-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    cursor: pointer;
+}
+.custom-arrow:before {
+    font-size: 18px;
+    @include mobile {
+        font-size: 18px;
+    }
+}
+.custom-arrow:hover {
+    color: red;
+}
+.arrow-right {
+    right: -35px;
+}
+.arrow-left {
+    left: -40px;
+    @include mobile {
+        left: -27.5px;
+    }
+}
+.work-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.slide {
+    height: 75% !important;
+    @include mobile {
+        height: 50% !important;
+    }
 }

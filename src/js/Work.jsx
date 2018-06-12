@@ -2,58 +2,33 @@
 
 const React = require('react');
 const PropTypes = require('prop-types');
+import ReactSlider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const NextArrow = (props: Object) => {
+	const { style, onClick } = props
+	return (
+		<i
+			className={`fa fa-chevron-right arrow-right custom-arrow`}
+			style={{ ...style }}
+			onClick={onClick}
+		/>
+	);
+};
+
+const PrevArrow = (props: Object) => {
+	const { style, onClick } = props
+	return (
+		<i
+		  className={`fa fa-chevron-left arrow-left custom-arrow`}
+		  style={{ ...style }}
+		  onClick={onClick}
+		/>
+	);
+};
 
 class Work extends React.Component {
-	// constructor(props) {
-	// 	super(props);
-	// 	this.interval = null;
-
-	// 	// configure settings for image slider:
- //        // width of image, speed of animation, time paused on each image, index of the slide
-	// 	this.width = 25;
-	// 	this.animationSpeed = 1000;
-	// 	this.pause = 3000;
-	// 	this.currentSlide = 1;
-	// 	this.animate = null;
-
-	// 	// cache slider DOM
-	// 	this.$slider = null,
-	// 	this.$slideContainer = null;
-	// 	this.$slides = null;
-	// }
-
-	// componentDidMount() {
-	// 	this.$slider = $('#slider');
-	// 	this.$slideContainer = $('#slides');
-	// 	this.$slides = $('.slide');
-	// 	this.animate = () => {
- //            // slide images to the left
- //            this.$slideContainer.animate({
- //                'margin-left': '-=' + this.width + 'em'
- //            }, this.animationSpeed, () => {
- //                // if you've hit the last image in the slideshow,
- //                // reset slider to 1st image
- //                if (++this.currentSlide === this.$slides.length) {
- //                    this.currentSlide = 1;
- //                    this.$slideContainer.css('margin-left', 0);
- //                }
- //            });
- //        };
-	// }
-
-	// componentWillReceiveProps(nextProps) {
-	// 	if (nextProps.onWork && !nextProps.onSettings && !nextProps.hideAll) {
-	//         // run slider
-	//         this.interval = setInterval(this.animate, this.pause);
-	// 	} else {
-	// 		// reset slider
-	// 		clearInterval(this.interval);
-	// 		setTimeout(() => {
-	// 			this.currentSlide = 1;
-	// 			this.$slideContainer.css('margin-left', 0);
-	// 		}, 250);
-	// 	}
-	// }
 
 	render() {
 		const { hideAll, onWork, onSettings } = this.props;
@@ -61,19 +36,31 @@ class Work extends React.Component {
 			<div className={`${!hideAll && onWork && !onSettings ? 'section-on' : ''} work-section`}>
 				<div className='top-panel top-color'>
 					<div className='panel upper work'>
-						<a href='https://www.wobc.org' target='_blank'>
-							<img className="wobc-logo" src="src/images/wobc-logo-05.png" alt=""/>
-							{/*<div id='slider'>
-															<ul id='slides'>
-																<li class="slide slide1"><img class="picture" src="src/images/frame-0029.png" /></li>
-										                        <li class="slide slide2"><img class="picture" src="src/images/frame-0155.png" /></li>
-										                        <li class="slide slide3"><img class="picture" src="src/images/frame-0201.png" /></li>
-										                        <li class="slide slide4"><img class="picture" src="src/images/frame-0228.png" /></li>
-										                        <li class="slide slide5"><img class="picture" src="src/images/frame-0297.png" /></li>
-										                        <li class="slide slide6"><img class="picture" src="src/images/frame-0029.png" /></li>
-															</ul>
-														</div>*/}
-						</a>
+						<ReactSlider
+							dots={true}
+							arrows={true}
+							infinite={true}
+							swipeToSlide={true}
+							slidesToShow={1}
+							slidesToScroll={1}
+							nextArrow={<NextArrow />}
+							prevArrow={<PrevArrow />}
+							speed={500}
+							autoplay={true}
+							dotsClass="work-dots"
+							className="work-slider"
+						>
+							<div className="slide">
+								<a className="work-link" href='https://www.wobc.org' target='_blank'>
+									<img className="wobc-logo" src="src/images/wobc-logo-05.png" alt=""/>
+								</a>
+							</div>
+							<div className="slide">
+								<a className="work-link" href="https://fabb.world" target='_blank'>
+									<img className="wobc-logo" src="src/images/FAB_sam-10.png" alt=""/>
+								</a>
+							</div>
+						</ReactSlider>
 					</div>
 				</div>
 				<div className='bottom-panel bottom-color'>
@@ -87,6 +74,9 @@ class Work extends React.Component {
 						</a>
 						<a href="https://salt-and-pepper-games.github.io/" target="_blank" className="prism-blog">
 							DEVELOPMENT BLOG
+						</a>
+						<a href="https://salt-and-pepper-games.github.io/prism-splash/" target="_blank" className="prism-splash">
+							SPLASH PAGE
 						</a>
 					</div>
 				</div>
