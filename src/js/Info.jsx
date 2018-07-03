@@ -9,13 +9,13 @@ const Info = ({ hideAll, onInfo, onSettings }) => {
 			<div className='top-panel top-color'>
 				<div className='panel info'>
 					Samuel Grund graduated from Oberlin College with a bachelor's degree in Computer Science on May 28th, 2018.
-					Now almost 22 and full of vitality, he's ready to make slick web applications until he drops or is feeling tired.
+					Now 22 and full of vitality, he's ready to make slick web applications until he drops.
 				</div>
 			</div>
 			<div className='bottom-panel bottom-color'>
 				<div className='panel info'>
-					By day, he's a front end engineer at 1stdibs.com. By night, he enjoys basketball, cooking, reading, and coding.
-					Sometimes he likes to make websites for his friends and family.
+					By day he's a front end engineer at 1stdibs.com. By night he enjoys basketball, reading, and coding.
+					Sometimes he likes to make websites for friends and family.
 				</div>
 			</div>
 		</div>
