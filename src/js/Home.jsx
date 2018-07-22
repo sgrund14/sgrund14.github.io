@@ -157,7 +157,7 @@ class Home extends React.Component {
 
 	render() {
 		const { currentSection, onSettings, hideAll } = this.state;
-		const onInfo = currentSection === 'info';
+		const onInfo = currentSection === 'bio';
 		const onWork = currentSection === 'work';
 		const onContact = currentSection === 'contact';
 		return (

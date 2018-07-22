@@ -3,7 +3,7 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 const { CirclePicker } = require('react-color');
-const sectionArray = ['home', 'info', 'work', 'contact'];
+const sectionArray = ['home', 'bio', 'work', 'contact'];
 const colorPickerColors = [
 	'#f44336', '#e91e63', '#d82727', '#6b0000', '#9c27b0', '#673ab7', '#000251',
 	'#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#ced0ff', '#009688', '#4caf50',
