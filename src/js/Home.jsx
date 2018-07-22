@@ -222,6 +222,7 @@ class Home extends React.Component {
 						</span>
 					</div>
 					<div className="bottom-row-wrapper">
+						<span className="updated-on bottom-color">7/22/18</span>
 						<div className="row bottom-color">
 							<ul className='buttons links'>
 								<a className="btn" id="github-btn" href='https://github.com/sgrund14' target='_blank'>github</a>
