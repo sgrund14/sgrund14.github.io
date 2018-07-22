@@ -234,11 +234,12 @@ body {
     color: inherit;
     margin-right: 10px;
     font-weight: 300;
+    width: 100px;
+    display: flex;
+    justify-content: flex-end;
     transition: color .025s, opacity .25s;
     @include mobile {
-        width: 250px;
-        display: flex;
-        justify-content: flex-end;
+        
     }
 }
 
@@ -253,7 +254,10 @@ body {
     transition: color .025s, opacity .25s;
 }
 .empty {
-    width: 60.8px;
+    width: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hide-all-button:hover {

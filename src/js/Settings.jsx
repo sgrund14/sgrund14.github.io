@@ -79,8 +79,8 @@ class Settings extends React.Component {
 	}
 	componentWillReceiveProps(nextProps) {
 		this.setState({
-			canNavigateLeft: sectionArray.indexOf(nextProps.currentSection) !== 0,
-			canNavigateRight: sectionArray.indexOf(nextProps.currentSection) !== sectionArray.length - 1
+			canNavigateLeft: true,
+			canNavigateRight: true
 		});
 		if (nextProps.onSettings) {
 			document.addEventListener('touchstart', this.handleTouchStart, false);        
@@ -105,6 +105,26 @@ class Settings extends React.Component {
 		return (
 			<div className={`${onSettings ? 'section-on' : ''} settings-section`}>
 				<div className='top-settings top-color'>
+					<div className='settings-header'>
+						<i
+							className={`${this.state.canNavigateLeft ? 'settings-arrow-active' : 'settings-arrow-disabled'} settings-arrow-left fa fa-chevron-left`}
+							onClick={() => {
+									const index = sectionArray.indexOf(currentSection);
+									const navigateTo = (index === 0 ? index + 3 : index - 1)%4;
+									navigate(sectionArray[navigateTo]);
+								
+							}}
+						/>
+						<span>{currentSection}</span>
+						<i
+							className={`${this.state.canNavigateRight ? 'settings-arrow-active' : 'settings-arrow-disabled'} settings-arrow-right fa fa-chevron-right`}
+							onClick={() => {
+									const navigateTo = (sectionArray.indexOf(currentSection) + 1)%4;
+									navigate(sectionArray[navigateTo]);
+								
+							}}
+						/>
+					</div>
 					<div className='color-wrapper'>
 						<div>
 							<div className='circle-picker-text no-user-select'>
@@ -159,6 +179,7 @@ class Settings extends React.Component {
 					</div>
 				</div>
 				<div className='bottom-settings'>
+					<div className="empty bottom-color">Click on circle of desired color to save selection.</div>
 					<div className='color-wrapper'>
 						<div className='bottom-color'>
 							<div className="circle-picker-text no-user-select">

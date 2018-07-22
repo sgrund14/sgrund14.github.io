@@ -210,7 +210,7 @@ class Home extends React.Component {
 							</ul>
 						</div>
 						<span
-							className={`settings-button top-color ${onSettings ? 'on' : ''}`}
+							className={`settings-button top-color`}
 							onClick={() => {
 								this.setState({ onSettings: !onSettings });
 								if (onSettings) {
@@ -218,7 +218,7 @@ class Home extends React.Component {
 								}
 							}}
 						>
-						settings
+						{onSettings ? "close settings" : "settings"}
 						</span>
 					</div>
 					<div className="bottom-row-wrapper">
