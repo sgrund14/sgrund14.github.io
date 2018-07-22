@@ -181,64 +181,57 @@ class Home extends React.Component {
     				navigate={this.navigate}
     			/>
 
-    			<div className={`${onSettings || hideAll ? '' : 'section-on'} home-section`}>
-					<div className='row top top-color'>
-						<ul className='buttons tabs'>
-							<h1 id='first-name'>SAMUEL</h1>
-							<p
-								id="info-btn"
-								className={onInfo ? 'on' : ''}
-								onClick={() => this.navigate(onInfo ? 'home' : 'info')}
-							>
-							info
-							</p>
-							<p
-								id="work-btn"
-								className={onWork ? 'on' : ''}
-								onClick={() => this.navigate(onWork ? 'home' : 'work')}
-							>
-							work
-							</p>
-							<p
-								id="contact-btn"
-								className={`contact-btn ${onContact ? 'on' : ''}`}
-								onClick={() => this.navigate(onContact ? 'home' : 'contact')}
-							>
-							contact
-							</p>
-						</ul>
-					</div>
-					<div className='row bottom bottom-color'>
-						<ul className='buttons links'>
-							<a id="github-btn" href='https://github.com/sgrund14' target='_blank'>github</a>
-							<a id="linkedin-btn" href='https://www.linkedin.com/in/samuel-grund-2a7481108' target='_blank'>linkedin</a>
-							<a id="behance-btn" href='https://www.behance.net/sgrund' target='_blank'>behance</a>
-							<h1 id='last-name'>GRUND
-							</h1>
-						</ul>
-					</div>
-				</div>
-
-				<div className="top-color">
-					<i
-						className={`settings-button fa ${onSettings ? 'fa-times' : 'fa-gear'}`}
-						onClick={() => {
-							this.setState({ onSettings: !onSettings });
-							if (onSettings) {
-								this.closeSettings(this.state.currentSection);	
-							}
-						}}
-					/>
-					{!onSettings &&
-						<i
-							className={`hide-all-button fa ${hideAll ? 'fa-plus-square-o' : 'fa-minus-square-o'}`}
+    			<div className="home-section section-on">
+    				<div className="top-row-wrapper">
+    					<span className="my-name top-color">Sam Grund</span>
+						<div className='row top top-color'>
+							<ul className='buttons tabs'>
+								<span
+									id="info-btn"
+									className={`btn ${onInfo ? 'on' : ''}`}
+									onClick={() => this.navigate(onInfo ? 'home' : 'info')}
+								>
+								bio
+								</span>
+								<span
+									id="work-btn"
+									className={`btn ${onWork ? 'on' : ''}`}
+									onClick={() => this.navigate(onWork ? 'home' : 'work')}
+								>
+								work
+								</span>
+								<span
+									id="contact-btn"
+									className={`btn contact-btn ${onContact ? 'on' : ''}`}
+									onClick={() => this.navigate(onContact ? 'home' : 'contact')}
+								>
+								contact
+								</span>
+							</ul>
+						</div>
+						<span
+							className={`settings-button top-color ${onSettings ? 'on' : ''}`}
 							onClick={() => {
-								this.setState({ hideAll: !hideAll });
+								this.setState({ onSettings: !onSettings });
+								if (onSettings) {
+									this.closeSettings(this.state.currentSection);	
+								}
 							}}
-						/>
-					}
+						>
+						settings
+						</span>
+					</div>
+					<div className="bottom-row-wrapper">
+						<div className="row bottom-color">
+							<ul className='buttons links'>
+								<a className="btn" id="github-btn" href='https://github.com/sgrund14' target='_blank'>github</a>
+								<a className="btn" id="linkedin-btn" href='https://www.linkedin.com/in/samuel-grund-2a7481108' target='_blank'>linkedin</a>
+								<a className="btn" id="behance-btn" href='https://www.behance.net/sgrund' target='_blank'>behance</a>
+								<a className="btn" id="arena-btn" href='https://www.are.na/samuel-grund/channels' target='_blank'>are.na</a>
+							</ul>
+						</div>
+					</div>
 				</div>
-				
 			</div>
 		);
 	}

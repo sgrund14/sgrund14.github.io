@@ -105,27 +105,6 @@ class Settings extends React.Component {
 		return (
 			<div className={`${onSettings ? 'section-on' : ''} settings-section`}>
 				<div className='top-settings top-color'>
-					<div className='settings-header'>
-						<i
-							className={`${this.state.canNavigateLeft ? 'settings-arrow-active' : 'settings-arrow-disabled'} settings-arrow-left fa fa-chevron-left`}
-							onClick={() => {
-								if (this.state.canNavigateLeft) {
-									const navigateTo = sectionArray.indexOf(currentSection) - 1;
-									navigate(sectionArray[navigateTo]);
-								}
-							}}
-						/>
-						<span>{currentSection}</span>
-						<i
-							className={`${this.state.canNavigateRight ? 'settings-arrow-active' : 'settings-arrow-disabled'} settings-arrow-right fa fa-chevron-right`}
-							onClick={() => {
-								if (this.state.canNavigateRight) {
-									const navigateTo = sectionArray.indexOf(currentSection) + 1;
-									navigate(sectionArray[navigateTo]);
-								}
-							}}
-						/>
-					</div>
 					<div className='color-wrapper'>
 						<div>
 							<div className='circle-picker-text no-user-select'>

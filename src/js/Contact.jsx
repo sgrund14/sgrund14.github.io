@@ -9,7 +9,7 @@ const Contact = ({ hideAll, onContact, onSettings }) => {
 			<div className='top-panel top-color'>
 				<div className='panel upper contact'>
 					<h2>email</h2>
-					saltpeppergames@gmail.com
+					sgrund626@gmail.com
 					<br />
 				</div>
 			</div>

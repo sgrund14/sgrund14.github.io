@@ -1,3 +1,5 @@
+@import '../fonts/transfonter/stylesheet.css';
+
 @mixin mobile {
   @media only screen and (orientation: portrait), only screen and (max-height: 480px) {
     @content;
@@ -28,14 +30,14 @@
 }
 html {
     @include mobile {
-        font-size: 2.5vmin;
+        font-size: 14px;
     }
 }
 
 body {
     font-family: 'Josefin Sans';
-    font-weight: 300;
     margin: 0;
+    font-weight: 300;
     transition: all .25s;
 }
 
@@ -76,7 +78,7 @@ body {
     left: 0;
 }
 .settings-arrow-active:hover {
-    opacity: .5;
+    opacity: .75;
     cursor: pointer;
 }
 .settings-arrow-disabled {
@@ -100,6 +102,10 @@ body {
     display: flex;
     flex-direction: column;
 }
+.upper.work {
+    display: flex;
+    width: 50%;
+}
 
 .work-section,
 .contact-section {
@@ -122,8 +128,9 @@ body {
 }
 
 .on {
-    font-size: 2em;
-    padding-left: -.5em;
+    border-bottom: 1px solid;
+    border-color: inherit;
+    margin-bottom: -1px !important;
 }
 
 .section-on {
@@ -173,7 +180,6 @@ body {
     background-color: black;
     transition: all .25s;
 }
-
 #canvas {
     position: absolute;
     left: 0;
@@ -189,42 +195,70 @@ body {
     height: 50%;
     width: 100%;
 }
-
-.row {
+.top-row-wrapper {
     position: absolute;
-    pointer-events: none;
-    height: 50%;
-    width: 100%;
+    top: 0;
     left: 0;
+    z-index: 20;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @include mobile {
+        margin-top: 12px;
+    }
 }
-
+.bottom-row-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.row {
+    width: 800px;
+    display: flex;
+    justify-content: flex-start;
+}
+.row.bottom-color {
+    justify-content: flex-end;
+}
+.btn {
+    margin: 0 12px;
+    box-sizing: border-box;
+}
 .settings-button {
     color: inherit;
-    position: absolute;
-    top: .5em;
-    right: .5em;
-    font-size: 2em;
+    margin-right: 10px;
+    font-weight: 300;
     transition: color .025s, opacity .25s;
+    @include mobile {
+        width: 250px;
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
 .settings-button:hover {
     cursor: pointer;
-    opacity: .5;
+    opacity: .75;
 }
 .hide-all-button {
     color: inherit;
-    position: absolute;
-    top: .5em;
-    left: .5em;
-    font-size: 2em;
+    font-size: 32px;
+    margin-left: 10px;
     transition: color .025s, opacity .25s;
+}
+.empty {
+    width: 60.8px;
 }
 
 .hide-all-button:hover {
     cursor: pointer;
-    opacity: .5;
+    opacity: .75;
 }
 
 .top {
@@ -243,7 +277,6 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 27.5em;
     pointer-events: auto;
     padding: 0;
 }
@@ -251,10 +284,9 @@ body {
 .buttons {
     color: inherit;
     a,
-    p,
+    span,
     h1 {
-        margin: 0;
-        transition: padding-left .25s, font-size .25s, opacity .25s;
+        transition: font-size .25s, opacity .25s;
     }
 }
 #first-name,
@@ -268,53 +300,33 @@ body {
     animation: fadein .5s;
 }
 #info-btn, #behance-btn {
-    opacity: 0;
-    -webkit-animation: fadein .5s forwards;
-    -moz-animation: fadein .5s forwards;
-    -ms-animation: fadein .5s forwards;
-    -o-animation: fadein .5s forwards;
-    animation: fadein .5s forwards;
-    -webkit-animation-delay: .05s;
-    -moz-animation-delay: .05s;
-    -ms-animation-delay: .05s;
-    -o-animation-delay: .05s;
-    animation-delay: .05s;
+    -webkit-animation: fadein .5s;
+    -moz-animation: fadein .5s;
+    -ms-animation: fadein .5s;
+    -o-animation: fadein .5s;
+    animation: fadein .5s;
 }
 #work-btn, #linkedin-btn {
-    opacity: 0;
-    -webkit-animation: fadein .5s forwards;
-    -moz-animation: fadein .5s forwards;
-    -ms-animation: fadein .5s forwards;
-    -o-animation: fadein .5s forwards;
-    animation: fadein .5s forwards;
-    -webkit-animation-delay: .1s;
-    -moz-animation-delay: .1s;
-    -ms-animation-delay: .1s;
-    -o-animation-delay: .1s;
-    animation-delay: .1s;
+    -webkit-animation: fadein .5s;
+    -moz-animation: fadein .5s;
+    -ms-animation: fadein .5s;
+    -o-animation: fadein .5s;
+    animation: fadein .5s;
 }
 #contact-btn, #github-btn {
-    opacity: 0;
-    -webkit-animation: fadein .5s forwards;
-    -moz-animation: fadein .5s forwards;
-    -ms-animation: fadein .5s forwards;
-    -o-animation: fadein .5s forwards;
-    animation: fadein .5s forwards;
-    -webkit-animation-delay: .15s;
-    -moz-animation-delay: .15s;
-    -ms-animation-delay: .15s;
-    -o-animation-delay: .15s;
-    animation-delay: .15s;
+    -webkit-animation: fadein .5s;
+    -moz-animation: fadein .5s;
+    -ms-animation: fadein .5s;
+    -o-animation: fadein .5s;
+    animation: fadein .5s;
 }
 
 .tabs,
 .links {
     font-weight: 300;
-    position: absolute;
-    right: 10%;
-    p:hover,
+    span:hover,
     a:hover {
-        opacity: .5 !important;
+        opacity: .75 !important;
     }
     @include mobile {
         position: static;
@@ -324,19 +336,18 @@ body {
 }
 
 .tabs {
-    bottom: 0;
     a,
-    p {
+    span {
         color: inherit;
     }
     @include mobile {
-        margin-top: auto;
+        margin: auto;
     }
 }
 
 .links {
     a,
-    p {
+    span {
         color: inherit;
     }
 }
@@ -407,8 +418,8 @@ body {
     width: 100%;
     height: 50%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .bottom-panel {
@@ -420,15 +431,25 @@ body {
 
 .panel {
     line-height: 1.5em;
-    width: 26em;
-    margin-left: 10%;
     @include mobile {
         margin: auto;
+        line-height: unset;
     }
+}
+.panel.work {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top-panel > .panel.info {
+    width: 277px;
+}
+.bottom-panel > .panel.info {
+    width: 277px
 }
 
 a,
-p {
+span {
     cursor: pointer;
     user-select: none;
     font-size: 1em;
@@ -513,8 +534,9 @@ p {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 32px;
     font-weight: 300;
+    margin: 0;
 }
 
 h2 {
@@ -568,6 +590,8 @@ h6 {
 
 #first-name {
     padding-left: 0;
+    justify-self: flex-start;
+    color: inherit;
 }
 #last-name {
     padding-right: 0;
@@ -611,7 +635,7 @@ h6 {
     margin: 0 1rem;
     background-color: black;
     transition: opacity .5s, height .5s, width .5s;
-    opacity: .5;
+    opacity: .75;
 }
 .work-dots > .slick-active {
     width: 18px;
@@ -687,8 +711,24 @@ h6 {
     height: 100%;
 }
 .slide {
-    height: 75% !important;
+    width: 50%;
     @include mobile {
         height: 50% !important;
+    }
+}
+.deborah {
+    font-family: 'League Gothic';
+    font-size: 48px;
+    color: inherit;
+    transition: .25s opacity;
+}
+.deborah:hover {
+    opacity: .75;
+}
+.my-name {
+    margin-left: 20px;
+    font-weight: 300;
+    @include mobile {
+        width: 250px;
     }
 }

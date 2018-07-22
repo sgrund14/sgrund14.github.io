@@ -8,19 +8,17 @@ const Info = ({ hideAll, onInfo, onSettings }) => {
 		<div className={`${!hideAll && onInfo && !onSettings ? 'section-on' : ''} info-section`}>
 			<div className='top-panel top-color'>
 				<div className='panel info'>
-					Samuel Grund graduated from Oberlin College with a bachelor's degree in Computer Science on May 28th, 2018.
-					Now 22 and full of vitality, he's ready to make slick web applications until he drops.
+					This website is the personal property of SAM GRUND. He built it and one day, when the time is right, he will destroy it.
 				</div>
 			</div>
 			<div className='bottom-panel bottom-color'>
 				<div className='panel info'>
-					By day he's a front end engineer at 1stdibs.com. By night he enjoys basketball, reading, and coding.
-					Sometimes he likes to make websites for friends and family.
+					He lives and works in New York City as a front end engineer. Here is where his story begins...
 				</div>
 			</div>
 		</div>
 	);
-};
+};             
 
 Info.propTypes = {
 	hideAll: PropTypes.bool,

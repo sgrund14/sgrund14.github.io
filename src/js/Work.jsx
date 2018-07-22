@@ -36,31 +36,18 @@ class Work extends React.Component {
 			<div className={`${!hideAll && onWork && !onSettings ? 'section-on' : ''} work-section`}>
 				<div className='top-panel top-color'>
 					<div className='panel upper work'>
-						<ReactSlider
-							dots={true}
-							arrows={true}
-							infinite={true}
-							swipeToSlide={true}
-							slidesToShow={1}
-							slidesToScroll={1}
-							nextArrow={<NextArrow />}
-							prevArrow={<PrevArrow />}
-							speed={500}
-							autoplay={true}
-							dotsClass="work-dots"
-							className="work-slider"
-						>
-							<div className="slide">
-								<a className="work-link" href='https://www.wobc.org' target='_blank'>
-									<img className="wobc-logo" src="src/images/wobc-logo-05.png" alt=""/>
-								</a>
-							</div>
-							<div className="slide">
-								<a className="work-link" href="https://fabb.world" target='_blank'>
-									<img className="wobc-logo" src="src/images/FAB_sam-10.png" alt=""/>
-								</a>
-							</div>
-						</ReactSlider>
+						<div className="slide">
+							<a className="work-link" href='https://www.wobc.org' target='_blank'>
+								<img className="wobc-logo" src="src/images/wobc-logo-05.png" alt=""/>
+							</a>
+						</div>
+					</div>
+					<div className='panel upper work'>
+						<div className="slide">
+							<a className="work-link" href="https://fabb.world" target='_blank'>
+								<img className="wobc-logo" src="src/images/FAB_sam-10.png" alt=""/>
+							</a>
+						</div>
 					</div>
 				</div>
 				<div className='bottom-panel bottom-color'>
@@ -77,6 +64,11 @@ class Work extends React.Component {
 						</a>
 						<a href="https://salt-and-pepper-games.github.io/prism-splash/" target="_blank" className="prism-splash">
 							SPLASH PAGE
+						</a>
+					</div>
+					<div className="panel lower work bottom-color">
+						<a href="http://deborahdavisjackson.org/" target="_blank" className="deborah">
+							DDJ: Deborah Davis Jackson
 						</a>
 					</div>
 				</div>
