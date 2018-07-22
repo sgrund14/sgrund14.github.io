@@ -33,16 +33,16 @@ const Settings = require('./Settings');
 const colorDefaults = {
 	homeTop: initialCircleColors.top,
     homeBottom: initialCircleColors.bottom,
-    infoTop: possibleColors[Math.floor(Math.random()*possibleColors.length)],
-    infoBottom: possibleColors[Math.floor(Math.random()*possibleColors.length)],
+    bioTop: possibleColors[Math.floor(Math.random()*possibleColors.length)],
+    bioBottom: possibleColors[Math.floor(Math.random()*possibleColors.length)],
     workTop: possibleColors[Math.floor(Math.random()*possibleColors.length)],
     workBottom: possibleColors[Math.floor(Math.random()*possibleColors.length)],
     contactTop: possibleColors[Math.floor(Math.random()*possibleColors.length)],
     contactBottom: possibleColors[Math.floor(Math.random()*possibleColors.length)],
     homeTopBackground: '#ffffff',
     homeBottomBackground: '#000000',
-    infoTopBackground: possibleColors[Math.floor(Math.random()*possibleColors.length)],
-    infoBottomBackground: possibleColors[Math.floor(Math.random()*possibleColors.length)],
+    bioTopBackground: possibleColors[Math.floor(Math.random()*possibleColors.length)],
+    bioBottomBackground: possibleColors[Math.floor(Math.random()*possibleColors.length)],
     workTopBackground: possibleColors[Math.floor(Math.random()*possibleColors.length)],
     workBottomBackground: possibleColors[Math.floor(Math.random()*possibleColors.length)],
     contactTopBackground: possibleColors[Math.floor(Math.random()*possibleColors.length)],
@@ -189,7 +189,7 @@ class Home extends React.Component {
 								<span
 									id="info-btn"
 									className={`btn ${onInfo ? 'on' : ''}`}
-									onClick={() => this.navigate(onInfo ? 'home' : 'info')}
+									onClick={() => this.navigate(onInfo ? 'home' : 'bio')}
 								>
 								bio
 								</span>
