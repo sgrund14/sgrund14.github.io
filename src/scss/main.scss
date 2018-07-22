@@ -452,13 +452,16 @@ body {
     width: 277px
 }
 
-a,
-span {
-    cursor: pointer;
-    user-select: none;
-    font-size: 1em;
-    text-decoration: none;
+.buttons {
+    a,
+    span {
+        cursor: pointer;
+        user-select: none;
+        font-size: 1em;
+        text-decoration: none;
+    }    
 }
+
 
 .resume {
     color: inherit;
@@ -725,6 +728,7 @@ h6 {
     font-size: 48px;
     color: inherit;
     transition: .25s opacity;
+    text-decoration: none;
 }
 .deborah:hover {
     opacity: .75;
@@ -732,13 +736,18 @@ h6 {
 .my-name {
     margin-left: 20px;
     font-weight: 300;
+    user-select: none;
     @include mobile {
         width: 250px;
     }
+}
+.my-name:hover {
+    cursor: pointer;
 }
 .updated-on {
     display: flex;
     align-items: center;
     margin-left: 20px;
     font-weight: 300;
+    font-size: 12px;
 }
