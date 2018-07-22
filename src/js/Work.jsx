@@ -59,12 +59,14 @@ class Work extends React.Component {
 							<span className='letter S'>s</span>
 							<span className='letter M'>m</span>
 						</a>
-						<a href="https://salt-and-pepper-games.github.io/" target="_blank" className="prism-blog">
+						<div className="prism-drawer hidden">
+							<a href="https://salt-and-pepper-games.github.io/" target="_blank" className="prism-blog">
 							DEVELOPMENT BLOG
-						</a>
-						<a href="https://salt-and-pepper-games.github.io/prism-splash/" target="_blank" className="prism-splash">
-							SPLASH PAGE
-						</a>
+							</a>
+							<a href="https://salt-and-pepper-games.github.io/prism-splash/" target="_blank" className="prism-splash">
+								SPLASH PAGE
+							</a>
+						</div>
 					</div>
 					<div className="panel lower work bottom-color">
 						<a href="http://deborahdavisjackson.org/" target="_blank" className="deborah">
