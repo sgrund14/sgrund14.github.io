@@ -229,12 +229,7 @@ class Home extends React.Component {
 					<div className="bottom-row-wrapper">
 						<span className="updated-on bottom-color">7/22/18</span>
 						<div className="row bottom-color">
-							<ul className='buttons links'>
-								<a className="btn" id="github-btn" href='https://github.com/sgrund14' target='_blank'>github</a>
-								<a className="btn" id="linkedin-btn" href='https://www.linkedin.com/in/samuel-grund-2a7481108' target='_blank'>linkedin</a>
-								<a className="btn" id="behance-btn" href='https://www.behance.net/sgrund' target='_blank'>behance</a>
-								<a className="btn" id="arena-btn" href='https://www.are.na/samuel-grund/channels' target='_blank'>are.na</a>
-							</ul>
+							
 						</div>
 					</div>
 				</div>

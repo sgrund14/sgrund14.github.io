@@ -229,6 +229,7 @@ body {
 .btn {
     margin: 0 12px;
     box-sizing: border-box;
+    color: inherit;
 }
 .settings-button {
     color: inherit;
@@ -444,6 +445,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.panel.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 155px;
+}
+.panel.contact.upper {
+    align-self: flex-end;
+}
+.panel.contact.lower {
+    align-self: flex-start;
 }
 .top-panel > .panel.info {
     width: 277px;
@@ -739,6 +752,7 @@ a {
 .my-name {
     margin-left: 20px;
     font-weight: 300;
+    width: 100px;
     user-select: none;
     @include mobile {
         width: 250px;
@@ -755,4 +769,10 @@ a {
 }
 .prism-drawer {
     display: none;
+}
+.media-link {
+    margin: 1em 0;
+}
+.empty-contact-col {
+    width: 155px;
 }
