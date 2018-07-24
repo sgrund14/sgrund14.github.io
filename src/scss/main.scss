@@ -223,13 +223,21 @@ body {
     display: flex;
     justify-content: flex-start;
 }
+.row.top {
+    width: 277px;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: -10px;
+}
 .row.bottom-color {
     justify-content: flex-end;
 }
 .btn {
-    margin: 0 12px;
     box-sizing: border-box;
     color: inherit;
+}
+.empty-top-col {
+    width: 100px;
 }
 .settings-button {
     color: inherit;
@@ -284,6 +292,7 @@ body {
     justify-content: space-between;
     pointer-events: auto;
     padding: 0;
+    width: 130px;
 }
 
 .buttons {
@@ -448,9 +457,8 @@ body {
 }
 .panel.contact {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 155px;
+    justify-content: space-between;
+    width: 277px;
 }
 .panel.contact.upper {
     align-self: flex-end;
@@ -750,7 +758,6 @@ a {
     opacity: .75;
 }
 .my-name {
-    margin-left: 20px;
     font-weight: 300;
     width: 100px;
     user-select: none;
@@ -764,7 +771,7 @@ a {
 .updated-on {
     display: flex;
     align-items: center;
-    margin-left: 20px;
+    margin-left: 10px;
     font-weight: 300;
 }
 .prism-drawer {

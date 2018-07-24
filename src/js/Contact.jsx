@@ -10,15 +10,15 @@ const Contact = ({ hideAll, onContact, onSettings }) => {
 				<div className='panel upper contact'>
 					<a className="btn media-link" id="github-btn" href='https://github.com/sgrund14' target='_blank'>github</a>
 					<a className="btn media-link" id="arena-btn" href='https://www.are.na/samuel-grund/channels' target='_blank'>are.na</a>
-					<a className="btn media-link" id="linkedin-btn" href='https://www.linkedin.com/in/samuel-grund-2a7481108' target='_blank'>linkedin</a>
+					<p>twitter</p>
 				</div>
 			</div>
 			<div className='bottom-panel bottom-color'>
 				<div className='panel lower contact'>
 					<p>instagram</p>
-					<p>twitter</p>
 					<a className="btn media-link" id="behance-btn" href='https://www.behance.net/sgrund' target='_blank'>behance</a>
-					</div>
+					<a className="btn media-link" id="linkedin-btn" href='https://www.linkedin.com/in/samuel-grund-2a7481108' target='_blank'>linkedin</a>
+				</div>
 			</div>
 		</div>
 	);

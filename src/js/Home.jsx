@@ -183,13 +183,14 @@ class Home extends React.Component {
 
     			<div className="home-section section-on">
     				<div className="top-row-wrapper">
-    					<span
+    					<div className="empty-top-col"></div>
+						<div className='row top top-color'>
+							<span
     						className="my-name top-color"
     						onClick={() => this.navigate('home')}
-    					>
-    						Sam Grund
-    					</span>
-						<div className='row top top-color'>
+	    					>
+	    						Sam Grund
+	    					</span>
 							<ul className='buttons tabs'>
 								<span
 									id="info-btn"
@@ -227,7 +228,7 @@ class Home extends React.Component {
 						</span>
 					</div>
 					<div className="bottom-row-wrapper">
-						<span className="updated-on bottom-color">7/22/18</span>
+						<span className="updated-on bottom-color">7/24/18</span>
 						<div className="row bottom-color">
 							
 						</div>
