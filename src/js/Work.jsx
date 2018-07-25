@@ -35,43 +35,61 @@ class Work extends React.Component {
 		return (
 			<div className={`${!hideAll && onWork && !onSettings ? 'section-on' : ''} work-section`}>
 				<div className='top-panel top-color'>
-					<div className='panel upper work'>
-						<div className="slide">
-							<a className="work-link" href='https://www.wobc.org' target='_blank'>
-								<img className="wobc-logo" src="src/images/wobc-logo-05.png" alt=""/>
-							</a>
+					<div className="panel-row">
+						<div className='panel upper work'>
+							<div className="slide">
+								<a className="work-link" href='https://www.wobc.org' target='_blank'>
+									<img className="wobc-logo" src="src/images/wobc.png" alt=""/>
+								</a>
+								<span className="work-subtext camcorder">WOBC: Oberlin College and Community Radio</span>
+							</div>
 						</div>
-					</div>
-					<div className='panel upper work'>
-						<div className="slide">
-							<a className="work-link" href="https://fabb.world" target='_blank'>
-								<img className="wobc-logo" src="src/images/FAB_sam-10.png" alt=""/>
-							</a>
+						<div className='panel upper work'>
+							<div className="slide">
+								<a className="work-link" href="https://fabb.world" target='_blank'>
+									<img className="wobc-logo" src="src/images/fabb.png" alt=""/>
+								</a>
+								<span className="work-subtext camcorder">FABB: Femme Artists Breaking Boundaries</span>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div className='bottom-panel bottom-color'>
-					<div className='panel lower work'>
-						<a href='https://salt-and-pepper-games.github.io/prism' className='prism' target='_blank'>
-							<span className='letter P'>p</span>
-							<span className='letter R'>r</span>
-							<span className='letter I'>i</span>
-							<span className='letter S'>s</span>
-							<span className='letter M'>m</span>
-						</a>
-						<div className="prism-drawer hidden">
-							<a href="https://salt-and-pepper-games.github.io/" target="_blank" className="prism-blog">
-							DEVELOPMENT BLOG
+					<div className="panel-row">
+						<div className='panel lower work'>
+							<div className="slide">
+								<a href="https://salt-and-pepper-games.github.io/prism/#/" target="_blank" className="work-link">
+									<img src="src/images/prism.png" alt="" className="wobc-logo"/>
+								</a>
+								<span className="work-subtext camcorder">Prism: A Salt and Pepper Games Production</span>
+							</div>
+							{/*<a href='https://salt-and-pepper-games.github.io/prism' className='prism' target='_blank'>
+								<span className='letter P'>p</span>
+								<span className='letter R'>r</span>
+								<span className='letter I'>i</span>
+								<span className='letter S'>s</span>
+								<span className='letter M'>m</span>
 							</a>
-							<a href="https://salt-and-pepper-games.github.io/prism-splash/" target="_blank" className="prism-splash">
-								SPLASH PAGE
-							</a>
+							<div className="prism-drawer hidden">
+								<a href="https://salt-and-pepper-games.github.io/" target="_blank" className="prism-blog">
+								DEVELOPMENT BLOG
+								</a>
+								<a href="https://salt-and-pepper-games.github.io/prism-splash/" target="_blank" className="prism-splash">
+									SPLASH PAGE
+								</a>
+							</div>*/}
 						</div>
-					</div>
-					<div className="panel lower work bottom-color">
-						<a href="http://deborahdavisjackson.org/" target="_blank" className="deborah">
-							DDJ: Deborah Davis Jackson
-						</a>
+						<div className="panel lower work bottom-color">
+							<div className="slide">
+								<a href="http://deborahdavisjackson.org/" target="_blank" className="work-link">
+									<img src="src/images/ddj.png" alt="" className="wobc-logo"/>
+								</a>
+								<span className="work-subtext camcorder">DDJ: Deborah Davis Jackson</span>
+							</div>
+							{/*<a href="http://deborahdavisjackson.org/" target="_blank" className="deborah">
+								DDJ
+							</a>*/}
+						</div>
 					</div>
 				</div>
 			</div>

@@ -1,4 +1,9 @@
 @import '../fonts/transfonter/stylesheet.css';
+@import '../fonts/work-sans/stylesheet.css';
+@import '../fonts/camcorder-font/stylesheet.css';
+@import '../fonts/avenir-reg/stylesheet.css';
+@import '../fonts/avenir-oblique/stylesheet.css';
+@import '../fonts/avenir-light/stylesheet.css';
 
 @mixin mobile {
   @media only screen and (orientation: portrait), only screen and (max-height: 480px) {
@@ -27,6 +32,18 @@
 @-o-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
+}
+.camcorder {
+    font-family: 'camcorder_monospacedregular';
+}
+.avenir {
+    font-family: 'Avenir LT Std';
+}
+.work-sans {
+    font-family: 'Work Sans';
+}
+.camcorder.work-subtext {
+    font-size: 14px;
 }
 html {
     @include mobile {
@@ -376,6 +393,7 @@ body {
     @extend .top-panel;
     align-items: center;
     color: inherit;
+    justify-content: space-around;
     .top-settings-overlay {
         position: absolute;
         top: 0;
@@ -432,7 +450,7 @@ body {
     width: 100%;
     height: 50%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
@@ -442,9 +460,21 @@ body {
     left: 0;
     color: inherit;
 }
-
-.panel {
+.panel-row {
+    width: 750px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottom-panel > .panel-row {
+}
+.top-panel > .panel-row {
+}
+.panel.info {
     line-height: 1.5em;
+}
+.panel {
     @include mobile {
         margin: auto;
         line-height: unset;
@@ -643,6 +673,7 @@ h6 {
 .wobc-logo {
     width: 100%;
     transition: opacity .25s;
+    border-radius: 5px;
 }
 .wobc-logo:hover {
     opacity: .75;
@@ -736,20 +767,26 @@ h6 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
 }
 .slide {
-    width: 50%;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     @include mobile {
         height: 50% !important;
     }
+}
+.work-subtext {
+    margin-top: 10px;
 }
 a {
     text-decoration: none;
 }
 .deborah {
-    font-family: 'League Gothic';
-    font-size: 48px;
+    font-family: 'Work Sans';
+    font-size: 100px;
     color: inherit;
     transition: .25s opacity;
     text-decoration: none;

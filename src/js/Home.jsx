@@ -228,7 +228,7 @@ class Home extends React.Component {
 						</span>
 					</div>
 					<div className="bottom-row-wrapper">
-						<span className="updated-on bottom-color">7/24/18</span>
+						<span className="updated-on bottom-color">7/25/18</span>
 						<div className="row bottom-color">
 							
 						</div>
