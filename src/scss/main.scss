@@ -36,7 +36,8 @@
 }
 :root {
     --top-circle-color: black;
-    --bottom-circle-color: white;   
+    --bottom-circle-color: white;
+    --not-so-random-color: red;  
 }
 
 .camcorder {
@@ -785,12 +786,14 @@ a {
     font-weight: 300;
     width: 100px;
     user-select: none;
+    transition: color .25s;
     @include mobile {
         width: 250px;
     }
 }
 .my-name:hover {
     cursor: pointer;
+    color: var(--not-so-random-color) !important;
 }
 .updated-on {
     color: var(--bottom-circle-color) !important;

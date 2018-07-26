@@ -49,6 +49,15 @@ const colorDefaults = {
     contactBottomBackground: possibleColors[Math.floor(Math.random()*possibleColors.length)]
 };
 
+const getRandomColor = () => {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
 class Home extends React.Component {
 	constructor(props) {
 		super(props);
@@ -67,6 +76,8 @@ class Home extends React.Component {
 		this.onCircleSelect = this.onCircleSelect.bind(this);
 		this.onBackgroundHover = this.onBackgroundHover.bind(this);
 		this.onBackgroundSelect = this.onBackgroundSelect.bind(this);
+
+		this.nameHoverInterval = -1;
 
 		document.documentElement.style.setProperty(`--top-circle-color`, `${colorDefaults.homeTop}`);
 		document.documentElement.style.setProperty(`--bottom-circle-color`, `${colorDefaults.homeBottom}`);
@@ -196,6 +207,11 @@ class Home extends React.Component {
 							<span
 	    						className="my-name top-color"
 	    						onClick={() => this.navigate('home')}
+	    						onMouseEnter={() => {
+	    							this.nameHoverInterval = setInterval(() => {
+	    								document.documentElement.style.setProperty(`--not-so-random-color`, `${getRandomColor()}`);
+	    							}, 250);
+	    						}}
 	    					>
 	    						Sam Grund
 	    					</span>
