@@ -41,7 +41,7 @@ class Work extends React.Component {
 								<a className="work-link" href='https://www.wobc.org' target='_blank'>
 									<img className="wobc-logo" src="src/images/wobc.png" alt=""/>
 								</a>
-								<span className="work-subtext camcorder">WOBC: Oberlin College and Community Radio</span>
+								<span className="work-subtext">WOBC: Oberlin College and Community Radio</span>
 							</div>
 						</div>
 						<div className='panel upper work'>
@@ -49,7 +49,7 @@ class Work extends React.Component {
 								<a className="work-link" href="https://fabb.world" target='_blank'>
 									<img className="wobc-logo" src="src/images/fabb.png" alt=""/>
 								</a>
-								<span className="work-subtext camcorder">FABB: Femme Artists Breaking Boundaries</span>
+								<span className="work-subtext">FABB: Femme Artists Breaking Boundaries</span>
 							</div>
 						</div>
 					</div>
@@ -61,7 +61,7 @@ class Work extends React.Component {
 								<a href="https://salt-and-pepper-games.github.io/prism/#/" target="_blank" className="work-link">
 									<img src="src/images/prism.png" alt="" className="wobc-logo"/>
 								</a>
-								<span className="work-subtext camcorder">Prism: A Salt and Pepper Games Production</span>
+								<span className="work-subtext">Prism: A Salt and Pepper Games Production</span>
 							</div>
 							{/*<a href='https://salt-and-pepper-games.github.io/prism' className='prism' target='_blank'>
 								<span className='letter P'>p</span>
@@ -84,7 +84,7 @@ class Work extends React.Component {
 								<a href="http://deborahdavisjackson.org/" target="_blank" className="work-link">
 									<img src="src/images/ddj.png" alt="" className="wobc-logo"/>
 								</a>
-								<span className="work-subtext camcorder">DDJ: Deborah Davis Jackson</span>
+								<span className="work-subtext">DDJ: Deborah Davis Jackson</span>
 							</div>
 							{/*<a href="http://deborahdavisjackson.org/" target="_blank" className="deborah">
 								DDJ
