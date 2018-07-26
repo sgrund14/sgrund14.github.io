@@ -34,6 +34,11 @@
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+:root {
+    --top-circle-color: black;
+    --bottom-circle-color: white;   
+}
+
 .camcorder {
     font-family: 'camcorder_monospacedregular';
 }
@@ -56,24 +61,24 @@ html {
 }
 
 body {
-    font-family: 'Josefin Sans';
+    font-family: 'Apercu';
     margin: 0;
     font-weight: 300;
     transition: all .25s;
 }
 
 .circle-svg-top {
-    r: 0.5em;
-    cx: 1em;
-    cy: 1.1em;
+    r: 12px;
+    cx: 13px;
+    cy: 13px;
     stroke: black;
     stroke-width: 1.5px;
     transition: stroke .025s;
 }
 .circle-svg-bottom {
-    r: 0.5em;
-    cx: 1em;
-    cy: 1.1em;
+    r: 12px;
+    cx: 13px;
+    cy: 13px;
     stroke: white;
     stroke-width: 1.5px;
     transition: stroke .025s;
@@ -148,9 +153,7 @@ body {
 }
 
 .on {
-    border-bottom: 1px solid;
-    border-color: inherit;
-    margin-bottom: -1px !important;
+    color: var(--top-circle-color) !important;
 }
 
 .section-on {
@@ -172,9 +175,9 @@ body {
 }
 
 .circle-picker-text {
-    font-size: 1.17em;
+    font-size: 12px;
     text-align: center;
-    padding-bottom: .75em;
+    padding-bottom: 16px;
     @include mobile {
         padding-bottom: .25em;
         padding-top: .25em;
@@ -243,7 +246,7 @@ body {
     justify-content: flex-start;
 }
 .row.top {
-    width: 277px;
+    width: 335px;
     align-items: center;
     justify-content: space-between;
     margin-right: -10px;
@@ -256,16 +259,16 @@ body {
     color: inherit;
 }
 .empty-top-col {
-    width: 100px;
+    width: 150px;
 }
 .settings-button {
     color: inherit;
     margin-right: 10px;
     font-weight: 300;
-    width: 100px;
+    width: 150px;
     display: flex;
     justify-content: flex-end;
-    transition: color .025s, opacity .25s;
+    transition: color .025s;
     @include mobile {
         
     }
@@ -273,7 +276,7 @@ body {
 
 .settings-button:hover {
     cursor: pointer;
-    opacity: .75;
+    color: var(--top-circle-color) !important;
 }
 .hide-all-button {
     color: inherit;
@@ -282,7 +285,7 @@ body {
     transition: color .025s, opacity .25s;
 }
 .empty {
-    width: 480px;
+    width: 506px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -311,7 +314,7 @@ body {
     justify-content: space-between;
     pointer-events: auto;
     padding: 0;
-    width: 130px;
+    width: 180px;
 }
 
 .buttons {
@@ -325,28 +328,8 @@ body {
 #first-name,
 #last-name,
 .settings-button,
-.hide-all-button {
-    -webkit-animation: fadein .5s;
-    -moz-animation: fadein .5s;
-    -ms-animation: fadein .5s;
-    -o-animation: fadein .5s;
-    animation: fadein .5s;
-}
-#info-btn, #behance-btn {
-    -webkit-animation: fadein .5s;
-    -moz-animation: fadein .5s;
-    -ms-animation: fadein .5s;
-    -o-animation: fadein .5s;
-    animation: fadein .5s;
-}
-#work-btn, #linkedin-btn {
-    -webkit-animation: fadein .5s;
-    -moz-animation: fadein .5s;
-    -ms-animation: fadein .5s;
-    -o-animation: fadein .5s;
-    animation: fadein .5s;
-}
-#contact-btn, #github-btn {
+.hide-all-button,
+.btn {
     -webkit-animation: fadein .5s;
     -moz-animation: fadein .5s;
     -ms-animation: fadein .5s;
@@ -404,7 +387,7 @@ body {
         width: 100%;
         background-color: black;
         transition: background-color .25s;
-        opacity: .1;
+        opacity: .4;
         z-index: -1;
     }
 }
@@ -423,7 +406,7 @@ body {
         width: 100%;
         background-color: white;
         transition: background-color .25s;
-        opacity: .1;
+        opacity: .4;
     }
 }
 .settings-overlay-left {
@@ -491,7 +474,7 @@ body {
 .panel.contact {
     display: flex;
     justify-content: space-between;
-    width: 277px;
+    width: 335px;
 }
 .panel.contact.upper {
     align-self: flex-end;
@@ -500,10 +483,10 @@ body {
     align-self: flex-start;
 }
 .top-panel > .panel.info {
-    width: 277px;
+    width: 335px;
 }
 .bottom-panel > .panel.info {
-    width: 277px
+    width: 335px;
 }
 
 .buttons {
@@ -783,6 +766,7 @@ h6 {
 }
 .work-subtext {
     margin-top: 10px;
+    font-size: 12px;
 }
 a {
     text-decoration: none;
@@ -809,6 +793,7 @@ a {
     cursor: pointer;
 }
 .updated-on {
+    color: var(--bottom-circle-color) !important;
     display: flex;
     align-items: center;
     margin-left: 10px;
@@ -819,6 +804,12 @@ a {
 }
 .media-link {
     margin: 1em 0;
+}
+.upper > .media-link:hover {
+    color: var(--top-circle-color);
+}
+.lower > .media-link:hover {
+    color: var(--bottom-circle-color);
 }
 .empty-contact-col {
     width: 155px;

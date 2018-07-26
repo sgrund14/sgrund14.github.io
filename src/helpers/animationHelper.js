@@ -111,12 +111,14 @@ const anim = (paperArray, id, canvasElement) => {
     };
 
     // function to change circle colors on screen change
-    const colorChange = color => {
+    const colorChange = (color, section) => {
+        document.documentElement.style.setProperty(`--${section}-circle-color`, `${color}`);
         fade(path.fillColor, color, 125);
     };
 
     // change color of circles without altering speed
-    const colorChangeSettings = color => {
+    const colorChangeSettings = (color, section) => {
+        document.documentElement.style.setProperty(`--${section}-circle-color`, `${color}`);
         fadeSettings(path.fillColor, color, 125);
     };
 

@@ -67,6 +67,9 @@ class Home extends React.Component {
 		this.onCircleSelect = this.onCircleSelect.bind(this);
 		this.onBackgroundHover = this.onBackgroundHover.bind(this);
 		this.onBackgroundSelect = this.onBackgroundSelect.bind(this);
+
+		document.documentElement.style.setProperty(`--top-circle-color`, `${colorDefaults.homeTop}`);
+		document.documentElement.style.setProperty(`--bottom-circle-color`, `${colorDefaults.homeBottom}`);
 	}
 	/*
 	* initialize animation as soon as canvas elements mount
@@ -89,10 +92,10 @@ class Home extends React.Component {
 	*/
 	navigate(section) {
 		this.setState({ currentSection: section });
-		this.topAnim.colorChange(this.state.colors[`${section}Top`]);
-		this.bottomAnim.colorChange(this.state.colors[`${section}Bottom`]);
-		changeBackgroundColor(this.state.colors[`${section}TopBackground`], 'body');
-		changeBackgroundColor(this.state.colors[`${section}BottomBackground`], 'bottomhalf');
+		this.topAnim.colorChange(section === 'home' ? possibleColors[Math.floor(Math.random()*possibleColors.length)] : this.state.colors[`${section}Top`], 'top');
+		this.bottomAnim.colorChange(section === 'home' ? possibleColors[Math.floor(Math.random()*possibleColors.length)] : this.state.colors[`${section}Bottom`], 'bottom');
+		changeBackgroundColor(section === 'home' ? possibleColors[Math.floor(Math.random()*possibleColors.length)] : this.state.colors[`${section}TopBackground`], 'body');
+		changeBackgroundColor(section === 'home' ? possibleColors[Math.floor(Math.random()*possibleColors.length)] : this.state.colors[`${section}BottomBackground`], 'bottomhalf');
 	}
 	/*
 	* @param section: section you were on when you opened up settings
@@ -101,8 +104,8 @@ class Home extends React.Component {
 	*/
 	closeSettings(section) {
 		this.setState({ currentSection: section });
-		this.topAnim.colorChangeSettings(this.state.colors[`${section}Top`]);
-		this.bottomAnim.colorChangeSettings(this.state.colors[`${section}Bottom`]);
+		this.topAnim.colorChangeSettings(this.state.colors[`${section}Top`], 'top');
+		this.bottomAnim.colorChangeSettings(this.state.colors[`${section}Bottom`], 'bottom');
 		changeBackgroundColor(this.state.colors[`${section}TopBackground`], 'body');
 		changeBackgroundColor(this.state.colors[`${section}BottomBackground`], 'bottomhalf');
 	}
@@ -115,10 +118,10 @@ class Home extends React.Component {
 	onCircleHover(color, area) {
 		switch (area) {
 			case 'Top':
-				this.topAnim.colorChangeSettings(color.hex);
+				this.topAnim.colorChangeSettings(color.hex, 'top');
 				break;
 			case 'Bottom':
-				this.bottomAnim.colorChangeSettings(color.hex);
+				this.bottomAnim.colorChangeSettings(color.hex, 'bottom');
 				break;
 			default:
 				break;
@@ -169,7 +172,12 @@ class Home extends React.Component {
 
     			<Info hideAll={hideAll} onInfo={onInfo} onSettings={onSettings} />
     			<Work hideAll={hideAll} onWork={onWork} onSettings={onSettings} />
-    			<Contact hideAll={hideAll} onContact={onContact} onSettings={onSettings} />
+    			<Contact
+    				currentColors={this.state.colors}
+    				hideAll={hideAll}
+    				onContact={onContact}
+    				onSettings={onSettings}
+    			/>
     			<Settings
     				currentColors={this.state.colors}
     				currentSection={this.state.currentSection}
@@ -186,8 +194,8 @@ class Home extends React.Component {
     					<div className="empty-top-col"></div>
 						<div className='row top top-color'>
 							<span
-    						className="my-name top-color"
-    						onClick={() => this.navigate('home')}
+	    						className="my-name top-color"
+	    						onClick={() => this.navigate('home')}
 	    					>
 	    						Sam Grund
 	    					</span>
@@ -197,26 +205,26 @@ class Home extends React.Component {
 									className={`btn ${onInfo ? 'on' : ''}`}
 									onClick={() => this.navigate(onInfo ? 'home' : 'bio')}
 								>
-								bio
+									bio
 								</span>
 								<span
 									id="work-btn"
 									className={`btn ${onWork ? 'on' : ''}`}
 									onClick={() => this.navigate(onWork ? 'home' : 'work')}
 								>
-								work
+									work
 								</span>
 								<span
 									id="contact-btn"
 									className={`btn contact-btn ${onContact ? 'on' : ''}`}
 									onClick={() => this.navigate(onContact ? 'home' : 'contact')}
 								>
-								contact
+									contact
 								</span>
 							</ul>
 						</div>
 						<span
-							className={`settings-button top-color`}
+							className={`${onSettings ? 'on' : ''} settings-button top-color`}
 							onClick={() => {
 								this.setState({ onSettings: !onSettings });
 								if (onSettings) {
@@ -224,11 +232,11 @@ class Home extends React.Component {
 								}
 							}}
 						>
-						{onSettings ? "close settings" : "settings"}
+							{onSettings ? "close settings" : "settings"}
 						</span>
 					</div>
 					<div className="bottom-row-wrapper">
-						<span className="updated-on bottom-color">7/25/18</span>
+						<span className="updated-on bottom-color">7/26/18</span>
 						<div className="row bottom-color">
 							
 						</div>
