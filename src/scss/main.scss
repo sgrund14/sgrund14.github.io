@@ -786,7 +786,7 @@ a {
     font-weight: 300;
     width: 100px;
     user-select: none;
-    transition: color .25s;
+    transition: color .5s;
     @include mobile {
         width: 250px;
     }

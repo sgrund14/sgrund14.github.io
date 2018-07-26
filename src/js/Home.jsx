@@ -210,7 +210,7 @@ class Home extends React.Component {
 	    						onMouseEnter={() => {
 	    							this.nameHoverInterval = setInterval(() => {
 	    								document.documentElement.style.setProperty(`--not-so-random-color`, `${getRandomColor()}`);
-	    							}, 250);
+	    							}, 500);
 	    						}}
 	    					>
 	    						Sam Grund
