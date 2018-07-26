@@ -4,6 +4,7 @@
 @import '../fonts/avenir-reg/stylesheet.css';
 @import '../fonts/avenir-oblique/stylesheet.css';
 @import '../fonts/avenir-light/stylesheet.css';
+@import '../fonts/apercu-mono/stylesheet.css';
 
 @mixin mobile {
   @media only screen and (orientation: portrait), only screen and (max-height: 480px) {
@@ -38,6 +39,9 @@
 }
 .avenir {
     font-family: 'Avenir LT Std';
+}
+.apercu {
+    font-family: 'Apercu';
 }
 .work-sans {
     font-family: 'Work Sans';
@@ -171,7 +175,6 @@ body {
     font-size: 1.17em;
     text-align: center;
     padding-bottom: .75em;
-    padding-top: .75em;
     @include mobile {
         padding-bottom: .25em;
         padding-top: .25em;
@@ -392,7 +395,7 @@ body {
     @extend .top-panel;
     align-items: center;
     color: inherit;
-    justify-content: space-around;
+    justify-content: space-around !important;
     .top-settings-overlay {
         position: absolute;
         top: 0;
@@ -411,6 +414,7 @@ body {
     top: 50%;
     color: inherit;
     align-items: center;
+    justify-content: space-around !important;
     .bottom-settings-overlay {
         position: absolute;
         top: 0;
@@ -671,11 +675,11 @@ h6 {
 }
 .wobc-logo {
     width: 100%;
-    transition: opacity .25s;
+    transition: transform .25s;
     border-radius: 5px;
 }
 .wobc-logo:hover {
-    opacity: .75;
+    transform: translateY(-5px);
     cursor: pointer;
 }
 .work-dots {
