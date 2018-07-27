@@ -49,14 +49,13 @@ const colorDefaults = {
     contactBottomBackground: possibleColors[Math.floor(Math.random()*possibleColors.length)]
 };
 
-const getRandomColor = () => {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-};
+// "#38E4AE", // eucalyptus
+
+const brightColors = [
+	'#7EE8FA', '#80FF72', "#FFF07C",
+	"#ED4D6E", "#B47AEA", "#38E4AE", // eucalyptus
+	"#5F00BA", "#D6FF79", "#D6FF79"
+];
 
 class Home extends React.Component {
 	constructor(props) {
@@ -68,8 +67,10 @@ class Home extends React.Component {
 			colors: Object.assign({}, colorDefaults),
 			currentSection: 'home',
 			onSettings: false,
-			hideAll: false
+			hideAll: false,
+			nameCounter: 0
 		};
+		this.getRandomColor = this.getRandomColor.bind(this);
 		this.navigate = this.navigate.bind(this);
 		this.closeSettings = this.closeSettings.bind(this);
 		this.onCircleHover = this.onCircleHover.bind(this);
@@ -94,6 +95,12 @@ class Home extends React.Component {
 		// this.closeSettings('home');
 		this.paperArray[0].view.onFrame = this.topAnim.update(0);
 		this.paperArray[1].view.onFrame = this.bottomAnim.update(1);
+	}
+
+	getRandomColor() {
+		const { nameCounter } = this.state;
+		this.setState({ nameCounter: nameCounter + 1 });
+		return brightColors[this.state.nameCounter%9];
 	}
 
 	/*
@@ -209,9 +216,10 @@ class Home extends React.Component {
 	    						onClick={() => this.navigate('home')}
 	    						onMouseEnter={() => {
 	    							this.nameHoverInterval = setInterval(() => {
-	    								document.documentElement.style.setProperty(`--not-so-random-color`, `${getRandomColor()}`);
-	    							}, 500);
+	    								document.documentElement.style.setProperty(`--not-so-random-color`, `${this.getRandomColor()}`);
+	    							}, 300);
 	    						}}
+	    						onMouseLeave={() => clearInterval(this.nameHoverInterval)}
 	    					>
 	    						Sam Grund
 	    					</span>

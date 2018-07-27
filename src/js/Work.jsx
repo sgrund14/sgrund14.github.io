@@ -2,9 +2,6 @@
 
 const React = require('react');
 const PropTypes = require('prop-types');
-import ReactSlider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const NextArrow = (props: Object) => {
 	const { style, onClick } = props

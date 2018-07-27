@@ -10,7 +10,11 @@ module.exports = {
   devtool: debug ? "inline-sourcemap" : null,
   entry: APP_DIR + '/index.jsx',
   resolve: {
-      extensions: ['.js', '.json', '.jsx']
+      extensions: ['.js', '.json', '.jsx'],
+      "alias": {
+        "react": "preact-compat",
+        "react-dom": "preact-compat"
+      } 
   },
   module: {
     loaders: [
@@ -35,9 +39,6 @@ module.exports = {
       {
         test: /\.(ttf|eot|woff|woff2)$/,
         loader: 'file-loader',
-        options: {
-          name: 'node_modules/slick-carousel/slick/fonts/[name].[ext]',
-        },
       }
     ]
   },

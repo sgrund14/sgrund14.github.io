@@ -1,9 +1,3 @@
-@import '../fonts/transfonter/stylesheet.css';
-@import '../fonts/work-sans/stylesheet.css';
-@import '../fonts/camcorder-font/stylesheet.css';
-@import '../fonts/avenir-reg/stylesheet.css';
-@import '../fonts/avenir-oblique/stylesheet.css';
-@import '../fonts/avenir-light/stylesheet.css';
 @import '../fonts/apercu-mono/stylesheet.css';
 
 @mixin mobile {
@@ -37,7 +31,9 @@
 :root {
     --top-circle-color: black;
     --bottom-circle-color: white;
-    --not-so-random-color: red;  
+    --not-so-random-color: red;
+
+    --center-column-width: 367px;
 }
 
 .camcorder {
@@ -128,9 +124,11 @@ body {
 .lower.work {
     display: flex;
     flex-direction: column;
+    margin-bottom: 25.5px;
 }
 .upper.work {
     display: flex;
+    margin-top: 25.5px;
 }
 
 .work-section,
@@ -247,7 +245,7 @@ body {
     justify-content: flex-start;
 }
 .row.top {
-    width: 335px;
+    width: var(--center-column-width);
     align-items: center;
     justify-content: space-between;
     margin-right: -10px;
@@ -279,22 +277,11 @@ body {
     cursor: pointer;
     color: var(--top-circle-color) !important;
 }
-.hide-all-button {
-    color: inherit;
-    font-size: 32px;
-    margin-left: 10px;
-    transition: color .025s, opacity .25s;
-}
 .empty {
     width: 506px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.hide-all-button:hover {
-    cursor: pointer;
-    opacity: .75;
 }
 
 .top {
@@ -475,7 +462,7 @@ body {
 .panel.contact {
     display: flex;
     justify-content: space-between;
-    width: 335px;
+    width: var(--center-column-width);
 }
 .panel.contact.upper {
     align-self: flex-end;
@@ -484,10 +471,14 @@ body {
     align-self: flex-start;
 }
 .top-panel > .panel.info {
-    width: 335px;
+    width: var(--center-column-width);
+    align-self: flex-end;
+    margin-bottom: 10px;
 }
 .bottom-panel > .panel.info {
-    width: 335px;
+    width: var(--center-column-width);
+    align-self: flex-start;
+    margin-top: 10px;
 }
 
 .buttons {
@@ -498,39 +489,6 @@ body {
         font-size: 1em;
         text-decoration: none;
     }    
-}
-
-
-.resume {
-    color: inherit;
-    font-size: 2.5em;
-    transition: all .125s;
-}
-
-.resume:hover {
-    opacity: .75;
-}
-
-.prism-blog {
-    display: inline-block;
-    color: inherit;
-    font-weight: 400;
-    margin-top: 2em;
-    transition: opacity .25s;
-}
-.prism-blog:hover {
-    opacity: .75;
-}
-.prism-splash {
-    display: inline-block;
-    color: inherit;
-    font-weight: 400;
-    font-size: .75em;
-    margin-top: 1em;
-    transition: opacity .25s;
-}
-.prism-splash:hover {
-    opacity: .75;
 }
 
 .prism {
@@ -593,62 +551,10 @@ h6 {
     font-size: .2em;
 }
 
-.picture {
-    width: 25em;
-    height: 15em;
-    border-radius: 2em;
-}
-
-#slider {
-    width: 25em;
-    height: auto;
-    overflow: hidden;
-    transition: all .25s;
-}
-
-#slider:hover {
-    opacity: .75;
-}
-
-#slider {
-    #slides {
-        display: block;
-        width: 150em;
-        height: auto;
-        margin: 0;
-        padding: 0;
-    }
-}
-
-#slider {
-    .slide {
-        float: left;
-        list-style-type: none;
-        width: 25em;
-        height: auto;
-    }
-}
-
 .no-user-select {
     user-select: none;
 }
 
-#first-name {
-    padding-left: 0;
-    justify-self: flex-start;
-    color: inherit;
-}
-#last-name {
-    padding-right: 0;
-}
-#first-name,
-#last-name,
-{
-    user-select: none;
-    @include mobile {
-        font-weight: 300;
-    }
-}
 .info,
 .contact,
 .tabs,
@@ -665,90 +571,6 @@ h6 {
 .wobc-logo:hover {
     transform: translateY(-5px);
     cursor: pointer;
-}
-.work-dots {
-    padding: 0;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    height: 18px;
-}
-.work-dots > li {
-    border-radius: 1rem;
-    width: 12px;
-    height: 12px;
-    margin: 0 1rem;
-    background-color: black;
-    transition: opacity .5s, height .5s, width .5s;
-    opacity: .75;
-}
-.work-dots > .slick-active {
-    width: 18px;
-    height: 18px;
-    opacity: 1;
-}
-.work-dots > li > button {
-    opacity: 0;
-}
-.work-dots > li:hover {
-    opacity: 1;
-    cursor: pointer;
-}
-.work-dots > .slick-active:hover {
-    opacity: 1;
-    cursor: default;
-}
-.work-dots > li > button:hover {
-    cursor: pointer;
-}
-.work-dots > .slick-active > button:hover {
-    cursor: default;
-}
-.work-slider-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    @include mobile {
-        margin-bottom: 1rem;
-    }
-}
-.work-slider {
-    width: 100%;
-}
-.custom-arrow {
-    color: black;
-    transition: color .25s;
-    position: absolute;
-    padding: 0;
-    font-size: 0;
-    line-height: 0;
-    top: 50%;
-    width: 20px;
-    height: 20px;
-    -webkit-transform: translate(0,-50%);
-    -ms-transform: translate(0,-50%);
-    transform: translate(0,-50%);
-    cursor: pointer;
-}
-.custom-arrow:before {
-    font-size: 18px;
-    @include mobile {
-        font-size: 18px;
-    }
-}
-.custom-arrow:hover {
-    color: red;
-}
-.arrow-right {
-    right: -35px;
-}
-.arrow-left {
-    left: -40px;
-    @include mobile {
-        left: -27.5px;
-    }
 }
 .work-link {
     display: flex;
@@ -786,7 +608,7 @@ a {
     font-weight: 300;
     width: 100px;
     user-select: none;
-    transition: color .5s;
+    transition: color .25s;
     @include mobile {
         width: 250px;
     }
