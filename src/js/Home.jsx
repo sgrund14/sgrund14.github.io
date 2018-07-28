@@ -110,10 +110,25 @@ class Home extends React.Component {
 	*/
 	navigate(section) {
 		this.setState({ currentSection: section });
-		this.topAnim.colorChange(section === 'home' ? possibleColors[Math.floor(Math.random()*possibleColors.length)] : this.state.colors[`${section}Top`], 'top');
-		this.bottomAnim.colorChange(section === 'home' ? possibleColors[Math.floor(Math.random()*possibleColors.length)] : this.state.colors[`${section}Bottom`], 'bottom');
-		changeBackgroundColor(section === 'home' ? possibleColors[Math.floor(Math.random()*possibleColors.length)] : this.state.colors[`${section}TopBackground`], 'body');
-		changeBackgroundColor(section === 'home' ? possibleColors[Math.floor(Math.random()*possibleColors.length)] : this.state.colors[`${section}BottomBackground`], 'bottomhalf');
+		const newHomeTopCircles = possibleColors[Math.floor(Math.random()*possibleColors.length)];
+		const newHomeBottomCircles = possibleColors[Math.floor(Math.random()*possibleColors.length)];
+		const newHomeTopBG = possibleColors[Math.floor(Math.random()*possibleColors.length)];
+		const newHomeBottomBG = possibleColors[Math.floor(Math.random()*possibleColors.length)];
+		const newColors = Object.assign({}, this.state, {
+			homeTop: newHomeTopCircles,
+			homeBottom: newHomeBottomCircles,
+			homeTopBackground: newHomeTopBG,
+			homeBottomBackground: newHomeBottomBG
+		});
+		if (section === 'home') {
+			this.setState({
+				colors: newColors
+			})
+		}
+		this.topAnim.colorChange(section === 'home' ? newHomeTopCircles : this.state.colors[`${section}Top`], 'top');
+		this.bottomAnim.colorChange(section === 'home' ? newHomeBottomCircles : this.state.colors[`${section}Bottom`], 'bottom');
+		changeBackgroundColor(section === 'home' ? newHomeTopBG : this.state.colors[`${section}TopBackground`], 'body');
+		changeBackgroundColor(section === 'home' ? newHomeBottomBG : this.state.colors[`${section}BottomBackground`], 'bottomhalf');
 	}
 	/*
 	* @param section: section you were on when you opened up settings
