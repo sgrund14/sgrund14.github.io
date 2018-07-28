@@ -114,7 +114,7 @@ class Home extends React.Component {
 		const newHomeBottomCircles = possibleColors[Math.floor(Math.random()*possibleColors.length)];
 		const newHomeTopBG = possibleColors[Math.floor(Math.random()*possibleColors.length)];
 		const newHomeBottomBG = possibleColors[Math.floor(Math.random()*possibleColors.length)];
-		const newColors = Object.assign({}, this.state, {
+		const newColors = Object.assign({}, this.state.colors, {
 			homeTop: newHomeTopCircles,
 			homeBottom: newHomeBottomCircles,
 			homeTopBackground: newHomeTopBG,

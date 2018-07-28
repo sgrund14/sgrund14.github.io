@@ -61,7 +61,6 @@ body {
     font-family: 'Apercu';
     margin: 0;
     font-weight: 300;
-    transition: all .25s;
 }
 
 .circle-svg-top {
@@ -307,11 +306,6 @@ body {
 
 .buttons {
     color: inherit;
-    a,
-    span,
-    h1 {
-        transition: font-size .25s, opacity .25s;
-    }
 }
 #first-name,
 #last-name,
@@ -330,7 +324,7 @@ body {
     font-weight: 300;
     span:hover,
     a:hover {
-        opacity: .75 !important;
+        color: var(--top-circle-color) !important;
     }
     @include mobile {
         position: static;
