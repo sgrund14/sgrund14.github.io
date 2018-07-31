@@ -8,7 +8,7 @@ const Info = ({ hideAll, onInfo, onSettings }) => {
 		<div className={`${!hideAll && onInfo && !onSettings ? 'section-on' : ''} info-section`}>
 			<div className='top-panel top-color'>
 				<div className='panel info'>
-					This website is the unholy creation of SAM GRUND. He built it, amongst other things.
+					This website is the unholy creation of SAM GRUND. He built it with future web technologies, amongst other things.
 				</div>
 			</div>
 			<div className='bottom-panel bottom-color'>
