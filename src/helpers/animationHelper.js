@@ -67,7 +67,7 @@ const anim = (paperArray, id, canvasElement) => {
     let speed = 8;
 
     // more circles on bottom canvas, less on top.
-    id === 0 ? count = 10 : count = 15;
+    id === 0 ? count = 20 : count = 45;
 
     let path;
 
@@ -96,7 +96,7 @@ const anim = (paperArray, id, canvasElement) => {
 
         // larger circles on top canvas, smaller circles on bottom
         if (id === 0) {
-            placedSymbol.scale(currentPaper.view.size.width / 175 * i / count);
+            placedSymbol.scale(currentPaper.view.size.width / 200 * i / count);
         } else {
             placedSymbol.scale(currentPaper.view.size.width / 400 * i / count);
         }
@@ -169,7 +169,7 @@ const anim = (paperArray, id, canvasElement) => {
     const update = id => {
         return () => {
             let count;
-            id === 0 ? count = 10 : count = 15;
+            id === 0 ? count = 20 : count = 45;
             for (let i = 0; i < count; i++) {
                 const item = paperArray[id].project.activeLayer.children[i];
 
