@@ -155,10 +155,16 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 25.5px;
+    @include mobile {
+        margin-bottom: auto;
+    }
 }
 .upper.work {
     display: flex;
     margin-top: 25.5px;
+    @include mobile {
+        margin-top: auto;
+    }
 }
 
 .work-section,
@@ -514,11 +520,25 @@ body {
     width: var(--center-column-width);
     align-self: flex-end;
     margin-bottom: 10px;
+    padding: 0 10px;
 }
 .bottom-panel > .panel.info {
     width: var(--center-column-width);
     align-self: flex-start;
     margin-top: 10px;
+    padding: 0 10px;
+}
+.top-panel > .panel.contact {
+    width: var(--center-column-width);
+    align-self: flex-end;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+.bottom-panel > .panel.contact {
+    width: var(--center-column-width);
+    align-self: flex-start;
+    margin-top: 10px;
+    padding: 0 10px;
 }
 
 .buttons {
@@ -631,6 +651,9 @@ h6 {
 .work-subtext {
     margin-top: 10px;
     font-size: 12px;
+    @include mobile {
+        font-size: 10px;
+    }
 }
 a {
     text-decoration: none;
