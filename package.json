@@ -10,9 +10,7 @@
     "preact": "^8.2.9",
     "preact-compat": "^3.18.0",
     "prop-types": "^15.5.10",
-    "react": "^0.14.6",
     "react-color": "^2.14.1",
-    "react-dom": "^0.14.6",
     "react-svg": "^4.0.13"
   },
   "repository": {

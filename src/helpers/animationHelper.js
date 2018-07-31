@@ -36,8 +36,8 @@ const hexToRgb = hex => {
 const changeBackgroundColor = (endColor, area) => {
     const section = document.getElementById(area);
     const rgb = hexToRgb(endColor);
+
     // https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
-    const els = document.getElementsByClassName(area === 'body' ? 'top-color' : 'bottom-color');
     const circleSVGs = document.getElementsByClassName(area === 'body' ? 'circle-svg-top' : 'circle-svg-bottom');
     const overlay = document.getElementsByClassName(area === 'body' ? 'top-settings-overlay' : 'bottom-settings-overlay');
     let fontColor;
@@ -46,9 +46,8 @@ const changeBackgroundColor = (endColor, area) => {
     } else {
         fontColor = '#ffffff'
     }
-    Array.from(els).forEach(el => {
-        el.style.color = fontColor;
-    });
+    document.documentElement.style.setProperty(`--${area === 'body' ? 'top' : 'bottom'}-copy-txt-color`, `${fontColor}`);
+
     Array.from(circleSVGs).forEach(el => {
         el.style.stroke = fontColor;
     });
@@ -68,7 +67,7 @@ const anim = (paperArray, id, canvasElement) => {
     let speed = 8;
 
     // more circles on bottom canvas, less on top.
-    id === 0 ? count = 20 : count = 50;
+    id === 0 ? count = 10 : count = 15;
 
     let path;
 
@@ -97,9 +96,9 @@ const anim = (paperArray, id, canvasElement) => {
 
         // larger circles on top canvas, smaller circles on bottom
         if (id === 0) {
-            placedSymbol.scale(currentPaper.view.size.width / 300 * i / count);
+            placedSymbol.scale(currentPaper.view.size.width / 175 * i / count);
         } else {
-            placedSymbol.scale(currentPaper.view.size.width / 600 * i / count);
+            placedSymbol.scale(currentPaper.view.size.width / 400 * i / count);
         }
     }
 
@@ -170,7 +169,7 @@ const anim = (paperArray, id, canvasElement) => {
     const update = id => {
         return () => {
             let count;
-            id === 0 ? count = 20 : count = 50;
+            id === 0 ? count = 10 : count = 15;
             for (let i = 0; i < count; i++) {
                 const item = paperArray[id].project.activeLayer.children[i];
 

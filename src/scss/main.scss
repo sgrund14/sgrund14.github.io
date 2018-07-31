@@ -5,6 +5,16 @@
     @content;
   }
 }
+@mixin medium-window {
+    @media only screen and (max-width: 1280px) {
+        @content;
+    }
+}
+@mixin small-window {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -33,7 +43,15 @@
     --bottom-circle-color: white;
     --not-so-random-color: red;
 
+    --top-copy-txt-color: black;
+    --bottom-copy-txt-color: white;
+
     --center-column-width: 367px;
+    --side-gutter: 150px;
+    @include mobile {
+        --center-column-width: 100vw;
+        --side-gutter: auto;
+    }
 }
 
 .camcorder {
@@ -81,11 +99,11 @@ body {
 }
 
 .top-color {
-    color: black;
+    color: var(--top-copy-txt-color);
     transition: color .025s;
 }
 .bottom-color {
-    color: white;
+    color: var(--bottom-copy-txt-color);
     transition: color .025s;
 }
 
@@ -93,11 +111,24 @@ body {
     transition: color .025s, opacity .25s;
     position: absolute;
     right: 0;
+    @include mobile {
+        font-size: 12px;
+    }
+    @include medium-window {
+        font-size: 14px;
+    }
 }
 .settings-arrow-left {
     transition: color .025s, opacity .25s;
     position: absolute;
     left: 0;
+    @include mobile {
+        font-size: 12px;
+    }
+    @include medium-window {
+        font-size: 14px;
+    }
+
 }
 .settings-arrow-active:hover {
     opacity: .75;
@@ -136,7 +167,7 @@ body {
 }
 
 .settings-header {
-    color: inherit;
+    color: var(--top-copy-txt-color);
     z-index: 2;
     font-size: 2em;
     display: flex;
@@ -144,9 +175,17 @@ body {
     padding: 0px;
     width: 15em;
     justify-content: center;
+    align-items: center;
     position: relative;
     @include mobile {
-        width: 10em;
+        width: 90vw;
+        font-size: 14px;
+    }
+    @include small-window {
+        width: 30vw;
+    }
+    @include medium-window {
+        font-size: 1.5em;
     }
 }
 
@@ -224,9 +263,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include mobile {
-        margin-top: 12px;
-    }
 }
 .bottom-row-wrapper {
     position: absolute;
@@ -254,33 +290,41 @@ body {
 }
 .btn {
     box-sizing: border-box;
-    color: inherit;
+    color: var(--top-copy-txt-color);
 }
 .empty-top-col {
-    width: 150px;
+    width: var(--side-gutter);
 }
 .settings-button {
-    color: inherit;
+    color: var(--top-copy-txt-color);
     margin-right: 10px;
     font-weight: 300;
-    width: 150px;
+    width: var(--side-gutter);
     display: flex;
     justify-content: flex-end;
     transition: color .025s;
     @include mobile {
-        
+        color: var(--bottom-copy-txt-color); 
     }
+    
 }
 
 .settings-button:hover {
     cursor: pointer;
     color: var(--top-circle-color) !important;
 }
-.empty {
+.directions {
     width: 506px;
     display: flex;
     justify-content: center;
     align-items: center;
+    @include mobile {
+        width: auto;
+        font-size: 12px;
+    }
+    @include small-window {
+        margin-bottom: 20px;
+    }
 }
 
 .top {
@@ -294,7 +338,7 @@ body {
 }
 
 .buttons {
-    color: inherit;
+    color: var(--top-copy-txt-color);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -302,15 +346,12 @@ body {
     pointer-events: auto;
     padding: 0;
     width: 180px;
+    @include mobile {
+        width: 50vw;
+        margin-right: 10px;
+    }
 }
-
-.buttons {
-    color: inherit;
-}
-#first-name,
-#last-name,
 .settings-button,
-.hide-all-button,
 .btn {
     -webkit-animation: fadein .5s;
     -moz-animation: fadein .5s;
@@ -328,25 +369,15 @@ body {
     }
     @include mobile {
         position: static;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 
 .tabs {
     a,
     span {
-        color: inherit;
+        color: var(--top-copy-txt-color);
     }
     @include mobile {
-        margin: auto;
-    }
-}
-
-.links {
-    a,
-    span {
-        color: inherit;
     }
 }
 
@@ -359,7 +390,7 @@ body {
 .top-settings {
     @extend .top-panel;
     align-items: center;
-    color: inherit;
+    color: var(--top-copy-txt-color);
     justify-content: space-around !important;
     .top-settings-overlay {
         position: absolute;
@@ -372,12 +403,16 @@ body {
         opacity: .4;
         z-index: -1;
     }
+    @include small-window {
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
 }
 
 .bottom-settings {
     @extend .top-panel;
     top: 50%;
-    color: inherit;
+    color: var(--bottom-copy-txt-color);
     align-items: center;
     justify-content: space-around !important;
     .bottom-settings-overlay {
@@ -389,6 +424,10 @@ body {
         background-color: white;
         transition: background-color .25s;
         opacity: .4;
+    }
+    @include small-window {
+        flex-direction: column !important;
+        justify-content: center !important;
     }
 }
 .settings-overlay-left {
@@ -426,7 +465,7 @@ body {
     @extend .top-panel;
     top: 50%;
     left: 0;
-    color: inherit;
+    color: var(--bottom-copy-txt-color);
 }
 .panel-row {
     width: 750px;
@@ -434,6 +473,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: scroll;
+    @include mobile {
+        width: 100vw;
+    }
+    @include small-window {
+        width: 100vw;
+    }
 }
 .bottom-panel > .panel-row {
 }
@@ -579,6 +625,7 @@ h6 {
     align-items: center;
     @include mobile {
         height: 50% !important;
+        width: 45vw;
     }
 }
 .work-subtext {
@@ -588,23 +635,14 @@ h6 {
 a {
     text-decoration: none;
 }
-.deborah {
-    font-family: 'Work Sans';
-    font-size: 100px;
-    color: inherit;
-    transition: .25s opacity;
-    text-decoration: none;
-}
-.deborah:hover {
-    opacity: .75;
-}
 .my-name {
     font-weight: 300;
     width: 100px;
     user-select: none;
     transition: color .25s;
     @include mobile {
-        width: 250px;
+        width: auto;
+        margin-left: 10px;
     }
 }
 .my-name:hover {
@@ -629,7 +667,4 @@ a {
 }
 .lower > .media-link:hover {
     color: var(--bottom-circle-color);
-}
-.empty-contact-col {
-    width: 155px;
 }

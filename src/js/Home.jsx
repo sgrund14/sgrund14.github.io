@@ -7,6 +7,7 @@ const Info = require('./Info');
 const Work = require('./Work');
 const Contact = require('./Contact');
 const Settings = require('./Settings');
+const SettingsButton = require('./SettingsButton');
 
 // // default color settings
 // const colorDefaults = {
@@ -68,8 +69,10 @@ class Home extends React.Component {
 			currentSection: 'home',
 			onSettings: false,
 			hideAll: false,
-			nameCounter: 0
+			nameCounter: 0,
+			onMobile: false
 		};
+		this.mq = window.matchMedia("(orientation: portrait)");
 		this.getRandomColor = this.getRandomColor.bind(this);
 		this.navigate = this.navigate.bind(this);
 		this.closeSettings = this.closeSettings.bind(this);
@@ -77,6 +80,7 @@ class Home extends React.Component {
 		this.onCircleSelect = this.onCircleSelect.bind(this);
 		this.onBackgroundHover = this.onBackgroundHover.bind(this);
 		this.onBackgroundSelect = this.onBackgroundSelect.bind(this);
+		this.handleSettingsClick = this.handleSettingsClick.bind(this);
 
 		this.nameHoverInterval = -1;
 
@@ -88,6 +92,9 @@ class Home extends React.Component {
 	*
 	*/
 	componentDidMount() {
+		if (this.mq.matches) {
+			this.setState({ onMobile: true });
+		}
 		// runs animation. id refers to which canvas paper runs on: 0 for top, 1 for bottom.
 		// canvasElement is the canvas to draw on
 		this.topAnim = anim(this.paperArray, 0, document.getElementById('canvas'));
@@ -125,6 +132,7 @@ class Home extends React.Component {
 				colors: newColors
 			})
 		}
+		this.mq = window.matchMedia("(orientation: portrait)");
 		this.topAnim.colorChange(section === 'home' ? newHomeTopCircles : this.state.colors[`${section}Top`], 'top');
 		this.bottomAnim.colorChange(section === 'home' ? newHomeBottomCircles : this.state.colors[`${section}Bottom`], 'bottom');
 		changeBackgroundColor(section === 'home' ? newHomeTopBG : this.state.colors[`${section}TopBackground`], 'body');
@@ -191,8 +199,15 @@ class Home extends React.Component {
 		this.setState({ colors: newColors });
 	}
 
+	handleSettingsClick() {
+		this.setState({ onSettings: !this.state.onSettings });
+		if (this.state.onSettings) {
+			this.closeSettings(this.state.currentSection);	
+		}
+	}
+
 	render() {
-		const { currentSection, onSettings, hideAll } = this.state;
+		const { currentSection, onSettings, hideAll, onMobile } = this.state;
 		const onInfo = currentSection === 'bio';
 		const onWork = currentSection === 'work';
 		const onContact = currentSection === 'contact';
@@ -224,7 +239,7 @@ class Home extends React.Component {
 
     			<div className="home-section section-on">
     				<div className="top-row-wrapper">
-    					<div className="empty-top-col"></div>
+    					{!onMobile && <div className="empty-top-col"></div>}
 						<div className='row top top-color'>
 							<span
 	    						className="my-name top-color"
@@ -262,23 +277,15 @@ class Home extends React.Component {
 								</span>
 							</ul>
 						</div>
-						<span
-							className={`${onSettings ? 'on' : ''} settings-button top-color`}
-							onClick={() => {
-								this.setState({ onSettings: !onSettings });
-								if (onSettings) {
-									this.closeSettings(this.state.currentSection);	
-								}
-							}}
-						>
-							{onSettings ? "close settings" : "settings"}
-						</span>
+						{!onMobile &&
+							<SettingsButton onMobile={onMobile} handleClick={this.handleSettingsClick} onSettings={onSettings} />
+						}
 					</div>
 					<div className="bottom-row-wrapper">
 						<span className="updated-on bottom-color">7/26/18</span>
-						<div className="row bottom-color">
-							
-						</div>
+						{onMobile &&
+							<SettingsButton onMobile={onMobile} handleClick={this.handleSettingsClick} onSettings={onSettings} />
+						}
 					</div>
 				</div>
 			</div>

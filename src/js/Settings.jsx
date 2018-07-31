@@ -179,7 +179,7 @@ class Settings extends React.Component {
 					</div>
 				</div>
 				<div className='bottom-settings'>
-					<div className="empty bottom-color">Click on circle of desired color to save selection.</div>
+					<div className="directions bottom-color">Click on circle of desired color to save selection.</div>
 					<div className='color-wrapper'>
 						<div className='bottom-color'>
 							<div className="circle-picker-text no-user-select">
