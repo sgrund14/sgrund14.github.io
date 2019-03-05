@@ -13,7 +13,7 @@ const Info = ({ hideAll, onInfo, onSettings }) => {
 			</div>
 			<div className='bottom-panel bottom-color'>
 				<div className='panel info'>
-					He lives and works in New York City as a front end engineer. Here is where his story begins...
+					He lives in Greenpoint Brooklyn with Jack Ferguson and works as a front end engineer. Here is where his story begins...
 				</div>
 			</div>
 		</div>
